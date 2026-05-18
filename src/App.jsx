@@ -18,8 +18,8 @@ function App() {
     <GrowingTogether/>
     <PopularVouchers/>
     <Customersupport/>
-    <WhyChooseViralPe/>
     <PromotionalCards/>
+    <WhyChooseViralPe/>
     <ReferAndEarn/>
     <SupportBanner/>
     <FAQSection/>

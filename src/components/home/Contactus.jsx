@@ -1,5 +1,7 @@
 import React from "react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import Mobilechat from "../../../public/images/mobile-chat.png";
+import Emailicon from "../../../public/images/email.png";
+import locationicon from "../../../public/images/property-location.png";
 
 const ContactUs = () => {
   return (
@@ -8,32 +10,44 @@ const ContactUs = () => {
       {/* Left Side */}
       <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
 
-        <h2 className="text-[40px] md:text-[46px] font-bold text-[#222222] tracking-tight mb-4 leading-none">
+        <h2 className="text-[40px] md:text-[52px] font-semibold text-[#222222] tracking-tight mb-4 leading-none">
           Contact Us
         </h2>
 
-        <p className="text-[15px] text-gray-600 leading-relaxed mb-10 max-w-[420px]">
+        <p className="text-[18px] text-[#222222CC] leading-relaxed mb-10 max-w-[420px]">
           We are committed to processing the information in order to contact you and talk about your project.
         </p>
 
-        <div className="flex flex-col gap-6">
+        <div className=" flex flex-col gap-6">
 
-          <div className="flex items-center gap-4">
-            <Mail className="text-[#901C27]" size={20} strokeWidth={2} />
+          <div className="flex items-center gap-10">
+            <img
+              src={Emailicon}
+              alt="Email"
+              className="w-[20px] h-[20px] object-contain"
+            />
             <span className="text-[14px] font-medium text-[#222222]">
               example@teamwebflow.com
             </span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <MapPin className="text-[#901C27]" size={20} strokeWidth={2} />
+          <div className="flex items-center gap-10">
+            <img
+              src={locationicon}
+              alt="Location"
+              className="w-[20px] h-[20px] object-contain"
+            />
             <span className="text-[14px] font-medium text-[#222222]">
               4074 Ebert Summit Suite 375
             </span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <Phone className="text-[#901C27]" size={20} strokeWidth={2} />
+          <div className="flex items-center gap-10">
+            <img
+              src={Mobilechat}
+              alt="Phone"
+              className="w-[20px] h-[20px] object-contain"
+            />
             <span className="text-[14px] font-medium text-[#222222]">
               +44 123 654 7890
             </span>
@@ -46,10 +60,10 @@ const ContactUs = () => {
       {/* Right Side */}
       <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-white">
 
-        <form className="flex flex-col gap-5 w-full max-w-[480px]">
+        <form className="flex flex-col gap-5 w-full max-w-[470px]" >
 
           {/* Name */}
-          <div className="relative">
+          <div className=" relative">
             <input
               type="text"
               id="name"
@@ -59,9 +73,9 @@ const ContactUs = () => {
 
             <label
               htmlFor="name"
-              className="absolute left-4 top-3.5 text-[14px] text-gray-500 transition-all peer-focus:-top-2.5 peer-focus:text-[12px] peer-focus:bg-white peer-focus:px-1 peer-focus:text-[#901C27] peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:text-[12px] peer-not-placeholder-shown:bg-white peer-not-placeholder-shown:px-1 pointer-events-none"
+              className="absolute left-4 top-3.5 text-[14px]  text-[#1C1B1B] transition-all peer-focus:-top-2.5 peer-focus:text-[12px] peer-focus:bg-white peer-focus:px-1 peer-focus:text-[#901C27] peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:text-[12px] peer-not-placeholder-shown:bg-white peer-not-placeholder-shown:px-1 pointer-events-none"
             >
-              Name<span className="text-red-500">*</span>
+              Name<span className="text-red-500 text-[16px]">*</span>
             </label>
           </div>
 
@@ -76,7 +90,7 @@ const ContactUs = () => {
 
             <label
               htmlFor="email"
-              className="absolute left-4 top-3.5 text-[14px] text-gray-500 transition-all peer-focus:-top-2.5 peer-focus:text-[12px] peer-focus:bg-white peer-focus:px-1 peer-focus:text-[#901C27] peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:text-[12px] peer-not-placeholder-shown:bg-white peer-not-placeholder-shown:px-1 pointer-events-none"
+              className="absolute left-4 top-3.5 text-[14px] text-[#1C1B1B] transition-all peer-focus:-top-2.5 peer-focus:text-[12px] peer-focus:bg-white peer-focus:px-1 peer-focus:text-[#901C27] peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:text-[12px] peer-not-placeholder-shown:bg-white peer-not-placeholder-shown:px-1 pointer-events-none"
             >
               Email<span className="text-red-500">*</span>
             </label>
@@ -93,7 +107,7 @@ const ContactUs = () => {
 
             <label
               htmlFor="message"
-              className="absolute left-4 top-3.5 text-[14px] text-gray-500 transition-all peer-focus:-top-2.5 peer-focus:text-[12px] peer-focus:bg-white peer-focus:px-1 peer-focus:text-[#901C27] peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:text-[12px] peer-not-placeholder-shown:bg-white peer-not-placeholder-shown:px-1 pointer-events-none"
+              className="absolute left-4 top-3.5 text-[14px] text-[#1C1B1B] transition-all peer-focus:-top-2.5 peer-focus:text-[12px] peer-focus:bg-white peer-focus:px-1 peer-focus:text-[#901C27] peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:text-[12px] peer-not-placeholder-shown:bg-white peer-not-placeholder-shown:px-1 pointer-events-none"
             >
               Message
             </label>

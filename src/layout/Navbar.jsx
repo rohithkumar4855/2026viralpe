@@ -31,8 +31,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="max-w-360 w-full mx-auto px-10 flex items-center justify-between md:justify-evenly bg-white z-100 relative">
-
+<nav className="fixed top-0 left-0 w-full px-10 flex items-center justify-between md:justify-evenly bg-white z-50 shadow-md">
       <div className="flex items-center">
         <img
           src={logo}

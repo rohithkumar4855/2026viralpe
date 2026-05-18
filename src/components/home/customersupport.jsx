@@ -1,5 +1,5 @@
 import React from "react";
-
+import logo from "../../../public/images/logo.png";
 const CustomerSupportBanner = () => {
   return (
     <div className="w-full max-w-[1205px] mt-[32px] mx-auto min-h-[115px] rounded-[16px] flex items-center justify-between px-4 md:px-8 py-4 md:py-0 shadow-md relative overflow-hidden bg-[#7a1219]">
@@ -14,7 +14,7 @@ const CustomerSupportBanner = () => {
         <div className="w-[70px] md:w-[85px] h-[70px] md:h-[85px] bg-white rounded-[12px] flex-shrink-0 flex items-center justify-center p-2 shadow-sm">
 
           <img
-            src="/api/placeholder/60/60"
+            src={logo}
             alt="ViralPe Logo"
             className="w-full h-full object-contain"
           />

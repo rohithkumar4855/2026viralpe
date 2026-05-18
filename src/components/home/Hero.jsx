@@ -3,7 +3,7 @@ import Container from "../../layout/Container";
 import Button from "../ui/Button";
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
-import homescreen from "../../../public/images/Homescreen.png";
+import homescreen from "../../../public/images/Homescreen1.png";
 import Frame_1 from "../../../public/images/Frame_1.png";
 import Frame_2 from "../../../public/images/Frame_2.png";
 
@@ -39,8 +39,8 @@ const rechargeData = [
 export default function Heropage() {
     return (
         <section>
-                <div className="max-w-301.75 mx-auto pt-22.25 flex flex-col md:flex-row gap-7.75">
-                    <div className="flex flex-col  gap-4  bg-white rounded-lg max-w-181 max-h-66 w-full p-[27.28px]">
+                <div className="max-w-301.75 mt-25 mx-auto  flex flex-col md:flex-row gap-7.75 ">
+                    <div className="flex flex-col  gap-4  bg-white rounded-2xl max-w-181 max-h-66 w-full p-[27.28px] shadow-sm">
                         <h2 className="font-semibold  text-[28px] ">Recharge or Pay Mobile Bill</h2>
                         <div className="flex flex-row justify-evenly  gap-14.25">
                             {rechargeData.map((item) => (
@@ -62,7 +62,7 @@ export default function Heropage() {
 
 
                     {/* rightcard */}
-                    <div className="w-110 min-w-110 h-66 bg-[#FFEDEE] rounded-[20px] flex flex-row relative overflow-hidden shrink-0">
+                    <div className="w-110 min-w-110 h-66 bg-[#FFEDEE] rounded-2xl flex flex-row relative overflow-hidden shrink-0 shadow-sm">
 
                         {/* --- Left Text Content --- */}
                         <div className="flex flex-col pt-8 pl-7 z-10 w-[240px]">
@@ -75,7 +75,7 @@ export default function Heropage() {
                             </p>
 
                             <div>
-                                <Button className="rounded-lg py-[8px] px-[14px] flex flex-row items-center gap-[6px] bg-[#8B232A] text-white hover:bg-[#721c22] transition-colors shadow-sm w-fit">
+                                <Button className="rounded-lg py-[8px] px-[14px] flex flex-row items-center gap-[6px]  text-white hover:bg-[#721c22] transition-colors shadow-sm w-fit">
                                     <span className="text-[12px] font-medium leading-none mt-[1px]">Download ViralPe App</span>
                                     <div className="flex flex-row items-center gap-[4px]">
                                         <img src={playstoreicon} alt="Play Store" className="w-[14px] h-[14px] object-contain" />

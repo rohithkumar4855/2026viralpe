@@ -12,15 +12,14 @@ export default function GrowingTogether() {
     subtitle,
   }) => {
     return (
-      <div className="flex flex-col p-5 border border-gray-200 rounded-xl  bg-white shadow-sm hover:shadow-md transition-shadow ">
+      <div className="flex flex-col p-3 border border-[#000000]/10 rounded-2xl  bg-white shadow-sm  transition-shadow ">
 
-        {/* Icon + Title */}
         <div className="flex items-center gap-2 mb-3">
-          <div className="text-(--primary-red)  p-1.5 rounded-[9.9px] w-[41px] h-[41px] flex items-center justify-center">
+          <div className="text-(--primary-red)  p-1.5 rounded-[9.9px]  flex items-center justify-center">
            <img
   src={Icon}
   alt={title}
-  className=" object-contain"
+  className=" object-contain w-10.25 h-10.25"
 />
           </div>
 
@@ -31,7 +30,7 @@ export default function GrowingTogether() {
         </div>
 
         {/* Amount */}
-        <h3 className="text-[22px] font-bold text-[#1c1b1b]">
+        <h3 className="text-[24px] font-bold text-[#1c1b1b] ml-[21px]">
           {amount}
         </h3>
 

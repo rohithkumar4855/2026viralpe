@@ -9,10 +9,10 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Navbar />
     <Container>
+      <Navbar />
       <App />
+      <Footer />
     </Container>
-    <Footer />
   </StrictMode>,
 )
