@@ -30,7 +30,7 @@ const WalletandEarnings = ({ icon, title, amount}) => {
 
 export default function Home() {
     return (
-        <div className="w-full max-w-[1217px] max-h-[240px] mx-auto mt-[32px] bg-white rounded-[20px] p-8 md:p-10 shadow-sm border border-gray-100">
+        <div className="w-full  max-w-[1217px] max-h-[240px] mx-auto mt-[32px]   bg-white rounded-[20px] p-8 md:p-10 shadow-sm border border-gray-100">
             <div>
                 <h1 className="text-[24px] font-semibold">Wallet & Earnings</h1>
             </div>

@@ -1,16 +1,41 @@
+import UserNavbar from "./UserNavbar";
 import { useState } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import logo from "../../public/images/logo.png";
 import MoneyReceive from "../../public/images/money-receive.png";
 import dthicon from "../../public/images/dthicon.png";
 import fastagicon from "../../public/images/fastagicon.png";
-import { useNavigate } from "react-router-dom";
-
+import { useEffect } from "react";
+import { useNavigate,useLocation } from "react-router-dom";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
 
+  // 2. Listen for the custom event to update the navbar instantly
+ useEffect(() => {
+    const handleAuthChange = () => {
+      setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
+      // console.log("Navbar checking auth! Status is:", status); 
+    };
+
+    window.addEventListener("authChange", handleAuthChange);
+    return () => window.removeEventListener("authChange", handleAuthChange);
+  }, []);
+
+  
+  if (location.pathname === "/login-user") {
+    return null;
+  }
+
+
+  if (isLoggedIn) {
+    return <UserNavbar/>;
+  }
+
+  
   // Navigation Items
   const navItems = [
     {
@@ -77,6 +102,7 @@ export default function Navbar() {
   ];
 
   return (
+    
     <nav className="fixed top-0 left-0 w-full px-10 flex items-center justify-between md:justify-evenly bg-white z-50 shadow-md">
       <div className="flex items-center cursor-pointer" onClick={() => navigate("/")}>
         <img src={logo} alt="ViralPe Logo" className="w-[90.84px] h-[90.84px]" />
@@ -196,8 +222,18 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Login */}
-      <button onClick={() => navigate("/login")}
-      className="hidden md:block login-btn font-semibold py-[12px] px-[24px] bg-(--primary-red) text-white cursor-pointer rounded-lg hover:opacity-90 transition-opacity">
+
+      <button
+        onClick={() => {
+          // 1. Set login state
+          localStorage.setItem("isLoggedIn", "true");
+          // 2. Tell the Navbar to change immediately
+          window.dispatchEvent(new Event("authChange"));
+          // 3. Navigate to the new screen (e.g., Dashboard or Home)
+          navigate("/login-user"); 
+        }}
+        className="hidden md:block font-semibold py-[12px] px-[24px] bg-(--primary-red) text-white cursor-pointer rounded-lg hover:opacity-90 transition-opacity"
+      >
         Login
       </button>
 

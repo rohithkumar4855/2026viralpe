@@ -5,7 +5,6 @@ export default function Ourteam(){
     <>
     <OurTeam/>
     <OurAssociate/>
-
     </>
     );
 }
