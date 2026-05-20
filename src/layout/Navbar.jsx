@@ -194,7 +194,7 @@ export default function Navbar() {
                 {item.isMegaMenu && (
                   <div className="absolute top-[85%] left-1/2 -translate-x-1/2 mt-3 min-w-[560px] bg-white rounded-b-2xl shadow-[0_20px_40px_rgb(0,0,0,0.15)] z-50">
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-[#00a3ff]"></div>
-                    <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-t-[2px] border-l-[2px] border-[#00a3ff] z-10"></div>
+                    <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45  z-10"></div>
                     <div className="relative z-20 bg-white rounded-b-2xl flex gap-12 px-10 py-6">
                       {item.columns.map((col, colIndex) => (
                         <div key={colIndex} className="flex-1 flex flex-col">
