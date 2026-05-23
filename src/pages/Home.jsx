@@ -4,7 +4,7 @@ import PopularVouchers from "../components/home/Vouchers";
 import Customersupport from "../components/home/Customersupport";
 import PromotionalCards from "../components/home/Promotionalcards";
 import WhyChooseViralPe from "../components/home/Whychoose";
-import ReferAndEarn from "../components/home/Referandearn";
+import ReferAndEarn from "../components/home/ReferandEarn";
 import SupportBanner from "../components/home/Supportbanner";
 import FAQSection from "../components/home/Faqquestion";
 import ContactUs from "../components/home/Contactus";

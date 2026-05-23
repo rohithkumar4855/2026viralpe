@@ -70,13 +70,53 @@ export default function CashbackCardList() {
     { label: "Footwear", icon: footwear },
     { label: "Accessories", icon: accessories }
   ];
-
+const features = [
+    {
+        id: "secure-payments",
+        title: "100% Secure Payments",
+        description: "256-bit SSL Encrypted",
+        icon: '/images/lock.png',
+        isRating: false,
+    },
+    {
+        id: "instant-delivery",
+        title: "Instant Code Delivery",
+        description: "Get Vouchers In Seconds",
+        icon: '/images/Thunder.png',
+        isRating: false,
+    },
+    {
+        id: "customer-support",
+        title: "24/7 Customer Support",
+        description: "Help available round the clock",
+        icon: '/images/Headphones.png',
+        isRating: false,
+    },
+    {
+        id: "trusted-users",
+        title: "Trusted By 1M+ Users",
+        description: "4.8/5",
+        icon: '/images/Vector.svg',
+        isRating: true,
+    },
+];
+const renderIcon = (icon) => {
+    return (
+        <img
+            src={icon}
+            alt="icon"
+            className="w-8.5 h-8.5 object-contain"
+        />
+    );
+};
   const vouchersData = [
     { id: 1, value: 100, savings: 5 },
     { id: 2, value: 200, savings: 10 },
     { id: 3, value: 300, savings: 15 },
-    { id: 4, value: 400, savings: 200 },
-    { id: 5, value: 600, savings: 90 }
+    { id: 4, value: 600, savings: 200 },
+    { id: 5, value: 400, savings: 90 },
+     { id: 6, value: 500, savings: 90 },
+    
   ];
 
   // Helper functions to update state cleanly
@@ -139,14 +179,20 @@ export default function CashbackCardList() {
     },
     {
       id: 2,
-      question: "What if my recharge fails?",
+      question: "Cashback & Rewards Terms",
       answer: "If your recharge fails, the amount is usually refunded to your original payment method within 3-5 business days. Please check your transaction history for the real-time status or contact our support team."
     },
     {
       id: 3,
-      question: "When will I get Cashback?",
+      question: "Validity & Expiry",
+      answer: "Cashback is credited instantly to your ViralPe wallet right after a successful transaction. In rare scenarios, it might take up to 24 hours to process."
+    },
+     {
+      id: 4,
+      question: "Refund & Cancellation",
       answer: "Cashback is credited instantly to your ViralPe wallet right after a successful transaction. In rare scenarios, it might take up to 24 hours to process."
     }
+
   ];
 
   const toggleAccordion = (index) => {
@@ -168,8 +214,8 @@ export default function CashbackCardList() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fbf8f8] p-4 md:p-8">
-      <div className="max-w-[1240px] pt-36 mx-auto">
+    <div className="min-h-screen  p-4 md:p-8">
+      <div className="max-w-[1240px] pt-20  mx-auto">
 
         {/* Main 12-Column Grid */}
         <div className="flex flex-row gap-6 items-start">
@@ -178,20 +224,20 @@ export default function CashbackCardList() {
           <div className="col-span-12 lg:col-span-8 flex flex-col gap-6">
 
             {/* Voucher Card */}
-            <div className="border border-transparent max-w-[700px] w-full max-h-[331px]">
+            <div className="border border-transparent ">
               <div className="flex flex-col font-sans">
                 {categories.map((item) => (
                   <div
                     key={item.id}
-                    className="bg-white rounded-[24px] p-6 md:p-8 w-full max-w-3xl shadow-sm border border-gray-100"
+                    className="bg-white rounded-[16px] p-4 w-full max-w-[700px]  max-h-[331px]shadow-sm border border-gray-100"
                   >
-                    <div className="flex justify-between items-start mb-6">
+                    <div className=" flex justify-between items-start">
                       <div className="flex gap-4 items-center">
-                        <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                        <div className="  flex items-center justify-center">
                           <img src={item.icon} alt={`${item.title} Logo`} className="w-full h-full object-contain" />
                         </div>
                         <div>
-                          <h2 className="text-[22px] font-bold text-gray-900 leading-tight">{item.title}</h2>
+                          <h2 className="text-[28.1px] font-bold text-gray-900 leading-tight">{item.title}</h2>
                           <p className="text-[#a6303c] text-sm font-semibold mt-1">{item.cashback}</p>
                         </div>
                       </div>
@@ -200,11 +246,11 @@ export default function CashbackCardList() {
                       </span>
                     </div>
 
-                    <p className="text-[#6b7280] text-[15px] leading-[1.7] mb-8 font-medium">{item.para}</p>
+                    <p className="text-[#6b7280] text-[16px] leading-[1.7] mb-8 font-medium">{item.para}</p>
 
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex  items-center text-center gap-2 ">
                       {tags.map((tag, index) => (
-                        <div key={index} className="flex items-center gap-2 bg-[#fcf6f6] text-[#9b2a36] px-5 py-2.5 rounded-full text-sm font-bold">
+                        <div key={index} className="flex items-center gap-2 max-w-[143px] w-full max-h-[41px]  bg-[#fcf6f6] text-[#9b2a36] px-5 py-2.5 rounded-[20px] text-sm font-bold">
                           <img src={tag.icon} alt={tag.label} className="w-4 h-4 object-contain" />
                           <span>{tag.label}</span>
                         </div>
@@ -216,15 +262,15 @@ export default function CashbackCardList() {
             </div>
 
             {/* Choose Voucher Grid Selector */}
-            <div className="w-full bg-white max-w-3xl max-w-[700px] max-h-[367px] rounded-[24px] p-6 border border-gray-100 shadow-sm">
-              <h1 className='font-bold text-2xl mb-4'>Choose Your Voucher value</h1>
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4">
+            <div className="w-full bg-white  max-w-[700px] max-h-[367px] rounded-[24px] p-4 border border-gray-100 shadow-sm">
+              <h1 className='font-bold text-[24px] mb-4'>Choose Your Voucher value</h1>
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-4">
                 {vouchersData.map((voucher) => {
                   const currentQty = quantities[voucher.id] || 0;
                   return (
                     <div
                       key={voucher.id}
-                      className="w-full h-[123px] bg-white border border-[#9c27b0]/20 rounded-[24px] shadow-sm flex flex-col items-center justify-between p-2.5 transition-all duration-200 hover:shadow-md hover:bg-[#FFF8F8] hover:border-[#901C27] mx-auto"
+                      className="w-full  max-w-[148px] max-h-[123px] bg-white border border-[#9c27b0]/20 rounded-[20px] shadow-sm flex flex-col items-center justify-between p-2.5 transition-all duration-200 hover:shadow-md hover:bg-[#FFF8F8] hover:border-[#901C27] mx-auto"
                     >
                       <div className="flex flex-col items-center text-center mt-1">
                         <h2 className="text-xl font-bold text-gray-900 flex items-center justify-center tracking-tight leading-none">
@@ -533,51 +579,47 @@ export default function CashbackCardList() {
         </div>
 
         {/* Global Banner Strip */}
-        <div className='w-full max-w-[1240px] flex flex-col md:flex-row border border-red-100 gap-6 items-start md:items-center justify-around mt-8 p-6 bg-[#FFEDEE] rounded-2xl shadow-xs'>
-          <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-              <Lock className="w-5 h-5 stroke-[2]" />
+        <div className="max-w-[1210px] mt-4 max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto  gap-6">
+            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 ">
+                {features.map((feature) => (
+
+                    <div key={feature.id} className="flex items-center gap-4 min-w-0 ">
+                        {/* Icon Box */}
+                        <div className="flex h-11.75 w-11.75 flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
+                            {renderIcon(feature.icon)}
+                        </div>
+
+                        {/* Text */}
+                        <div className="flex flex-col justify-center">
+                            <h3 className="text-[16px]  font-semibold text-[#901c27] ">
+                                {feature.title}
+                            </h3>
+
+                            {feature.isRating ? (
+                                <div className="mt-1 flex items-center gap-1">
+                                    {[...Array(5)].map((_, index) => (
+                                        <svg
+                                            key={index}
+                                            className="h-4 w-4 fill-current text-yellow-400"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                        </svg>
+                                    ))}
+
+                                    <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
+                                        {feature.description}
+                                    </span>
+                                </div>
+                            ) : (
+                                <p className="mt-1 text-sm ">
+                                    {feature.description}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                ))}
             </div>
-            <div>
-              <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">Secure Payments</h4>
-              <p className="text-[14px] font-medium text-[#1C1B1BCC] mt-0.5">256-bit SSL encrypted transactions</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-              <Zap className="w-5 h-5 stroke-[2]" />
-            </div>
-            <div>
-              <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">Instant Code Delivery</h4>
-              <p className="text-[11px] font-medium text-gray-400 mt-0.5">Code delivered to your wallet immediately</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-              <Headphones className="w-5 h-5 stroke-[2]" />
-            </div>
-            <div>
-              <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">24/7 Customer Support</h4>
-              <p className="text-[14px] font-medium text-[#1C1B1BCC] mt-0.5">Help available round the clock</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-              <ShieldCheck className="w-5 h-5 stroke-[2]" />
-            </div>
-            <div>
-              <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">Trusted By 1M+ Users</h4>
-              <p className="text-[14px] font-medium text-[#1C1B1BCC] mt-0.5">Active daily consumers</p>
-              <div className="flex items-center gap-1 mt-2">
-                <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                <span className="ml-1 text-[12px] font-semibold text-[#8A1C24]">4.8/5</span>
-              </div>
-            </div>
-          </div>
         </div>
 
       </div>

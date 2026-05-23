@@ -12,7 +12,9 @@ import PrepaidRecharge from "../feature/Dashboard/PrepaidRecharge";
 import Chooseaplan from "../feature/Dashboard/ChooseaPlan";
 import FastagRecharge from "../feature/Dashboard/FastagRecharge"
 import Dthrecharge from "../feature/Dashboard/Dthrecharge"
-import ReferAndEarn from "../feature/Dashboard/Referandearn";
+import ReferEarn from "../feature/Dashboard/Referearn";
+import Transcations from "../feature/Dashboard/Transcations"
+import Fastagdetails from "../feature/Dashboard/Fasttagdetails"
 export default function AppRoutes() {
   return (
     <Routes>
@@ -27,9 +29,11 @@ export default function AppRoutes() {
       <Route path="/payment-success" element={<PaymentSuccess />} />
       <Route path="/prepaid" element={<PrepaidRecharge />} />
       <Route path="/prepaid-plans" element={<Chooseaplan />} />
-      <Route path="/dth" element={< Dthrecharge/>}/>
-       <Route path="/fastag" element={<FastagRecharge />}/>
-      <Route path="/refer-and-earn" element={< ReferAndEarn/>}/>
+      <Route path="/dth" element={< Dthrecharge />} />
+      <Route path="/fastag" element={<FastagRecharge />} />
+      <Route path="/refer-and-earn" element={< ReferEarn />} />
+      <Route path="/transactions" element={< Transcations />} />
+      <Route path="/fastag-details" element={< Fastagdetails />} />
     </Routes>
   );
 }

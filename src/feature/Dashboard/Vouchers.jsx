@@ -21,6 +21,45 @@ export default function Vouchers() {
         { id: 'Transactions', label: 'Transactions' },
     ];
 
+    const features = [
+    {
+        id: "secure-payments",
+        title: "100% Secure Payments",
+        description: "256-bit SSL Encrypted",
+        icon: '/images/lock.png',
+        isRating: false,
+    },
+    {
+        id: "instant-delivery",
+        title: "Instant Code Delivery",
+        description: "Get Vouchers In Seconds",
+        icon: '/images/Thunder.png',
+        isRating: false,
+    },
+    {
+        id: "customer-support",
+        title: "24/7 Customer Support",
+        description: "Help available round the clock",
+        icon: '/images/Headphones.png',
+        isRating: false,
+    },
+    {
+        id: "trusted-users",
+        title: "Trusted By 1M+ Users",
+        description: "4.8/5",
+        icon: '/images/Vector.svg',
+        isRating: true,
+    },
+];
+const renderIcon = (icon) => {
+    return (
+        <img
+            src={icon}
+            alt="icon"
+            className="w-8.5 h-8.5 object-contain"
+        />
+    );
+};
     // 2. Filter Sidebar & Categories State Configurations
     const [sections, setSections] = useState({
         brands: true,
@@ -196,9 +235,9 @@ export default function Vouchers() {
                 <div className="flex flex-row  md:grid-cols-3 lg:grid-cols-9 gap-6 items-start">
 
                     {/* COLUMN 1: LEFT SIDEBAR (FILTERS & WHY VIRALPE) */}
-                    <div className="items-center lg:col-span-3  max-w-[291px] w-full flex flex-col gap-2 ">
-                        <aside className="w-full bg-white rounded-[28px] border border-gray-100 p-5 shadow-sm select-none">
-                            <div className="flex items-center justify-between mb-5">
+                    <div className="flex flex-col gap-2 ">
+                        <aside className=" bg-white max-w-[291px] w-full max-h-[556px] h-full rounded-[20px] border border-gray-100 p-5 shadow-sm select-none">
+                            <div className=" flex items-center justify-between  ">
                                 <h2 className="text-xl font-bold text-gray-900">Filter</h2>
                                 <button
                                     onClick={handleClearAll}
@@ -209,10 +248,10 @@ export default function Vouchers() {
                             </div>
 
                             {/* Section 1: Brands */}
-                            <div className="mb-4">
+                            <div >
                                 <button onClick={() => toggleSection('brands')} className="flex items-center justify-between w-full py-2 text-left">
 
-                                    <span className="text-[15px] font-bold text-gray-900">
+                                    <span className=" text-[15px] font-bold text-gray-900">
                                         Brands{" "}
                                         {selectedBrands.length > 0 && (
                                             <span className="text-[#901C27] font-semibold">
@@ -223,7 +262,7 @@ export default function Vouchers() {
                                     {sections.brands ? <ChevronUp className="w-4 h-4 text-gray-800 stroke-[2.5]" /> : <ChevronDown className="w-4 h-4 text-gray-800 stroke-[2.5]" />}
                                 </button>
                                 {sections.brands && (
-                                    <div className="mt-2 space-y-3">
+                                    <div className=" ">
                                         <div className="relative w-full">
                                             <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                                 <Search className="h-3.5 w-3.5 text-gray-400" />
@@ -233,15 +272,15 @@ export default function Vouchers() {
                                                 placeholder="Search brands"
                                                 value={brandSearch}
                                                 onChange={(e) => setBrandSearch(e.target.value)}
-                                                className="w-full pl-9 pr-3 py-1.5 text-xs bg-white border border-gray-200 rounded-lg text-gray-700 focus:outline-none focus:border-red-700 transition-all"
+                                                className="w-[237px] pl-9 pr-3 py-1.5 text-xs bg-white border border-gray-200 rounded-lg text-gray-700 focus:outline-none focus:border-red-700 transition-all"
                                             />
                                         </div>
-                                        <div className="space-y-2.5 max-h-[160px] overflow-y-auto pr-1 scrollbar-thin">
+                                        <div className=" overflow-y-auto pr-1 scrollbar-thin  p-2">
                                             {filteredBrands.map((brand) => {
                                                 const isChecked = selectedBrands.includes(brand);
                                                 return (
-                                                    <label key={brand} className="flex items-center justify-between cursor-pointer group">
-                                                        <span className="text-l font-medium text-gray-700 group-hover:text-gray-900 transition-colors">{brand}</span>
+                                                    <label key={brand} className="flex items-center justify-between  cursor-pointer group">
+                                                        <span className="text-[13px]  text-gray-700 group-hover:text-gray-900 transition-colors">{brand}</span>
                                                         <input type="checkbox" checked={isChecked} onChange={() => handleBrandChange(brand)} className="sr-only" />
                                                         <div className={`w-4 h-4 rounded border transition-all flex items-center justify-center ${isChecked ? 'bg-red-800 border-red-800' : 'border-gray-400 bg-white group-hover:border-gray-600'}`}>
                                                             {isChecked && <Check className="w-3 h-3 text-white stroke-[3]" />}
@@ -254,21 +293,21 @@ export default function Vouchers() {
                                 )}
                             </div>
 
-                            <hr className="border-gray-100 my-3" />
+                            <hr className="border-gray-100 my-1" />
 
                             {/* Section 2: Discount */}
-                            <div className="mb-4 ">
-                                <button onClick={() => toggleSection('discount')} className="flex items-center justify-between w-full py-2 text-left">
+                            <div>
+                                <button onClick={() => toggleSection('discount')} className="flex items-center justify-between w-full text-left">
                                     <span className="text-[15px] font-bold text-gray-900">Discount</span>
                                     {sections.discount ? <ChevronUp className="w-4 h-4 text-gray-800 stroke-[2.5]" /> : <ChevronDown className="w-4 h-4 text-gray-800 stroke-[2.5]" />}
                                 </button>
                                 {sections.discount && (
-                                    <div className="mt-2 space-y-2.5">
+                                    <div className="  ">
                                         {discountList.map((disc) => {
                                             const isChecked = selectedDiscount === disc;
                                             return (
                                                 <label key={disc} className="flex items-center justify-between cursor-pointer group">
-                                                    <span className="text-l font-medium text-gray-700 group-hover:text-gray-900 transition-colors">{disc}</span>
+                                                    <span className="text-[13px] text-gray-700 group-hover:text-gray-900 transition-colors">{disc}</span>
                                                     <input type="checkbox" checked={isChecked} onChange={() => setSelectedDiscount(isChecked ? '' : disc)} className="sr-only" />
                                                     <div className={`w-4 h-4 rounded border transition-all flex items-center justify-center ${isChecked ? 'bg-red-800 border-red-800' : 'border-gray-400 bg-white group-hover:border-gray-600'}`}>
                                                         {isChecked && <Check className="w-3 h-3 text-white stroke-[3]" />}
@@ -280,21 +319,21 @@ export default function Vouchers() {
                                 )}
                             </div>
 
-                            <hr className="border-gray-100 my-3" />
+                            <hr className="border-gray-100 my-1" />
 
                             {/* Section 3: Sort By */}
-                            <div className="mb-2">
-                                <button onClick={() => toggleSection('sortBy')} className="flex items-center justify-between w-full py-2 text-left">
+                            <div>
+                                <button onClick={() => toggleSection('sortBy')} className="flex items-center justify-between w-full  text-left">
                                     <span className="text-[15px] font-bold text-gray-900">Sort By</span>
                                     {sections.sortBy ? <ChevronUp className="w-4 h-4 text-gray-800 stroke-[2.5]" /> : <ChevronDown className="w-4 h-4 text-gray-800 stroke-[2.5]" />}
                                 </button>
                                 {sections.sortBy && (
-                                    <div className="mt-2 space-y-2.5">
+                                    <div className="mt-1 ">
                                         {sortList.map((sortOption) => {
                                             const isChecked = selectedSort === sortOption;
                                             return (
                                                 <label key={sortOption} className="flex items-center justify-between cursor-pointer group">
-                                                    <span className="text-l font-medium text-gray-700 group-hover:text-gray-900 transition-colors">{sortOption}</span>
+                                                    <span className="text-[13px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">{sortOption}</span>
                                                     <input type="checkbox" checked={isChecked} onChange={() => setSelectedSort(isChecked ? '' : sortOption)} className="sr-only" />
                                                     <div className={`w-4 h-4 rounded border transition-all flex items-center justify-center ${isChecked ? 'bg-red-800 border-red-800' : 'border-gray-400 bg-white group-hover:border-gray-600'}`}>
                                                         {isChecked && <Check className="w-3 h-3 text-white stroke-[3]" />}
@@ -436,11 +475,54 @@ export default function Vouchers() {
                         )}
                     </main>
 
-                    {/* COLUMN 3: RIGHT SIDEBAR (PROMOS & VALUES) */}
+                     
 
 
                 </div>
+                
             </div>
+             <div className="max-w-[1210px] max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto  gap-6">
+            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 ">
+                {features.map((feature) => (
+
+                    <div key={feature.id} className="flex items-center gap-4 min-w-0 ">
+                        {/* Icon Box */}
+                        <div className="flex h-11.75 w-11.75 flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
+                            {renderIcon(feature.icon)}
+                        </div>
+
+                        {/* Text */}
+                        <div className="flex flex-col justify-center">
+                            <h3 className="text-[16px]  font-semibold text-[#901c27] ">
+                                {feature.title}
+                            </h3>
+
+                            {feature.isRating ? (
+                                <div className="mt-1 flex items-center gap-1">
+                                    {[...Array(5)].map((_, index) => (
+                                        <svg
+                                            key={index}
+                                            className="h-4 w-4 fill-current text-yellow-400"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                        </svg>
+                                    ))}
+
+                                    <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
+                                        {feature.description}
+                                    </span>
+                                </div>
+                            ) : (
+                                <p className="mt-1 text-sm ">
+                                    {feature.description}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
         </div>
     );
 }

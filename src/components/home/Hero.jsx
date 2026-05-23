@@ -243,16 +243,7 @@ export default function Heropage() {
 
                         </div>
                     </div>
-                    {/* <img
-                        src={Frame_1}
-                        alt="Frame_1"
-                        className="absolute top-[125px] left-[207px] max-w-[222px] w-full object-contain z-10 "
-                    />
-                    <img
-                        src={Frame_2}
-                        alt="Frame_2"
-                        className="absolute top-[170px] left-[207px] max-w-[222px] w-full object-contain z-10 drop-shadow-md"
-                    /> */}
+                  
                 </div>
             </div>
         </section>
