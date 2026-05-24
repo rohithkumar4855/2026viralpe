@@ -15,6 +15,8 @@ import Dthrecharge from "../feature/Dashboard/Dthrecharge"
 import ReferEarn from "../feature/Dashboard/Referearn";
 import Transcations from "../feature/Dashboard/Transcations"
 import Fastagdetails from "../feature/Dashboard/Fasttagdetails"
+import UserVouchers from "../feature/Dashboard/UserVouchers"
+import Vouchercode from "../feature/Dashboard/VoucherCode"
 export default function AppRoutes() {
   return (
     <Routes>
@@ -34,6 +36,8 @@ export default function AppRoutes() {
       <Route path="/refer-and-earn" element={< ReferEarn />} />
       <Route path="/transactions" element={< Transcations />} />
       <Route path="/fastag-details" element={< Fastagdetails />} />
+      <Route path="/my-vouchers" element={< UserVouchers  />} />
+       <Route path="/voucher-code" element={< Vouchercode  />} />
     </Routes>
   );
 }

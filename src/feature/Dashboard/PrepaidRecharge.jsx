@@ -241,47 +241,47 @@ export default function RechargeDashboard() {
                         </div>
 
                     </div>
-                   {/* Updated to max-w-[1210px] with left-alignment fixes */}
-<div className="max-w-[1210px] w-full max-h-[118px]  rounded-[20px]  bg-[#FFEDEE] py-6 px-4 lg:px-6">
-    <div className="flex flex-row justify-between gap-5 w-full">
-        {features.map((feature) => (
-            <div key={feature.id} className="flex items-center gap-4">
-                {/* Icon Box */}
-                <div className="flex h-[47px] w-[47px] flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
-                    {renderIcon(feature.icon)}
-                </div>
+                    {/* Updated to max-w-[1210px] with left-alignment fixes */}
+                    <div className="max-w-[1210px] w-full max-h-[118px]  rounded-[20px]  bg-[#FFEDEE] py-6 px-4 lg:px-6">
+                        <div className="flex flex-row justify-between gap-5 w-full">
+                            {features.map((feature) => (
+                                <div key={feature.id} className="flex items-center gap-4">
+                                    {/* Icon Box */}
+                                    <div className="flex h-[47px] w-[47px] flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
+                                        {renderIcon(feature.icon)}
+                                    </div>
 
-                {/* Text */}
-                <div className="flex flex-col justify-center">
-                    <h3 className="text-[16px] font-semibold text-[#901c27]">
-                        {feature.title}
-                    </h3>
+                                    {/* Text */}
+                                    <div className="flex flex-col justify-center">
+                                        <h3 className="text-[16px] font-semibold text-[#901c27]">
+                                            {feature.title}
+                                        </h3>
 
-                    {feature.isRating ? (
-                        <div className="mt-1 flex items-center gap-1">
-                            {[...Array(5)].map((_, index) => (
-                                <svg
-                                    key={index}
-                                    className="h-4 w-4 fill-current text-yellow-400"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                </svg>
+                                        {feature.isRating ? (
+                                            <div className="mt-1 flex items-center gap-1">
+                                                {[...Array(5)].map((_, index) => (
+                                                    <svg
+                                                        key={index}
+                                                        className="h-4 w-4 fill-current text-yellow-400"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                                    </svg>
+                                                ))}
+                                                <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
+                                                    {feature.description}
+                                                </span>
+                                            </div>
+                                        ) : (
+                                            <p className="mt-1 text-sm">
+                                                {feature.description}
+                                            </p>
+                                        )}
+                                    </div>
+                                </div>
                             ))}
-                            <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
-                                {feature.description}
-                            </span>
                         </div>
-                    ) : (
-                        <p className="mt-1 text-sm">
-                            {feature.description}
-                        </p>
-                    )}
-                </div>
-            </div>
-        ))}
-    </div>
-</div>
+                    </div>
                 </div>
 
 

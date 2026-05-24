@@ -95,90 +95,101 @@ export default function ReferAndEarnFlex() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] p-4 mt-20 md:p-8 font-sans text-gray-800 ">
+    <div className="w-full mt-20 font-sans overflow-x-hidden">
 
-      {/* Outer Layout Wrapper */}
-      <div className="max-w-[1208px] w-full justify-between mx-auto flex flex-col lg:flex-row gap-6 ">
+      {/* Outer Layout Wrapper - Strictly Enforced 1217px Width */}
+      <div className="w-[1217px] max-w-full mx-auto flex flex-col lg:flex-row justify-between items-start gap-6 px-4 xl:px-0">
 
-        {/* LEFT COLUMN (Width: 721px) */}
-        <div className="flex flex-col gap-6 w-full  min-w-[721px] relative">
+        {/* LEFT COLUMN (Strict Width: 721px) */}
+        <div className="flex flex-col gap-6 w-full lg:w-[721px] flex-shrink-0 relative">
 
           {/* 1. Hero Banner */}
-          <div className="bg-white rounded-3xl relative shadow-sm border border-gray-100 flex flex-col justify-between w-full">
+          <div className="w-full lg:w-[721px] h-[418px] bg-white rounded-[24px] border border-[#EAEAEA] p-8 flex flex-col justify-between">
 
-            {/* Top Section: Text on Left, Image on Right */}
-            <div className="flex flex-col md:flex-row  max-w-[721px] w-full p-5" >
+            {/* Top Section */}
+            <div className="flex justify-between items-center h-[250px]">
 
-              {/* Text Content */}
-              <div className="flex flex-col gap-4 max-w-[333px] w-full ">
-                <p className="text-sm font-semibold text-gray-500">Refer & Earn with ViralPe</p>
-                <h1 className="text-3xl font-extrabold text-gray-900 leading-tight">
-                  Refer Your Friends & <br />
+              {/* Left Content */}
+              <div className="max-w-[333px]">
+                <p className="text-[14px] font-semibold text-[#1C1B1BCC]">
+                  Refer & Earn with ViralPe
+                </p>
+
+                <h1 className="text-[24px] font-extrabold leading-[1.4]">
+                  Refer Your Friends &
+                  <br />
                   Earn <span className="text-[#901C27]">Exciting Rewards!</span>
                 </h1>
-                <p className="text-sm text-gray-600">
-                  Your friends get a great experience and you earn cashback successful referral.
+
+                <p className="text-[13px] text-[#1C1B1BCC] leading-7">
+                  Your friends get a great experience and you earn
+                  cashback successful referral.
                 </p>
-                <div>
-                  <button className="bg-[#780A1D] hover:bg-[#5A0715] text-white font-medium py-3 px-8 rounded-xl flex items-center gap-2 transition duration-200 shadow-md">
-                    <Share2 size={18} />
-                    Refer Now
-                  </button>
-                </div>
+
+                <button className="mt-5 bg-[#901C27] text-white px-8 h-[48px] rounded-xl flex items-center gap-3">
+                  <Share2 size={18} />
+                  Refer Now
+                </button>
               </div>
 
-              {/* Illustration Area */}
-              <div className="w-full max-w-[318px] flex justify-center">
-                <img src={Refer} alt='refer illustration' className="w-full object-contain" />
+              {/* Right Image */}
+              <div className="w-[300px] h-[250px] flex items-center justify-center">
+                <img
+                  src={Refer}
+                  alt="Refer"
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
-              {/* Bottom Section: Pink Card (Now properly stacked below the top section) */}
-              <div className="bg-[#FFF5F6] rounded-2xl max-w-[629px] w-full max-h-[96px] h-full item-center p-4 flex flex-col md:flex-row absolute bottom-0">
 
-                {/* Referral Code Box */}
-                <div className="flex-1 flex flex-col ">
-                  
-                  <span className="text-[13px] text-[#1C1B1BB2]">Your Referral Code</span>
-                  <div className="max-w-[200px] w-full max-h-[33px] bg-white rounded-xl border border-pink-100 p-4 gap-4 flex flex-row  items-center">
-                    <span className='text-[13px] text-[#1C1B1B]'>{referralCode}</span>
-
-                    <div className="flex  gap-4 text-[#901C27]">
-                      <button onClick={() => handleCopy(referralCode)} className="hover:opacity-70 transition">
-                        <Copy size={16} />
-                      </button>
-                      <button >
-                        <Share2 size={16} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Share Link Box */}
-                <div className=" flex flex-1 flex-col ">
-                  <span className="text-[13px] text-[#1C1B1BB2]">Share your Link</span>
-                  <div className="max-w-[284px] w-full max-h-[33px] bg-white rounded-xl border border-pink-100 p-4 gap-4   flex flex-row  items-center">
-                    <span className="  text-[13px] text-[#1C1B1B]">{referralLink}</span>
-                    <div className="flex gap-4 text-[#901C27] ">
-                      <button onClick={() => handleCopy(referralLink)} className="hover:opacity-70 transition">
-                        <Copy size={16} />
-                      </button>
-                      <button >
-                        <Share2 size={16} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
             </div>
 
+            {/* Bottom Card */}
+            <div className="w-[629px] h-[96px] bg-[#FFEDEE] rounded-[20px] px-8 flex items-center self-center">
 
+              <div className="flex-1">
+                <p className="text-[13px] text-[#666] mb-2">
+                  Your Referral Code
+                </p>
+
+                <div className="w-[185px] h-[32px] bg-white rounded-lg  px-3 flex items-center justify-between">
+                  <span className="text-[13px] font-semibold">
+                    {referralCode}
+                  </span>
+
+                  <div className="flex gap-3 text-[#901C27]">
+                    <Copy size={14} />
+                    <Share2 size={14} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-px h-[50px] bg-[#E4D2D4] mx-8"></div>
+
+              <div className="flex-1">
+                <p className="text-[13px] text-[#666] mb-2">
+                  Share your Link
+                </p>
+
+                <div className="w-[270px] h-[32px] bg-white rounded-lg  px-3 flex items-center justify-between">
+                  <span className="text-[13px] font-semibold truncate">
+                    {referralLink}
+                  </span>
+
+                  <div className="flex gap-3 text-[#901C27]">
+                    <Copy size={14} />
+                    <Share2 size={14} />
+                  </div>
+                </div>
+              </div>
+
+            </div>
 
           </div>
-
+          
           {/* 2. Earnings Breakdown */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col w-full lg:h-[196px] overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col w-full lg:w-[721px] h-[196px] overflow-hidden">
             <div className="p-6 pb-4">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">Earnings Breakdown</h2>
+              <h2 className="text-[24px] font-bold text-gray-900 mb-6">Earnings Breakdown</h2>
               <div className="flex flex-row justify-between gap-4">
                 {metricsData.map((metric) => (
                   <div key={metric.id} className="flex flex-1 items-start gap-3">
@@ -201,7 +212,7 @@ export default function ReferAndEarnFlex() {
           </div>
 
           {/* 3. My Referrals List */}
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 w-full lg:h-[255px] flex flex-col">
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 w-full lg:w-[721px] lg:h-[255px] flex flex-col">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold text-gray-900">My Referrals</h2>
               <button className="text-sm font-bold text-[#780A1D] flex items-center gap-1 ">
@@ -238,7 +249,7 @@ export default function ReferAndEarnFlex() {
           </div>
 
           {/* 4. Bottom Banner */}
-          <div className="bg-[#901C27] text-white rounded-2xl p-8 py-0 flex flex-row justify-between items-center overflow-hidden w-full lg:h-[180px]">
+          <div className="bg-[#901C27] text-white rounded-2xl p-8 py-0 flex flex-row justify-between items-center overflow-hidden w-full lg:w-[721px] lg:h-[180px]">
             <div className="space-y-2 py-6">
               <h3 className="text-[24px] font-bold">Refer More, Earn More!</h3>
               <p className="text-[15px] ">
@@ -252,47 +263,60 @@ export default function ReferAndEarnFlex() {
 
         </div>
 
-        {/* RIGHT COLUMN (Width: 463px) */}
-        <div className="flex flex-col gap-6 w-full ">
+        {/* RIGHT COLUMN (Strict Width: 463px) */}
+        <div className="flex flex-col gap-6 w-full lg:w-[463px] flex-shrink-0">
 
           {/* 1. Earnings & Withdrawal Widget */}
-          <div className="bg-gradient-to-r from-[#1F0608] to-[#911922] text-white rounded-3xl p-8 shadow-md flex flex-col w-full lg:h-[417px] justify-between relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#1F0608] to-[#911922] text-white rounded-[20px] p-5 shadow-md flex flex-col w-full lg:w-[463px] h-[417px] justify-between relative overflow-hidden">
             <div>
-              <p className="text-sm font-medium text-white/80 mb-2">Your Earnings</p>
-              <h2 className="text-4xl font-extrabold tracking-tight">₹1,225.00</h2>
+              <p className="text-[13px] font-semibold text-[#FFFFFF] ">
+                Your Earnings
+              </p>
+              <h2 className="text-[30px] font-semibold tracking-tight">
+                ₹1,225.00
+              </h2>
             </div>
 
-            <div className="w-full h-[1px] bg-white/10 my-4"></div>
+            <div className="w-full h-px bg-white/10"></div>
 
-            <div className="flex justify-between items-center w-full">
-              <div className="flex-1 pr-4 border-r border-white/10">
-                <p className="text-2xl font-bold mb-1">₹825.00</p>
-                <p className="text-xs text-white/70">Confirmed Earnings</p>
+            <div className="flex flex-row items-center w-full">
+              <div className="flex-1 border-r border-white/10">
+                <p className="text-[30px] font-semibold mb-1">₹825.00</p>
+                <p className="text-xs text-white/70">
+                  Confirmed Earnings
+                </p>
               </div>
+
               <div className="flex-1 pl-6">
-                <p className="text-2xl font-bold mb-1 flex items-center gap-1">
+                <p className="text-[30px] font-semibold mb-1">
                   ₹400.00
                 </p>
+
                 <p className="text-xs text-white/70 flex items-center gap-1">
-                  <Info size={12} /> Pending Earnings
+                  <Info size={12} />
+                  Pending Earnings
                 </p>
               </div>
             </div>
 
-            <div className="mt-8 relative z-10 flex flex-col items-center">
-              <button className="w-full bg-white text-[#4E0F1A] font-bold py-4 px-4 rounded-xl hover:bg-gray-100 transition duration-150 text-base shadow-lg">
+            <div className="flex flex-col items-center">
+              <button className="w-full max-w-[394.33px] text-[16px] bg-white text-[#901c27] font-bold p-4 rounded-xl hover:bg-gray-100 transition">
                 Withdraw Earnings
               </button>
-              <p className="text-xs mt-3 text-white/60">Minimum withdraw amount is ₹200</p>
+
+              <p className="text-[13px] mt-3 text-[#ffffff]">
+                Minimum withdraw amount is ₹200
+              </p>
             </div>
 
-            <div className="absolute bottom-6 left-8 flex items-center gap-1.5 text-xs text-green-400 font-medium">
-              <ShieldCheck size={14} /> Safe & Secure Payments
+            <div className="flex items-center gap-1.5 text-[13px] text-green-400 font-medium">
+              <ShieldCheck size={14} />
+              Safe & Secure Payments
             </div>
           </div>
 
           {/* 2. How It Works */}
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 w-full lg:h-[405px]">
+          <div className="bg-white rounded-[20px] p-6 shadow-sm border border-gray-100 w-full lg:w-[463px] h-[405px]">
             <div className="flex justify-between items-center mb-8">
               <h3 className="text-xl font-bold text-gray-900">How it Works?</h3>
               <button className="text-xs font-bold text-[#780A1D] ">T&C Apply</button>
@@ -324,7 +348,7 @@ export default function ReferAndEarnFlex() {
           </div>
 
           {/* 3. Top Referrers */}
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 w-full lg:h-[342px] flex flex-col">
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 w-full lg:w-[463px] lg:h-[342px] flex flex-col">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-bold text-gray-900">Top Referrers</h3>
               <button className="text-sm font-bold text-[#780A1D] flex items-center gap-1 ">

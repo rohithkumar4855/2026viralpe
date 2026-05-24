@@ -7,6 +7,13 @@ import Frame_1 from "../../../public/images/Frame_1.png";
 import Frame_2 from "../../../public/images/Frame_2.png";
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
+import thunder from "../../../public/images/Thunder.png";
+import wallet from "../../../public/images/wallet1.svg";
+import Greenthunder from "../../../public/images/Greenthunder.svg";
+import Greentick from "../../../public/images/GreenTick.svg";
+import discount from "../../../public/images/Discount.svg";
+import lock from "../../../public/images/lock.png"
+import { ArrowRight } from "lucide-react";
 // Mock Data for Recharge Plans
 const plansData = [
     {
@@ -138,39 +145,25 @@ export default function PrepaidRechargeSection() {
         {
             title: "Instant Recharge",
             desc: "Recharge in just a seconds",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                </svg>
-            )
+            icon: <img src={thunder}/>
+            
         },
         {
             title: "Best Plans",
             desc: "Compare and choose the best plans",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581a1.42 1.42 0 0 0 2.008 0l4.318-4.318a1.42 1.42 0 0 0 0-2.008L11.16 3.659A2.25 2.25 0 0 0 9.568 3Z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6Z" />
-                </svg>
-            )
+            icon: <img src={discount}/>
+            
         },
         {
             title: "Earn Cashback",
             desc: "Earn cashback on every recharge",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V12m18 0A2.25 2.25 0 0 0 18.75 9.75H5.25A2.25 2.25 0 0 0 3 12m14.25 3h-.008v.008h.008V15Zm0-3h-.008v.008h.008V12Z" />
-                </svg>
-            )
+             icon: <img src={wallet}/>
+            
         },
         {
             title: "Secure Payments",
             desc: "256-bit SSL encrypted transactions",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
-                </svg>
-            )
+           icon: <img src={lock}/>
         }
     ];
 
@@ -199,11 +192,9 @@ export default function PrepaidRechargeSection() {
                                 </div>
 
                                 {/* Quick History Button */}
-                                <div className="flex items-center gap-3  bg-gray-50 border-2 border-gray-100 rounded-xl p-3 sm:px-4">
+                                <div className="flex items-center gap-3  bg-white border-2 border-gray-100 rounded-xl p-3 sm:px-4">
                                     <div className="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center text-pink-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                                        </svg>
+                                       <img src={thunder}/>
                                     </div>
                                     <div>
                                         <div className="text-xs font-semibold text-gray-900">Recharge with Last Plan</div>
@@ -238,13 +229,13 @@ export default function PrepaidRechargeSection() {
                             </div>
 
                             {/* Categories Horizontal Scroll */}
-                            <div className="flex gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar ">
+                            <div className="flex  overflow-x-auto pb-4 mb-6 no-scrollbar justify-between ">
                                 {categories.map((cat) => (
                                     <button
                                         key={cat}
                                         onClick={() => setActiveCategory(cat)}
-                                        className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide border transition ${activeCategory === cat
-                                            ? 'bg-amber-950 border-amber-950 text-white'
+                                        className={`whitespace-nowrap px-4 py-1.5 rounded-[12px] text-xs font-semibold tracking-wide border transition ${activeCategory === cat
+                                            ? 'bg-[#901c27] border-amber-950 text-white'
                                             : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
                                             }`}
                                     >
@@ -263,13 +254,13 @@ export default function PrepaidRechargeSection() {
                                                 key={plan.id}
                                                 onClick={() => setSelectedPlan(plan)}
                                                 className={`cursor-pointer rounded-2xl p-5 border transition-all flex flex-col justify-between relative ${isSelected
-                                                    ? 'border-red-800 bg-red-50/10 ring-1 ring-red-800'
+                                                    ? 'border-red-800 bg-red-50/10 ring-1 ring-[#901C27] hover:bg-[#FFEDEE66]'
                                                     : 'border-gray-200 hover:border-gray-300 bg-white'
                                                     }`}
                                             >
                                                 <div>
                                                     {/* Top Banner Tag */}
-                                                    <div className="absolute top-0 left-5 -translate-y-1/2 bg-emerald-50 text-emerald-600 text-[10px] font-bold px-2 py-0.5 rounded border border-emerald-100">
+                                                    <div className="absolute top-3 left-0 rounded-br-[20px] rounded-tl-[20px] -translate-y-1/2 bg-emerald-50 text-emerald-600 text-[10px] font-bold px-2 py-0.5 rounded border border-emerald-100">
                                                         {plan.cashback}
                                                     </div>
 
@@ -334,7 +325,7 @@ export default function PrepaidRechargeSection() {
                                         <div className="text-[11px] text-gray-400">Jio • Andhra Pradesh</div>
                                     </div>
                                 </div>
-                                <button className="text-xs font-semibold text-red-700 hover:underline">Change</button>
+                                <button className="text-xs font-semibold text-[#901c27] ">Change</button>
                             </div>
 
                             {/* Price Calculations */}
@@ -371,9 +362,7 @@ export default function PrepaidRechargeSection() {
                             <div className="flex items-center justify-between bg-gray-50 border border-gray-100 p-3 rounded-xl mb-5">
                                 <div className="flex items-center gap-3">
                                     <div className="text-red-800">
-                                        <svg xmlns="http://www.w3.org/2000/xl" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V12m18 0A2.25 2.25 0 0 0 18.75 9.75H5.25A2.25 2.25 0 0 0 3 12m14.25 3h-.008v.008h.008V15Zm0-3h-.008v.008h.008V12Z" />
-                                        </svg>
+                                       <img src={wallet}/>
                                     </div>
                                     <div>
                                         <div className="text-xs font-bold text-gray-900">Use ViralPe Wallet</div>
@@ -390,23 +379,18 @@ export default function PrepaidRechargeSection() {
                             </div>
 
                             {/* Payment Button */}
-                            <button className="w-full bg-red-800 hover:bg-red-900 text-white font-bold py-3 rounded-xl text-sm transition shadow-sm">
+                            <button className="w-full bg-[#901c27]  text-white font-bold py-3 rounded-xl text-sm transition shadow-sm">
                                 Pay ₹{(subtotal - cashbackAmount).toFixed(2)}
                             </button>
 
                             {/* Badges Footer */}
-                            <div className="flex justify-between items-center mt-5 text-[10px] text-gray-400 font-medium px-1">
-                                <span className="flex items-center gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5 text-emerald-500">
-                                        <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clipRule="evenodd" />
-                                    </svg>
+                            <div className="flex justify-between items-center mt-5 text-[12px] text-[#1C1B1BCC]  px-1">
+                                <span className="flex items-center gap-1  ">
+                                    <img src={Greentick}/>
                                     100% Secure Payments
                                 </span>
-                                <span className="flex items-center gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5 text-emerald-500">
-                                        <path fillRule="evenodd" d="M13.5 4.938a7 7 0 1 1-9.006 1.737c.2.028.395.008.572-.078l3.5-1.75a.75.75 0 0 0 .334-.666V1.5a.75.75 0 0 0-1.5 0v2.118L5.11 4.993a5.5 5.5 0 1 0 7.701 1.417.75.75 0 1 0-1.222-.868 7 7 0 0 1 1.91-1.604Z" clipRule="evenodd" />
-                                        <path fillRule="evenodd" d="M15.124 2.207a.75.75 0 0 1 .15 1.05l-4.25 5.5a.75.75 0 0 1-1.138.09l-2.5-2.5a.75.75 0 0 1 1.06-1.06l1.88 1.88 3.738-4.83a.75.75 0 0 1 1.06-.13Z" clipRule="evenodd" />
-                                    </svg>
+                                <span className="flex items-center gap-1 text-[12px] ">
+                                    <img src={Greenthunder}/>
                                     Instant Recharge
                                 </span>
                             </div>
@@ -437,7 +421,7 @@ export default function PrepaidRechargeSection() {
                     <h2 className="text-xl font-bold mb-4">Recent Recharges</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {RecentRecharges.map((item, index) => (
-                            <div key={index} className="border border-slate-100 rounded-xl p-4 bg-slate-50/50 flex flex-col justify-between">
+                            <div key={index} className="border border-slate-100 rounded-xl p-4 bg-white flex flex-col justify-between">
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="flex gap-4 items-center">
                                         <div className='p-2 bg-[#FFEDEE] rounded-2xl w-[60px] h-[60px] flex items-center justify-center flex-shrink-0'>
@@ -445,8 +429,8 @@ export default function PrepaidRechargeSection() {
                                         </div>
                                         <div>
                                             <p className="font-bold text-sm text-gray-900">{item.number}</p>
-                                            <p className="text-rose-600 font-bold text-sm mt-0.5">{item.price}</p>
-                                            <button className="text-xs text-gray-400 underline mt-1 block hover:text-rose-600">Continue Recharge</button>
+                                            <p className="text-[#901c27] font-bold text-sm mt-0.5">{item.price}</p>
+                                            <button className="text-xs text-[#901c27]  mt-1 block hover:text-rose-600">Continue Recharge</button>
                                         </div>
                                     </div>
                                     <button className="text-gray-400 hover:text-gray-600 text-lg">⋮</button>
@@ -466,8 +450,8 @@ export default function PrepaidRechargeSection() {
                     <div className="lg:col-span-2 max-w-[752px] bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-xl font-bold text-gray-900">All Network Operators</h2>
-                            <button className="text-rose-600 font-semibold text-sm flex items-center gap-1 hover:underline cursor-pointer">
-                                View More ➔
+                            <button className="text-[#901c27] font-semibold text-sm flex items-center gap-1  cursor-pointer">
+                                View More  <ArrowRight size={14} />
                             </button>
                         </div>
 

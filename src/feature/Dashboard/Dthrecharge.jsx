@@ -216,7 +216,7 @@ export default function DthRechargeDashboard() {
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-bold">All DTH Operators</h2>
                         <a href="#view-all" className="text-[#800A1D] text-xs font-bold flex items-center gap-1 hover:underline">
-                            View More
+                            View More 
                             <ArrowRight size={14} />
                         </a>
                     </div>

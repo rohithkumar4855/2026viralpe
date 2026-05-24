@@ -133,7 +133,7 @@ export default function FastagRecharge() {
                                 <input
                                     type="text"
                                     placeholder="Enter Bank Name"
-                                    className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-50 focus:border-red-400 transition"
+                                    className="max-w-[763px] w-full  border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-50 focus:border-red-400 transition"
                                 />
                             </div>
 
@@ -144,7 +144,7 @@ export default function FastagRecharge() {
                                     <input
                                         type="text"
                                         placeholder="Enter Vehicle Number/Chassis Number/Registered Mobile Number"
-                                        className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-50 focus:border-red-400 transition"
+                                        className="max-w-[763px] w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-50 focus:border-red-400 transition"
                                     />
                                 </div>
                             )}

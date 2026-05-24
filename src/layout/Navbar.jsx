@@ -104,7 +104,7 @@ function UserNavbar({ user }) {
           {/* Profile Dropdown */}
           <div className="relative">
             <div
-              className="flex items-center gap-2 cursor-pointer hover:bg-gray-50 p-1.5 pr-3 rounded-xl transition-all duration-200"
+              className="flex items-center gap-2 cursor-pointer  p-1.5 pr-3 rounded-xl transition-all duration-200"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
             >
               <div className="bg-[#901c27] w-[40px] h-[40px] rounded-[8px] flex items-center justify-center overflow-hidden shadow-sm">
@@ -130,13 +130,19 @@ function UserNavbar({ user }) {
                     onClick={() => { setIsProfileOpen(false); navigate("/dashboard"); }}
                     className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
                   >
-                    Dashboard
+                   Profile
+                  </button>
+                  <button
+                    onClick={() => { setIsProfileOpen(false); navigate("/my-vouchers"); }}
+                    className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
+                  >
+                    My Vouchers
                   </button>
                   <button
                     onClick={() => { setIsProfileOpen(false); navigate("/profile"); }}
                     className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
                   >
-                    Profile
+                    My Wallet
                   </button>
                 </div>
 
