@@ -38,13 +38,13 @@ function UserNavbar({ user }) {
 
   const secondaryNavItems = [
     { name: "All", icon: <Menu size={18} />, path: "/all-services" },
-    { name: "Vouchers", icon: <img src={vouchers} alt="Vouchers" className="w-[20px] h-[20px]" />, path: "/Vouchers" },
-    { name: "Prepaid Recharge", icon: <img src={moneyreceiveSvg} alt="Vouchers" className="w-[20px] h-[20px]" />, path: "/prepaid" },
-    { name: "Postpaid Recharge", icon: <img src={moneysend} alt="Vouchers" className="w-[20px] h-[20px]" />, path: "/prepaid" },
-    { name: "DTH Recharge", icon: <img src={dthiconSvg} alt="Vouchers" className="w-[20px] h-[20px]" />, path: "/dth" },
-    { name: "FASTag Recharge", icon: <img src={fastagiconSvg} alt="Vouchers" className="w-[20px] h-[20px]" />, path: "/fastag" },
-    { name: "Refer & Earn", icon: <img src={refer} alt="Vouchers" className="w-[20px] h-[20px]" />, path: "/refer-and-earn" },
-    { name: "Transactions", icon: <img src={transactions} alt="Vouchers" className="w-[20px] h-[20px]" />, path: "/transactions" },
+    { name: "Vouchers", icon: <img src={vouchers} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/Vouchers" },
+    { name: "Prepaid Recharge", icon: <img src={moneyreceiveSvg} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/prepaid" },
+    { name: "Postpaid Recharge", icon: <img src={moneysend} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/prepaid" },
+    { name: "DTH Recharge", icon: <img src={dthiconSvg} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/dth" },
+    { name: "FASTag Recharge", icon: <img src={fastagiconSvg} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/fastag" },
+    { name: "Refer & Earn", icon: <img src={refer} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/refer-and-earn" },
+    { name: "Transactions", icon: <img src={transactions} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/transactions" },
   ];
 
   const rechargeBillsGroup = [
@@ -66,12 +66,12 @@ function UserNavbar({ user }) {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white z-50 shadow-sm font-sans">
-      
+
       <div className=" py-3 flex  items-center justify-between ">
-        
+
         {/* Left Side: Logo & Dynamic Greeting */}
         <div className="flex  items-center pl-[105px]">
-          
+
           <div className="cursor-pointer" onClick={() => navigate("/dashboard")}>
             <img src={logo} alt="logo" className="w-[78px] h-[78px] object-contain" />
           </div>
@@ -96,75 +96,75 @@ function UserNavbar({ user }) {
               className="max-w-[385px] w-full max-h-[54px] bg-white border border-gray-200  hover:bg-white hover:border-gray-200 text-gray-700 rounded-[12px] py-[10px] pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-[#901c27]/20 focus:border-[#901c27] focus:bg-white "
             />
           </div>
-           <div className="flex items-center gap-4">
-          <button className="text-gray-500 hover:text-[#901c27] hover:bg-[#FFEDEE] p-2.5 rounded-full transition-all duration-200 cursor-pointer">
-            <Bell size={22} />
-          </button>
+          <div className="flex items-center gap-4">
+            <button className="text-gray-500 hover:text-[#901c27] hover:bg-[#FFEDEE] p-2.5 rounded-full transition-all duration-200 cursor-pointer">
+              <Bell size={22} />
+            </button>
 
-          {/* Profile Dropdown */}
-          <div className="relative">
-            <div
-              className="flex items-center gap-2 cursor-pointer  p-1.5 pr-3 rounded-xl transition-all duration-200"
-              onClick={() => setIsProfileOpen(!isProfileOpen)}
-            >
-              <div className="bg-[#901c27] w-[40px] h-[40px] rounded-[8px] flex items-center justify-center overflow-hidden shadow-sm">
-                {user?.photo ? (
-                  <img src={user.photo} alt="Profile" className="w-full h-full object-cover" />
-                ) : (
-                  <h1 className="text-white text-[18px] font-medium">{initial}</h1>
-                )}
+            {/* Profile Dropdown */}
+            <div className="relative">
+              <div
+                className="flex items-center gap-2 cursor-pointer  p-1.5 pr-3 rounded-xl transition-all duration-200"
+                onClick={() => setIsProfileOpen(!isProfileOpen)}
+              >
+                <div className="bg-[#901c27] w-[40px] h-[40px] rounded-[8px] flex items-center justify-center overflow-hidden shadow-sm">
+                  {user?.photo ? (
+                    <img src={user.photo} alt="Profile" className="w-full h-full object-cover" />
+                  ) : (
+                    <h1 className="text-white text-[18px] font-medium">{initial}</h1>
+                  )}
+                </div>
+                <ChevronDown size={16} className={`text-gray-500 transition-transform duration-200 ${isProfileOpen ? "rotate-180" : ""}`} />
               </div>
-              <ChevronDown size={16} className={`text-gray-500 transition-transform duration-200 ${isProfileOpen ? "rotate-180" : ""}`} />
+
+              {/* Dropdown Menu */}
+              {isProfileOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-100 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50 animate-fade-in">
+                  <div className="px-4 py-3 border-b border-gray-100 mb-1">
+                    <p className="text-sm font-bold text-gray-800 truncate">{user?.name || "User"}</p>
+                    <p className="text-xs text-gray-500 truncate mt-0.5">{user?.email || "No email provided"}</p>
+                  </div>
+
+                  <div className="px-2">
+                    <button
+                      onClick={() => { setIsProfileOpen(false); navigate("/dashboard"); }}
+                      className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
+                    >
+                      Profile
+                    </button>
+                    <button
+                      onClick={() => { setIsProfileOpen(false); navigate("/my-vouchers"); }}
+                      className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
+                    >
+                      My Vouchers
+                    </button>
+                    <button
+                      onClick={() => { setIsProfileOpen(false); navigate("/profile"); }}
+                      className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
+                    >
+                      My Wallet
+                    </button>
+                  </div>
+
+                  <div className="h-[1px] w-full bg-gray-100 my-1"></div>
+
+                  <div className="px-2">
+                    <button
+                      onClick={() => {
+                        localStorage.removeItem("isLoggedIn");
+                        localStorage.removeItem("userData");
+                        window.dispatchEvent(new Event("authChange"));
+                        navigate("/");
+                      }}
+                      className="w-full text-left px-3 py-2.5 text-red-600 hover:bg-red-50 rounded-lg font-medium transition-all duration-200 cursor-pointer"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
-
-            {/* Dropdown Menu */}
-            {isProfileOpen && (
-              <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-100 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50 animate-fade-in">
-                <div className="px-4 py-3 border-b border-gray-100 mb-1">
-                  <p className="text-sm font-bold text-gray-800 truncate">{user?.name || "User"}</p>
-                  <p className="text-xs text-gray-500 truncate mt-0.5">{user?.email || "No email provided"}</p>
-                </div>
-
-                <div className="px-2">
-                  <button
-                    onClick={() => { setIsProfileOpen(false); navigate("/dashboard"); }}
-                    className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
-                  >
-                   Profile
-                  </button>
-                  <button
-                    onClick={() => { setIsProfileOpen(false); navigate("/my-vouchers"); }}
-                    className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
-                  >
-                    My Vouchers
-                  </button>
-                  <button
-                    onClick={() => { setIsProfileOpen(false); navigate("/profile"); }}
-                    className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
-                  >
-                    My Wallet
-                  </button>
-                </div>
-
-                <div className="h-[1px] w-full bg-gray-100 my-1"></div>
-
-                <div className="px-2">
-                  <button
-                    onClick={() => {
-                      localStorage.removeItem("isLoggedIn");
-                      localStorage.removeItem("userData");
-                      window.dispatchEvent(new Event("authChange"));
-                      navigate("/");
-                    }}
-                    className="w-full text-left px-3 py-2.5 text-red-600 hover:bg-red-50 rounded-lg font-medium transition-all duration-200 cursor-pointer"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </div>
-            )}
           </div>
-        </div>
         </div>
       </div>
 
@@ -242,7 +242,7 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem("userData");
@@ -328,8 +328,7 @@ export default function Navbar() {
   return (
     <>
       {openDropdown !== null && (
-        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-opacity"></div>
-      )}
+        <div className="fixed inset-0 bg-black/50  z-40"></div>)}
 
       <nav className="fixed top-0 left-0 w-full px-6 md:px-10 pt-[5px] pb-[4.16px] flex items-center justify-between md:justify-evenly bg-white z-50 shadow-sm border-b border-gray-100">
         <div className="flex items-center cursor-pointer" onClick={() => navigate("/")}>
@@ -340,10 +339,10 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-2 lg:gap-8">
           {navItems.map((item, index) => (
             <div key={index} className="relative flex flex-col items-center" onMouseEnter={() => setOpenDropdown(index)} onMouseLeave={() => setOpenDropdown(null)}>
-              
+
               {/* Main Nav Items with Hover Background */}
-              <div className="flex flex-col items-center cursor-pointer py-2 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 mt-2">
-                <div className={`flex items-center gap-[6px] text-[16px] lg:text-[17px] font-semibold transition-colors duration-200 ${openDropdown === index ? "text-[#901c27]" : "text-gray-700 hover:text-[#901c27]"}`}>
+              <div className="flex flex-col items-center cursor-pointer py-2 px-4 rounded-xl  transition-all duration-200 mt-2">
+                <div className=" flex items-center gap-[6px] text-[18px] text-(--primary-red) font-medium">
                   {item.title}
                   {(item.menu || item.isMegaMenu) && (
                     <ChevronDown size={18} className={`transition-transform duration-300 ${openDropdown === index ? "rotate-180 text-[#901c27]" : "text-gray-400"}`} />
@@ -355,7 +354,9 @@ export default function Navbar() {
               {openDropdown === index && (
                 <>
                   {item.menu && !item.isMegaMenu && (
-                    <div className="absolute top-[100%] left-1/2 -translate-x-1/2 mt-2 min-w-[280px] bg-white rounded-2xl shadow-[0_12px_40px_rgb(0,0,0,0.12)] p-2 z-50 animate-fade-in border border-gray-100">
+                    <div className="absolute top-[85%] left-1/2 -translate-x-1/2 mt-3 min-w-[260px] bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50">
+                      <div className="absolute -top-[8px] left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 rounded-sm shadow-[-4px_-4px_10px_rgb(0,0,0,0.04)]"></div>
+
                       <div className="relative z-10 bg-white flex flex-col gap-1">
                         {item.menu.map((menuItem, i) => {
                           const isObject = typeof menuItem === "object";
@@ -367,12 +368,18 @@ export default function Navbar() {
                               }
                             }} className="flex items-center justify-between px-4 py-3 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-xl cursor-pointer transition-all duration-200 group">
                               <div className="flex items-center gap-4">
-                                <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white transition-colors">
-                                  {isObject && menuItem.icon}
-                                </div>
-                                <span className="text-gray-700 group-hover:text-[#901c27] font-semibold text-[15px] whitespace-nowrap transition-colors">{isObject ? menuItem.name : menuItem}</span>
+                                {isObject && menuItem.icon && (
+                                  <div className="w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-white transition-colors">
+                                    {menuItem.icon}
+                                  </div>
+                                )}
+
+                                <span className="text-gray-700 group-hover:text-[#901c27] font-semibold text-[15px] whitespace-nowrap transition-colors">
+                                  {isObject ? menuItem.name : menuItem}
+                                </span>
                               </div>
                               {isObject && menuItem.hasArrow && <ChevronRight size={18} className="text-gray-400 group-hover:text-[#901c27] flex-shrink-0 transition-colors" strokeWidth={2.5} />}
+
                             </div>
                           );
                         })}
@@ -381,16 +388,21 @@ export default function Navbar() {
                   )}
 
                   {item.isMegaMenu && (
-                    <div className="absolute top-[100%] left-1/2 -translate-x-1/2 mt-2 min-w-[600px] bg-white rounded-3xl shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-50 border border-gray-100 overflow-hidden animate-fade-in">
+                    <div className="absolute top-[100%] left-1/2 -translate-x-1/2 mt-2 min-w-[600px] bg-white rounded-3xl shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-50 border border-gray-100 overflow-visible animate-fade-in">
+
+                      {/* Top Arrow */}
+                      <div className="absolute -top-[8px] left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 rounded-sm shadow-[-4px_-4px_10px_rgb(0,0,0,0.04)] z-10"></div>
+
                       <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#901c27] to-[#e63946]"></div>
-                      <div className="relative z-20 bg-white flex gap-8 px-8 py-8">
+
+                      <div className="relative z-20 bg-white flex gap-8 px-8 py-8 rounded-3xl">
                         {item.columns.map((col, colIndex) => (
                           <div key={colIndex} className="flex-1 flex flex-col">
                             {col.map((link, i) => link.type === "header" ? (
                               <h4 key={i} className={`text-[11px] font-extrabold text-gray-400 uppercase tracking-widest mb-3 px-3 ${i !== 0 ? "mt-8" : ""}`}>{link.name}</h4>
                             ) : (
                               <div key={i} className="flex items-center gap-3 py-2.5 px-3 hover:bg-[#FFEDEE] cursor-pointer transition-all duration-200 rounded-xl group">
-                                <div className="flex items-center justify-center w-8 h-8 bg-gray-50 rounded-lg group-hover:bg-white transition-colors">{link.icon}</div>
+                                <div className="flex items-center justify-center w-8 h-8 rounded-lg group-hover:bg-white transition-colors">{link.icon}</div>
                                 <span className="text-gray-700 font-semibold text-[14.5px] group-hover:text-[#901c27] transition-colors">{link.name}</span>
                               </div>
                             ))}
@@ -417,7 +429,7 @@ export default function Navbar() {
         </button>
 
         {isOpen && <div className="absolute top-[90px] left-0 w-full bg-white shadow-xl md:hidden flex flex-col p-6 gap-6 h-screen overflow-y-auto pb-32 animate-slide-right border-t border-gray-100"></div>}
-      </nav>
+      </nav >
     </>
   );
 }
