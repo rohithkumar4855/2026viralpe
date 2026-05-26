@@ -17,7 +17,7 @@ const steps = [
 
 const VoucherDetailCard = () => {
     return (
-        <div className='pt-20 max-w-[1217px] flex mx-auto'>
+        <div className=' max-w-[1217px] flex mx-auto'>
             <div className='flex flex-col gap-5 items-center w-full px-4'>
 
                 {/* Top Card: Brand and Cashback Info */}

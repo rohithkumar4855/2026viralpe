@@ -11,9 +11,13 @@ import gift from "../../../public/images/gift.svg";
 import thumbsup from "../../../public/images/thumbsup.svg"
 import { ArrowRight } from "lucide-react";
 import FeatureBanner from '../Dashboard/FeatureBanner';
+import { useNavigate } from "react-router-dom";
+import { FeatureBannerCard } from "../../../data";
 
+<FeatureBanner cards={FeatureBannerCard} />
 
 export default function DthRechargeDashboard() {
+     const navigate = useNavigate();
     const whyRechargeFeatures = [
         {
             icon: thunder,
@@ -75,7 +79,7 @@ export default function DthRechargeDashboard() {
     ];
 
     return (
-        <div className="mt-20 bg-[#FCF8F8] py-10 flex flex-col items-center justify-start text-[#1A1A1A] font-sans antialiased">
+        <div className="  flex flex-col items-center justify-start text-[#1A1A1A] font-sans antialiased">
             <div className="w-[1217px] flex flex-col gap-6">
 
                 {/* TOP SECTION: Main Form & Why Recharge Side Widget */}
@@ -97,7 +101,9 @@ export default function DthRechargeDashboard() {
                             </div>
                         </div>
                         <div className="mt-4 flex justify-center">
-                            <button className="bg-[#800A1D] text-white font-semibold text-base px-16 py-3 rounded-xl hover:bg-[#660817] transition-all duration-200 shadow-sm w-[260px]">
+                            <button className="bg-[#800A1D] text-white font-semibold text-base px-16 py-3 rounded-xl hover:bg-[#660817] transition-all duration-200 shadow-sm w-[260px]"
+                              onClick={() => navigate("/dthdetails")}>
+                               
                                 Confirm
                             </button>
                         </div>
@@ -246,7 +252,9 @@ export default function DthRechargeDashboard() {
                 </div>
 
                 {/* FOOTER TRUST BADGES */}
-                <FeatureBanner/>
+              <div>
+  <FeatureBanner cards={FeatureBannerCard} />
+</div>
 
             </div>
         </div>

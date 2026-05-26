@@ -215,7 +215,7 @@ const renderIcon = (icon) => {
 
   return (
     <div className="min-h-screen  p-4 md:p-8">
-      <div className="max-w-[1240px] pt-20  mx-auto">
+      <div className="max-w-[1240px]  mx-auto">
 
         {/* Main 12-Column Grid */}
         <div className="flex flex-row gap-6 items-start">

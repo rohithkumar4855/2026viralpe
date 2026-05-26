@@ -9,7 +9,8 @@ import coins from "../../../public/images/coins1.svg"
 import bonus from "../../../public/images/bonus.svg";
 import cashback from "../../../public/images/cash2.svg"
 import circular from "../../../public/images/circular.svg";
-
+import FeatureBanner from "../Dashboard/FeatureBanner";
+import { FeatureBannerCard3 } from "../../../data";
 import {
   Wallet,
   Coins,
@@ -28,11 +29,11 @@ import {
 // --- DATA ---
 const topTransactionData = [
   { id: 1, title: 'WALLET BALANCE', amount: '₹ 5,000.00', subtitle: 'Available to Use', icon: wallet },
-  { id: 2, title: 'ZONAL ROYALTY', amount: '₹ 5,000.00', subtitle: 'Total Earned Till Date',  icon: wallet },
+  { id: 2, title: 'ZONAL ROYALTY', amount: '₹ 5,000.00', subtitle: 'Total Earned Till Date', icon: wallet },
   { id: 3, title: 'LIFETIME EARNIN...', amount: '₹ 25,000.00', subtitle: 'Total Earned Till Date', icon: coins },
-  { id: 4, title: 'TOTAL CASHBACK', amount: '₹ 25,000.00', subtitle: 'Total Cashback In This Month', icon: cashback  },
+  { id: 4, title: 'TOTAL CASHBACK', amount: '₹ 25,000.00', subtitle: 'Total Cashback In This Month', icon: cashback },
   { id: 5, title: 'REFERRAL BONUS', amount: '₹ 25,000.00', subtitle: 'Pending Claim', icon: bonus },
-  { id: 6, title: 'REVERSAL WALLET', amount: '₹ 25,000.00', subtitle: 'Pending Claim', icon: circular},
+  { id: 6, title: 'REVERSAL WALLET', amount: '₹ 25,000.00', subtitle: 'Pending Claim', icon: circular },
 ];
 
 const listTransactions = [
@@ -45,32 +46,6 @@ const listTransactions = [
   { id: 7, type: 'Electricity Bill', details: 'BESCOM - 123456789', date: '10 May 2026, 11:00 AM', amount: '₹1,250.00', status: 'Success', iconType: 'out' }
 ];
 
-const securityFeatures = [
-  {
-    "id": 1,
-    "title": "100% Secure",
-    "description": "Your data and earnings are completely safe",
-    icon: lock
-  },
-  {
-    "id": 2,
-    "title": "No Limits",
-    "description": "Refer unlimited friends and earn unlimited rewards",
-    icon: limit
-  },
-  {
-    "id": 3,
-    "title": "Instant Rewards",
-    "description": "Get ₹25 instantly in your wallet",
-    icon: gift
-  },
-  {
-    "id": 4,
-    "title": "Easy Withdrawals",
-    "description": "Withdraw your earnings to bank or wallet anytime",
-    icon: wallet
-  }
-];
 
 // --- SUB-COMPONENTS ---
 const CustomCheckbox = ({ label, checked, onChange }) => (
@@ -127,7 +102,7 @@ const DashboardLayout = () => {
   };
 
   return (
-    <div className='pt-20 bg-[#faf7f7] min-h-screen'>
+    <div className='  min-h-screen'>
       <div className="w-full flex flex-col items-center pb-8 font-sans gap-6">
 
         {/* ============================== */}
@@ -326,26 +301,8 @@ const DashboardLayout = () => {
 
         </div>
 
-        {/* ============================== */}
-        {/* BOTTOM SECTION: SECURITY BANNER*/}
-        {/* ============================== */}
-        <div className='bg-[#FFEDEE] w-full max-w-[1210px] min-h-[118px] flex flex-row justify-between items-center px-8 py-4 rounded-xl shrink-0'>
-          {securityFeatures.map((feature) => (
-            <div key={feature.id} className='flex items-center max-w-[234px] w-full gap-4'>
-
-              <div className='bg-white rounded-[12.92px] p-2 shrink-0 shadow-sm'>
-                <img src={feature.icon} alt={feature.title} className='w-[34px] h-[34px] object-contain' />
-              </div>
-
-              <div className='flex flex-col'>
-                <h1 className="font-bold text-gray-900 text-[15px]">{feature.title}</h1>
-                <p className="text-[12px] text-gray-600 leading-tight mt-0.5">
-                  {feature.description}
-                </p>
-              </div>
-
-            </div>
-          ))}
+        <div>
+          <FeatureBanner cards={FeatureBannerCard3} />
         </div>
 
       </div>

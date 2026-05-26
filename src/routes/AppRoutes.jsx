@@ -19,14 +19,18 @@ import UserVouchers from "../components/Dashboard/UserVouchers"
 import Vouchercode from "../components/Dashboard/VoucherCode"
 import Wallet from "../components/Dashboard/Wallet"
 import ComingSoon from "../components/Comingsoon";
-
-
+import Dthdetails from "../components/Dashboard/Dthdetails"
+import PrivacyPolicy from "../components/Dashboard/PrivacyPolicy"
+import Termsandconditions from "../components/Dashboard/TermsandConditions"
+import RefundPolicy from "../components/Dashboard/Refundpolicy";
+import Dashboard from "../../src/pages/Dashboard";
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/management" element={<Management />} />
+      <Route path="/dashboard-details" element={<Dashboard />} />
       <Route path="/login-user" element={<LoginPage />} />
       <Route path="/dashboard" element={<Login />} />
       <Route path="/vouchers" element={<Vouchers />} />
@@ -44,7 +48,10 @@ export default function AppRoutes() {
       <Route path="/voucher-code" element={< Vouchercode />} />
       <Route path="/wallet" element={< Wallet />} />
       <Route path="/future" element={< ComingSoon />} />
-
+      <Route path="/dthdetails" element={< Dthdetails />} />
+      <Route path="/privacy-policy" element={< PrivacyPolicy />} />
+      <Route path="/terms-conditions" element={< Termsandconditions />} />
+      <Route path="/refund-policy" element={< RefundPolicy />} />
 
 
     </Routes>

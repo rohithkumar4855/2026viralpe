@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Barcode from "../../public/images/barcode.png";
 import Googleplay from "../../public/images/googleplay.png";
 import Appstore from "../../public/images/appstore.png";
 import { FaTwitter, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="w-full bg-[#901C27] mt-[32px] text-white pt-16 pb-6 border-t border-[#901C27]">
       <div className="max-w-[1206px] mx-auto px-6 md:px-10">
@@ -14,19 +17,24 @@ const Footer = () => {
           
           {/* 1. Brand */}
           <div className="lg:max-w-[280px]">
-            <h2 className="text-[25.52px] font-bold mb-4">ViralPe</h2>
+            <h2 
+              className="text-[25.52px] font-bold mb-4 cursor-pointer" 
+              onClick={() => navigate("/")}
+            >
+              ViralPe
+            </h2>
             <p className="text-[12px] text-white/90 leading-relaxed mb-6">
               Your premium destination for instant mobile recharges, bill payments, and digital services with Luminous Payments security.
             </p>
             <p className="text-[14px] font-bold mb-3">Follow Us</p>
             <div className="flex items-center gap-2.5">
-              <div className="bg-white text-[#901C27] w-[26px] h-[26px] rounded-[4px] flex items-center justify-center">
+              <div className="bg-white text-[#901C27] w-[26px] h-[26px] rounded-[4px] flex items-center justify-center cursor-pointer">
                 <FaTwitter size={15} />
               </div>
-              <div className="bg-white text-[#901C27] w-[26px] h-[26px] rounded-[4px] flex items-center justify-center">
+              <div className="bg-white text-[#901C27] w-[26px] h-[26px] rounded-[4px] flex items-center justify-center cursor-pointer">
                 <FaFacebookF size={15} />
               </div>
-              <div className="bg-white text-[#901C27] w-[26px] h-[26px] rounded-[4px] flex items-center justify-center">
+              <div className="bg-white text-[#901C27] w-[26px] h-[26px] rounded-[4px] flex items-center justify-center cursor-pointer">
                 <FaYoutube size={15} />
               </div>
             </div>
@@ -36,10 +44,10 @@ const Footer = () => {
           <div>
             <h3 className="text-[14px] font-semibold mb-5">Services</h3>
             <ul className="flex flex-col gap-3.5 text-[12px] font-light text-white/90">
-              <li>Prepaid</li>
-              <li>Postpaid</li>
-              <li>DTH</li>
-              <li>FASTag</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/prepaid")}>Prepaid</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Postpaid</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/dth")}>DTH</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/fastag")}>FASTag</li>
             </ul>
           </div>
 
@@ -47,11 +55,11 @@ const Footer = () => {
           <div>
             <h3 className="text-[14px] font-semibold mb-5">Legal</h3>
             <ul className="flex flex-col gap-3.5 text-[12px] font-light text-white/90">
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
-              <li>Refund Policy</li>
-              <li>Sub Processors</li>
-              <li>Account Deletion</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/privacy-policy")}>Privacy Policy</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/terms-conditions")}>Terms of Service</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/refund-policy")}>Refund Policy</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Sub Processors</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Account Deletion</li>
             </ul>
           </div>
 
@@ -59,25 +67,25 @@ const Footer = () => {
           <div>
             <h3 className="text-[14px] font-semibold mb-5">Company</h3>
             <ul className="flex flex-col gap-3.5 text-[12px] font-light text-white/90">
-              <li>About ViralPe</li>
-              <li>Contact ViralPe</li>
-              <li>Management</li>
-              <li>Branches</li>
-              <li>Coverage</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/about-us")}>About ViralPe</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Contact ViralPe</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/management")}>Management</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Branches</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Coverage</li>
             </ul>
           </div>
 
-          {/* 5. Vendors (This was missing) */}
+          {/* 5. Vendors */}
           <div>
             <h3 className="text-[14px] font-semibold mb-5">Vendors</h3>
             <ul className="flex flex-col gap-3.5 text-[12px] font-light text-white/90">
-              <li>Retail</li>
-              <li>Healthcare</li>
-              <li>Food & Beverages</li>
-              <li>Financial Services</li>
-              <li>Entertainment & Lifestyle</li>
-              <li>Education</li>
-              <li>Professional Services</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Retail</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Healthcare</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Food & Beverages</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Financial Services</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Entertainment & Lifestyle</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Education</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Professional Services</li>
             </ul>
           </div>
 
@@ -85,8 +93,8 @@ const Footer = () => {
           <div>
             <h3 className="text-[14px] font-semibold mb-5">Support</h3>
             <ul className="flex flex-col gap-3.5 text-[12px] font-light text-white/90">
-              <li>Contact Us</li>
-              <li>Faq's</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Contact Us</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Faq's</li>
             </ul>
           </div>
 
@@ -120,7 +128,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-       
+        
 
       </div>
        <div className="pt-6 border-t border-white/10 text-center">

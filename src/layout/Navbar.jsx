@@ -69,7 +69,7 @@ function UserNavbar({ user }) {
   const initial = user?.name ? user.name.charAt(0).toUpperCase() : "U";
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white z-50 shadow-sm font-sans">
+    <nav className="sticky top-0 left-0 w-full bg-white z-50 shadow-sm font-sans">
 
       <div className=" flex items-center justify-between h-[100px]  max-w-[1440px] w-full ">
 

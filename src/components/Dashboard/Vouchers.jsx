@@ -6,7 +6,9 @@ import Nike from "/images/nike.png"
 import Trends from "/images/trends.svg"
 import { useNavigate } from 'react-router-dom';
 import FeatureBanner from '../Dashboard/FeatureBanner';
+import { FeatureBannerCard } from "../../../data";
 
+<FeatureBanner cards={FeatureBannerCard} />
 export default function Vouchers() {
     // 1. Navigation Tabs Configuration
     const navigate = useNavigate();
@@ -166,10 +168,11 @@ const renderIcon = (icon) => {
     const displayVouchers = getFilteredVouchers();
 
     return (
-        <div className="min-h-screen  text-gray-800 antialiased font-sans">
+        <div className="text-gray-800 mx-auto  font-sans">
             {/* HEADER NAVBAR */}
-            <div className="w-full max-w-[1210px] px-4 py-5 border-b border-gray-100/50 bg-[#FCF9F9]">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            {/* MAIN LAYOUT WRAPPER */}
+            <div >
+                 <div className="max-w-7xl pb-8 mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Vouchers</h1>
 
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
@@ -200,9 +203,6 @@ const renderIcon = (icon) => {
                     </div>
                 </div>
             </div>
-
-            {/* MAIN LAYOUT WRAPPER */}
-            <div className="max-w-[1215px]  mx-auto px-4 py-6">
                 <div className="flex flex-row  md:grid-cols-3 lg:grid-cols-9 gap-6 items-start">
 
                     {/* COLUMN 1: LEFT SIDEBAR (FILTERS & WHY VIRALPE) */}
@@ -368,7 +368,7 @@ const renderIcon = (icon) => {
                     </div>
 
                     {/* COLUMN 2: CENTER CONTENT (CATEGORIES & PRODUCT CARDS) */}
-                    <main className=" lg:col-span-6 max-w-[930px] w-full flex flex-col gap-2 ">
+                    <main className=" lg:col-span-6 max-w-[930px] w-full flex flex-col gap-8 ">
 
                         {/* Horizontal Categories List */}
                         <div className=" w-full bg-white rounded-2xl p-2">
@@ -445,16 +445,12 @@ const renderIcon = (icon) => {
                             </div>
                         )}
                     </main>
-
-                     
-
-
-                </div>
-                
             </div>
-             <div>
-                <FeatureBanner/>
-             </div>
+             
+            <div>
+  <FeatureBanner cards={FeatureBannerCard} />
+</div>
+           
         </div>
     );
 }

@@ -144,3 +144,95 @@ export const referralData = {
   friendsJoinedWeek: 3,
   totalEarned: 200
 };
+
+
+
+export const FeatureBannerCard = [
+    {
+        id: "secure-payments",
+        title: "100% Secure Payments",
+        description: "256-bit SSL Encrypted",
+        icon: '/images/lock.png',
+        isRating: false,
+    },
+    {
+        id: "instant-delivery",
+        title: "Instant Code Delivery",
+        description: "Get Vouchers In Seconds",
+        icon: '/images/thunder.png',
+        isRating: false,
+    },
+    {
+        id: "customer-support",
+        title: "24/7 Customer Support",
+        description: "Help available round the clock",
+        icon: '/images/headphones.png',
+        isRating: false,
+    },
+    {
+        id: "trusted-users",
+        title: "Trusted By 1M+ Users",
+        description: "4.8/5",
+        icon: '/images/vector.svg',
+        isRating: true,
+    },
+];
+
+export const FeatureBannerCard2 = [
+    {
+        id: "secure-payments",
+        title: "100% Secure Payments",
+        description: "256-bit SSL Encrypted",
+        icon: '/images/lock.png',
+        isRating: false,
+    },
+    {
+        id: "instant-delivery",
+        title: "Accepted At All Toll plazas",
+        description: "All Over the India",
+        icon: '/images/fastagicon.png',
+        isRating: false,
+    },
+    {
+        id: "customer-support",
+        title: "24/7 Customer Support",
+        description: "Help available round the clock",
+        icon: '/images/headphones.png',
+        isRating: false,
+    },
+    {
+        id: "trusted-users",
+        title: "Trusted By 1M+ Users",
+        description: "4.8/5",
+        icon: '/images/vector.svg',
+        isRating: true,
+    },
+];
+
+
+export const FeatureBannerCard3 = [
+  {
+    "id": 1,
+    "title": "100% Secure",
+    "description": "Your data and earnings are completely safe",
+    icon: '/images/lock.png'
+  },
+  {
+    "id": 2,
+    "title": "No Limits",
+    "description": "Refer unlimited friends and earn unlimited rewards",
+    icon: '/images/limit.svg'
+  },
+  {
+    "id": 3,
+    "title": "Instant Rewards",
+    "description": "Get ₹25 instantly in your wallet",
+    icon: '/images/gift4.svg'
+  },
+  {
+    "id": 4,
+    "title": "Easy Withdrawals",
+    "description": "Withdraw your earnings to bank or wallet anytime",
+    icon: '/images/wallet1.svg'
+  }
+];

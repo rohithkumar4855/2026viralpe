@@ -15,7 +15,9 @@ import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import FeatureBanner from '../Dashboard/FeatureBanner';
 
+import { FeatureBannerCard } from "../../../data";
 
+<FeatureBanner cards={FeatureBannerCard} />
 
 
 const renderIcon = (icon) => {
@@ -53,7 +55,7 @@ export default function RechargeDashboard() {
     ];
 
     return (
-        <div className='pt-20'>
+        <div>
             <div className="min-h-screen bg-pink-50/30  font-sans text-slate-800">
                 <div className="max-w-7xl mx-auto space-y-6">
 
@@ -212,7 +214,9 @@ export default function RechargeDashboard() {
                         </div>
 
                     </div>
-               <FeatureBanner/>
+             <div>
+  <FeatureBanner cards={FeatureBannerCard} />
+</div>
                     
                 </div>
 

@@ -93,7 +93,7 @@ const TransactionsDashboard = () => {
     };
 
     return (
-        <div className='pt-20 bg-[#faf7f7] min-h-screen relative'>
+        <div className=' bg-[#faf7f7] min-h-screen relative'>
             <div className="w-full flex flex-col items-center pb-8 font-sans gap-6">
 
                 {/* TOP SECTION: TRANSACTION CARDS */}

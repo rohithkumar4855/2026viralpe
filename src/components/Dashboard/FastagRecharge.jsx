@@ -10,7 +10,10 @@ import Wallet from "../../../public/images/wallet.svg"
 import lock from "../../../public/images/lock.png"
 import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
-import FeatureBanner from '../Dashboard/featureBanner';
+import FeatureBanner from "../Dashboard/FeatureBanner";
+import { FeatureBannerCard2 } from "../../../data";
+
+
 // Mock Data for Banks List
 const banksData = [
     { id: 1, name: "Axis Bank", logo: Axis, cb: "5% Cashback" },
@@ -48,7 +51,7 @@ const ReachargeOn = [
 
 export default function FastagRecharge() {
     const [searchQuery, setSearchQuery] = useState("");
-    
+
     // State to toggle layout when confirm is pressed
     const [isConfirmed, setIsConfirmed] = useState(false);
 
@@ -58,11 +61,11 @@ export default function FastagRecharge() {
     );
 
     const handleConfirm = (e) => {
-        e.preventDefault(); 
-        
+        e.preventDefault();
+
         if (!isConfirmed) {
             // First Click: Reveal the new layout and input
-            setIsConfirmed(true); 
+            setIsConfirmed(true);
         } else {
             // Second Click: Navigate to the details page
             // Note: Replace this with router.push('/fastag-details') if using Next.js
@@ -72,9 +75,9 @@ export default function FastagRecharge() {
     };
 
     return (
-        <div className="pt-36 mt-15  min-h-screen p-4 md:p-8 font-sans text-gray-800">
-            <div className="max-w-[1207px] w-full mx-auto flex justify-between gap-8">
-                
+        <div className=" min-h-screen p-4 md:p-8 font-sans  text-gray-800">
+            <div className="max-w-[1217px] w-full mx-auto flex justify-between gap-4">
+
                 {/* --- LEFT SIDE CONTAINER (Heights/Widths strictly preserved) --- */}
                 <div className="max-w-[837px] max-h-[847px] w-full flex flex-col gap-6">
 
@@ -88,7 +91,7 @@ export default function FastagRecharge() {
                             </button>
                         </div>
 
-                        <div className="space-y-6">
+                        <div className="">
                             <div>
                                 <label className="block text-sm font-bold text-gray-700 mb-2">Bank</label>
                                 <input
@@ -165,11 +168,11 @@ export default function FastagRecharge() {
                     {/* --- NEW REPLACEMENT LAYOUT (Only shows AFTER confirm) --- */}
                     {isConfirmed && (
                         <div className="flex flex-col gap-6 animate-in fade-in duration-500 overflow-y-auto [&::-webkit-scrollbar]:hidden">
-                            
+
                             {/* 1. Recent Recharges Card */}
                             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 shrink-0">
                                 <h2 className="text-[20px] font-bold text-gray-900 mb-5">Recent Recharges</h2>
-                                
+
                                 <div className="flex gap-4 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                                     {recentRecharges.map((item, index) => (
                                         <div key={index} className="min-w-[280px] border border-gray-100 rounded-2xl p-4 flex flex-col bg-white shrink-0 hover:border-gray-200 transition-colors">
@@ -203,7 +206,7 @@ export default function FastagRecharge() {
                                         View More <ArrowRight size={15} />
                                     </button>
                                 </div>
-                                
+
                                 <div className="flex gap-4 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                                     {banksData.map((bank, index) => (
                                         <div
@@ -280,10 +283,11 @@ export default function FastagRecharge() {
 
             </div>
 
-            {/* --- BOTTOM FEATURES (Untouched) --- */}
-            <FeatureBanner/>
-          
-            
+
+            <div className="mt-8">
+               <FeatureBanner cards={FeatureBannerCard2} />
+            </div>
         </div>
+
     );
 }

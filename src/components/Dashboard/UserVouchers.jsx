@@ -91,7 +91,7 @@ const CashbackCard = () => {
     };
 
     return (
-        <div className='pt-25 mx-auto flex min-h-screen'>
+        <div className=' mx-auto flex min-h-screen'>
 
             {/* Main Wrapper: flex-row to put the left column and right column side-by-side */}
             <div className="flex flex-row gap-6 items-start mt-10">

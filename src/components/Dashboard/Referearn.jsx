@@ -6,6 +6,8 @@ import friendsicon from "../../../public/images/friends.svg";
 import refericon from "../../../public/images/Referlink.svg"
 import twocoinicon from "../../../public/images/Twocoins.svg";
 import { ArrowRight } from "lucide-react";
+import FeatureBanner from "../Dashboard/FeatureBanner";
+import { FeatureBannerCard3 } from "../../../data";
 
 import {
   Share2,
@@ -95,7 +97,7 @@ export default function ReferAndEarnFlex() {
   ];
 
   return (
-    <div className="w-full mt-20 font-sans overflow-x-hidden">
+    <div className="w-full  font-sans overflow-x-hidden">
 
       {/* Outer Layout Wrapper - Strictly Enforced 1217px Width */}
       <div className="w-[1217px] max-w-full mx-auto flex flex-col lg:flex-row justify-between items-start gap-6 px-4 xl:px-0">
@@ -185,7 +187,7 @@ export default function ReferAndEarnFlex() {
             </div>
 
           </div>
-          
+
           {/* 2. Earnings Breakdown */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col w-full lg:w-[721px] h-[196px] overflow-hidden">
             <div className="p-6 pb-4">
@@ -376,6 +378,10 @@ export default function ReferAndEarnFlex() {
 
         </div>
 
+      </div>
+
+      <div className="mt-8">
+        <FeatureBanner cards={FeatureBannerCard3} />
       </div>
     </div>
   );
