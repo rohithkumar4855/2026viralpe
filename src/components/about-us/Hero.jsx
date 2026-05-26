@@ -1,5 +1,5 @@
 import Container from "../../layout/Container";
-import thunder from "../../../public/images/Thunder.png";
+import thunder from "../../../public/images/thunder.png";
 import Lock from "../../../public/images/lock.png";
 import Gift from "../../../public/images/gift.png";
 import city from "../../../public/images/city.png";

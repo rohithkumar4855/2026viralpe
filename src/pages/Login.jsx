@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import Home from "../feature/Dashboard/Home";
-import Revenue from "../feature/Dashboard/Revenue";
+import Home from "../components/Dashboard/Home";
+   
+import Revenue from "../components/Dashboard/Revenue";
 import Heropage from "../components/home/Hero";
 import PopularVouchers from "../components/home/Vouchers";
-import RecentTranscationcard from "../feature/Dashboard/RecentTranscation";
-import FeatureBanner from "../feature/Dashboard/FeatureBanner";
-import Vouchers from "../feature/Dashboard/Vouchers"
+import RecentTranscationcard from "../components/Dashboard/RecentTranscation";
+import FeatureBanner from "../components/Dashboard/FeatureBanner";
+import Vouchers from "../components/Dashboard/Vouchers"
 export default function loginpage() {
    const navigate = useNavigate();
    

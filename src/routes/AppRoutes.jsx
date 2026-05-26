@@ -3,20 +3,24 @@ import Home from "../pages/Home";
 import AboutUs from "../pages/AboutUs";
 import Management from "../pages/Management";
 import Login from "../pages/Login";
-import Vouchers from "../feature/Dashboard/Vouchers"
-import VoucherDetails from "../feature/Dashboard/VoucherDetails"
-import PaymentScreen from "../feature/Dashboard/Payments";
-import LoginPage from "../feature/Dashboard/Userloginpage";
-import PaymentSuccess from "../feature/Dashboard/PaymentSuccess";
-import PrepaidRecharge from "../feature/Dashboard/PrepaidRecharge";
-import Chooseaplan from "../feature/Dashboard/ChooseaPlan";
-import FastagRecharge from "../feature/Dashboard/FastagRecharge"
-import Dthrecharge from "../feature/Dashboard/Dthrecharge"
-import ReferEarn from "../feature/Dashboard/Referearn";
-import Transcations from "../feature/Dashboard/Transcations"
-import Fastagdetails from "../feature/Dashboard/Fasttagdetails"
-import UserVouchers from "../feature/Dashboard/UserVouchers"
-import Vouchercode from "../feature/Dashboard/VoucherCode"
+import Vouchers from "../components/Dashboard/Vouchers"
+import VoucherDetails from "../components/Dashboard/VoucherDetails"
+import PaymentScreen from "../components/Dashboard/Payments";
+import LoginPage from "../components/Dashboard/Userloginpage";
+import PaymentSuccess from "../components/Dashboard/PaymentSuccess";
+import PrepaidRecharge from "../components/Dashboard/PrepaidRecharge";
+import Chooseaplan from "../components/Dashboard/ChooseaPlan";
+import FastagRecharge from "../components/Dashboard/FastagRecharge"
+import Dthrecharge from "../components/Dashboard/Dthrecharge"
+import ReferEarn from "../components/Dashboard/Referearn";
+import Transcations from "../components/Dashboard/Transcations"
+import Fastagdetails from "../components/Dashboard/Fasttagdetails"
+import UserVouchers from "../components/Dashboard/UserVouchers"
+import Vouchercode from "../components/Dashboard/VoucherCode"
+import Wallet from "../components/Dashboard/Wallet"
+import ComingSoon from "../components/Comingsoon";
+
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -36,8 +40,13 @@ export default function AppRoutes() {
       <Route path="/refer-and-earn" element={< ReferEarn />} />
       <Route path="/transactions" element={< Transcations />} />
       <Route path="/fastag-details" element={< Fastagdetails />} />
-      <Route path="/my-vouchers" element={< UserVouchers  />} />
-       <Route path="/voucher-code" element={< Vouchercode  />} />
+      <Route path="/my-vouchers" element={< UserVouchers />} />
+      <Route path="/voucher-code" element={< Vouchercode />} />
+      <Route path="/wallet" element={< Wallet />} />
+      <Route path="/future" element={< ComingSoon />} />
+
+
+
     </Routes>
   );
 }

@@ -1,6 +1,4 @@
-import React from "react";
-
-const features = [
+const FeatureBannerCard = [
     {
         id: "secure-payments",
         title: "100% Secure Payments",
@@ -12,21 +10,21 @@ const features = [
         id: "instant-delivery",
         title: "Instant Code Delivery",
         description: "Get Vouchers In Seconds",
-        icon: '/images/Thunder.png',
+        icon: '/images/thunder.png',
         isRating: false,
     },
     {
         id: "customer-support",
         title: "24/7 Customer Support",
         description: "Help available round the clock",
-        icon: '/images/Headphones.png',
+        icon: '/images/headphones.png',
         isRating: false,
     },
     {
         id: "trusted-users",
         title: "Trusted By 1M+ Users",
         description: "4.8/5",
-        icon: '/images/Vector.svg',
+        icon: '/images/vector.svg',
         isRating: true,
     },
 ];
@@ -45,7 +43,7 @@ export default function FeatureBanner() {
     return (
         <div className="max-w-[1210px] max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto  gap-6">
             <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 ">
-                {features.map((feature) => (
+                {FeatureBannerCard.map((feature) => (
 
                     <div key={feature.id} className="flex items-center gap-4 min-w-0 ">
                         {/* Icon Box */}
