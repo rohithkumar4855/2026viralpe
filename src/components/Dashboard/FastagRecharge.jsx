@@ -6,14 +6,12 @@ import icic from "../../../public/images/iciclogo.svg";
 import idfc from "../../../public/images/idfclogo.svg";
 import Thunder from "../../../public/images/thunder.png"
 import discount from "../../../public/images/discount.svg"
-import Wallet from "../../../public/images/wallet.svg"
+import Wallet from "../../../public/images/wallet2.svg"
 import lock from "../../../public/images/lock.png"
 import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
 import FeatureBanner from "../Dashboard/FeatureBanner";
-import { FeatureBannerCard2 } from "../../../data";
-
-
+import { FeatureBannerCard2 } from "../../data/Dashboard";
 // Mock Data for Banks List
 const banksData = [
     { id: 1, name: "Axis Bank", logo: Axis, cb: "5% Cashback" },
@@ -41,6 +39,7 @@ const recentRecharges = [
 ];
 
 
+
 const ReachargeOn = [
     { title: 'Instant Recharge', desc: 'Recharge in just a seconds', icon: Thunder },
     { title: 'Best Plans', desc: 'Compare and choose the best plans', icon: discount },
@@ -48,10 +47,19 @@ const ReachargeOn = [
     { title: 'Secure Payments', desc: '256-bit SSL encrypted transactions', icon: lock },
 ];
 
+const renderIcon = (icon) => {
+    return (
+        <img
+            src={icon}
+            alt="icon"
+            className="w-8.5 h-8.5 object-contain"
+        />
+    );
+};
 
 export default function FastagRecharge() {
     const [searchQuery, setSearchQuery] = useState("");
-
+    
     // State to toggle layout when confirm is pressed
     const [isConfirmed, setIsConfirmed] = useState(false);
 
@@ -61,11 +69,11 @@ export default function FastagRecharge() {
     );
 
     const handleConfirm = (e) => {
-        e.preventDefault();
-
+        e.preventDefault(); 
+        
         if (!isConfirmed) {
             // First Click: Reveal the new layout and input
-            setIsConfirmed(true);
+            setIsConfirmed(true); 
         } else {
             // Second Click: Navigate to the details page
             // Note: Replace this with router.push('/fastag-details') if using Next.js
@@ -75,9 +83,9 @@ export default function FastagRecharge() {
     };
 
     return (
-        <div className=" min-h-screen p-4 md:p-8 font-sans  text-gray-800">
-            <div className="max-w-[1217px] w-full mx-auto flex justify-between gap-4">
-
+        <div className=" min-h-screen  font-sans text-gray-800 ">
+            <div className="max-w-[1207px]   w-full mx-auto flex justify-between ">
+                
                 {/* --- LEFT SIDE CONTAINER (Heights/Widths strictly preserved) --- */}
                 <div className="max-w-[837px] max-h-[847px] w-full flex flex-col gap-6">
 
@@ -91,7 +99,7 @@ export default function FastagRecharge() {
                             </button>
                         </div>
 
-                        <div className="">
+                        <div className="space-y-6">
                             <div>
                                 <label className="block text-sm font-bold text-gray-700 mb-2">Bank</label>
                                 <input
@@ -168,11 +176,11 @@ export default function FastagRecharge() {
                     {/* --- NEW REPLACEMENT LAYOUT (Only shows AFTER confirm) --- */}
                     {isConfirmed && (
                         <div className="flex flex-col gap-6 animate-in fade-in duration-500 overflow-y-auto [&::-webkit-scrollbar]:hidden">
-
+                            
                             {/* 1. Recent Recharges Card */}
                             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 shrink-0">
                                 <h2 className="text-[20px] font-bold text-gray-900 mb-5">Recent Recharges</h2>
-
+                                
                                 <div className="flex gap-4 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                                     {recentRecharges.map((item, index) => (
                                         <div key={index} className="min-w-[280px] border border-gray-100 rounded-2xl p-4 flex flex-col bg-white shrink-0 hover:border-gray-200 transition-colors">
@@ -206,7 +214,7 @@ export default function FastagRecharge() {
                                         View More <ArrowRight size={15} />
                                     </button>
                                 </div>
-
+                                
                                 <div className="flex gap-4 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                                     {banksData.map((bank, index) => (
                                         <div
@@ -231,7 +239,7 @@ export default function FastagRecharge() {
                 </div>
 
                 {/* --- RIGHT SIDE CONTAINER (Completely Untouched) --- */}
-                <div className="space-y-6 shrink-0">
+                <div className="flex flex-col gap-3">
                     <div className="bg-white max-w-[348px] max-h-[260px] p-4 rounded-2xl shadow-sm border border-slate-100">
                         <h3 className="text-lg font-bold mb-4">Why Recharge On ViralPe?</h3>
                         <div className="space-y-4">
@@ -249,7 +257,7 @@ export default function FastagRecharge() {
                         </div>
                     </div>
 
-                    <div className="bg-[#FFEDEE] p-6 rounded-2xl shadow-sm border border-rose-100 relative overflow-hidden flex flex-row items-center justify-between min-h-[140px]">
+                    <div className="bg-[#FFEDEE] w-[348px] p-6 rounded-2xl shadow-sm border border-rose-100 relative overflow-hidden flex flex-row items-center justify-between min-h-[140px]">
                         <div className="max-w-[60%]">
                             <h3 className="text-lg font-bold text-gray-900 leading-tight">Extra 5% Cashback</h3>
                             <p className="text-xs text-gray-600 mt-2 leading-relaxed">
@@ -283,11 +291,9 @@ export default function FastagRecharge() {
 
             </div>
 
-
-            <div className="mt-8">
+         <div className="mt-8">
                <FeatureBanner cards={FeatureBannerCard2} />
             </div>
         </div>
-
     );
 }

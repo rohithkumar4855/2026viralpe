@@ -1,7 +1,7 @@
 import React from "react";
 import thunder from "../../../public/images/thunder.png";
-import wallet from "../../../public/images/wallet.svg";
-import lock from "../../../public/images/lock.png";
+import wallet from "../../../public/images/wallet2.svg";
+import lock from "../../../public/images/lock.svg";
 import headphones from "../../../public/images/headphones.png";
 import tata from "../../../public/images/tataicon.svg";
 import airtel from "../../../public/images/airtelicon.svg";
@@ -12,7 +12,7 @@ import thumbsup from "../../../public/images/thumbsup.svg"
 import { ArrowRight } from "lucide-react";
 import FeatureBanner from '../Dashboard/FeatureBanner';
 import { useNavigate } from "react-router-dom";
-import { FeatureBannerCard } from "../../../data";
+import { FeatureBannerCard } from "../../data/Dashboard";
 
 <FeatureBanner cards={FeatureBannerCard} />
 

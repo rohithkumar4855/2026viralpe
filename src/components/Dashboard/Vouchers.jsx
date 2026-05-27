@@ -6,9 +6,8 @@ import Nike from "/images/nike.png"
 import Trends from "/images/trends.svg"
 import { useNavigate } from 'react-router-dom';
 import FeatureBanner from '../Dashboard/FeatureBanner';
-import { FeatureBannerCard } from "../../../data";
+import { FeatureBannerCard } from "../../data/Dashboard";
 
-<FeatureBanner cards={FeatureBannerCard} />
 export default function Vouchers() {
     // 1. Navigation Tabs Configuration
     const navigate = useNavigate();
@@ -447,7 +446,7 @@ const renderIcon = (icon) => {
                     </main>
             </div>
              
-            <div>
+            <div className='mt-6'>
   <FeatureBanner cards={FeatureBannerCard} />
 </div>
            

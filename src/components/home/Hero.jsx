@@ -59,7 +59,7 @@ export default function Heropage() {
 
     return (
         <section>
-            <div className="max-w-301.75 mt-25 mx-auto  flex flex-col md:flex-row gap-7.75 ">
+            <div className="max-w-301.75 mt-10 mx-auto  flex flex-col md:flex-row gap-7.75 ">
                 <div className="flex flex-col gap-4 bg-white rounded-2xl max-w-181 h-[264px] w-full p-[27.28px] shadow-sm relative overflow-hidden">
 
                     {/* Default View: Show 4 Icons */}

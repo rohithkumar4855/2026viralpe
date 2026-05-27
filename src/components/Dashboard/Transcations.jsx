@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import headphones from "../../../public/images/earphones.svg";
 import chat from "../../../public/images/chat.svg";
-import lock from "../../../public/images/lock.png";
+import lock from "../../../public/images/lock.svg";
 import gift from "../../../public/images/gift4.svg"
-import wallet from "../../../public/images/wallet1.svg"
+import wallet from "../../../public/images/wallet2.svg"
 import limit from "../../../public/images/limit.svg"
 import coins from "../../../public/images/coins1.svg"
 import bonus from "../../../public/images/bonus.svg";
 import cashback from "../../../public/images/cash2.svg"
 import circular from "../../../public/images/circular.svg";
 import FeatureBanner from "../Dashboard/FeatureBanner";
-import { FeatureBannerCard3 } from "../../../data";
+import { FeatureBannerCard3 } from "../../data/Dashboard";
 import {
   Wallet,
   Coins,
@@ -140,7 +140,7 @@ const DashboardLayout = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </div> 
         </div>
 
         {/* ============================== */}

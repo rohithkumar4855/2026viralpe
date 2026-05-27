@@ -20,9 +20,9 @@ import headphones from "../../../public/images/headphones.png";
 import sundirect from "../../../public/images/sundirecticon.svg";
 import { ArrowRight } from "lucide-react";
 import FeatureBanner from '../Dashboard/FeatureBanner';
-import { FeatureBannerCard } from "../../../data";
+import { FeatureBannerCard } from "../../data/Dashboard";
 
-<FeatureBanner cards={FeatureBannerCard} />
+
 // Mock Data for Recharge Plans
 
 const plansData = [
@@ -79,36 +79,7 @@ const recentRecharges = [
     },
 ];
 
-const feature1 = [
-    {
-        id: "secure-payments",
-        title: "100% Secure Payments",
-        description: "256-bit SSL Encrypted",
-        icon: '/images/lock.png',
-        isRating: false,
-    },
-    {
-        id: "instant-delivery",
-        title: "Instant Code Delivery",
-        description: "Get Vouchers In Seconds",
-        icon: '/images/Thunder.png',
-        isRating: false,
-    },
-    {
-        id: "customer-support",
-        title: "24/7 Customer Support",
-        description: "Help available round the clock",
-        icon: '/images/Headphones.png',
-        isRating: false,
-    },
-    {
-        id: "trusted-users",
-        title: "Trusted By 1M+ Users",
-        description: "4.8/5",
-        icon: '/images/Vector.svg',
-        isRating: true,
-    },
-];
+
 
 const renderIcon = (icon) => {
     return (
@@ -179,7 +150,7 @@ export default function PrepaidRechargeSection() {
     ];
 
     return (
-        <div className='mt-25'>
+        <div >
             <div className="min-h-screen  p-4 md:p-8 font-sans antialiased text-gray-800">
 
                 <div className="max-w-[1217px] mx-auto flex flex-col md:flex-row justify-between">

@@ -1,4 +1,3 @@
-console.log("FeatureBanner component loaded");
 import React from "react";
 
 const renderIcon = (icon) => (
@@ -10,7 +9,7 @@ const renderIcon = (icon) => (
 );
 
 export default function FeatureBanner({ cards = [] }) {
-  console.log("cards =", cards);
+
   return (
     <div className="max-w-[1210px] md:max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto gap-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6">

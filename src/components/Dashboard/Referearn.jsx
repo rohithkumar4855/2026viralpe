@@ -7,7 +7,7 @@ import refericon from "../../../public/images/Referlink.svg"
 import twocoinicon from "../../../public/images/Twocoins.svg";
 import { ArrowRight } from "lucide-react";
 import FeatureBanner from "../Dashboard/FeatureBanner";
-import { FeatureBannerCard3 } from "../../../data";
+import { FeatureBannerCard3 } from "../../data/Dashboard";
 
 import {
   Share2,

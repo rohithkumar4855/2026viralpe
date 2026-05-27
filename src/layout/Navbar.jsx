@@ -26,7 +26,7 @@ import fastagiconSvg from "../../public/images/fasttag.svg";
 import refer from "../../public/images/refericon.svg";
 import transactions from "../../public/images/transcations.svg";
 import comingsoon from "../components/Comingsoon"
-
+import home from "/images/home.svg";
 // --- Public Navbar Specific Imports (PNGs) ---
 import MoneyReceivePng from "../../public/images/money-receive.png";
 import dthiconPng from "../../public/images/dthicon.png";
@@ -42,6 +42,7 @@ function UserNavbar({ user }) {
 
   const secondaryNavItems = [
     { name: "All", icon: <Menu size={18} />, path: "/all-services" },
+        { name: "DashBoard", icon: <img src={home} alt="Home" />, path: "/dashboard" },
     { name: "Vouchers", icon: <img src={vouchers} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/Vouchers" },
     { name: "Prepaid Recharge", icon: <img src={moneyreceiveSvg} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/prepaid" },
     { name: "Postpaid Recharge", icon: <img src={moneysend} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/prepaid" },

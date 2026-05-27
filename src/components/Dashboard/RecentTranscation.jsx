@@ -1,5 +1,5 @@
 import React from 'react';
-import { transactionData, referralData } from  "../../../data" 
+import { transactionData, referralData } from  "../../data/Dashboard" 
 import googlestore from  "../../../public/images/googleplayicon.png"
 import applestore from  "../../../public/images/applestoreicon.svg"
 

@@ -27,51 +27,6 @@ export const earningsData = [
 ];
 
 
-export const WalletandEarningsCard =[
-  {
-    id: 1,
-    icon: "/images/location.png", // Direct root path
-    title: "Wallet Balance",
-    amount: "₹ 5,000.00",
-  
-  },
-  {
-    id: 2,
-    icon: "/images/vendor.png",
-    title: "Zonal Royalty",
-    amount: "₹ 5,000.00",
-
-  },
-  {
-    id: 3,
-    icon: "/images/gift.png",
-    title: "Lifetime earnings",
-     amount: "₹ 5,000.00",
-
-  },
-  {
-    id: 4,
-    icon: "/images/overlay.png",
-    title: "Total Cashback",
-    amount: "₹ 5,000.00",
-
-  },
-   {
-    id: 5,
-    icon: "/images/overlay.png",
-    title: " Referral Bonus",
-    amount: "₹ 5,000.00",
-    
-  },
-   {
-    id: 6,
-    icon: "/images/overlay.png",
-    title: "Reversal Wallet",
-    amount: "₹5,000.00",
-
-  },
-];
-
 
  export const statsData = [
     {
@@ -152,21 +107,21 @@ export const FeatureBannerCard = [
         id: "secure-payments",
         title: "100% Secure Payments",
         description: "256-bit SSL Encrypted",
-        icon: '/images/lock.png',
+        icon: '/images/lock.svg',
         isRating: false,
     },
     {
         id: "instant-delivery",
         title: "Instant Code Delivery",
         description: "Get Vouchers In Seconds",
-        icon: '/images/thunder.png',
+        icon: '/images/thunder.svg',
         isRating: false,
     },
     {
         id: "customer-support",
         title: "24/7 Customer Support",
         description: "Help available round the clock",
-        icon: '/images/headphones.png',
+        icon: '/images/headphone.svg',
         isRating: false,
     },
     {
@@ -183,7 +138,7 @@ export const FeatureBannerCard2 = [
         id: "secure-payments",
         title: "100% Secure Payments",
         description: "256-bit SSL Encrypted",
-        icon: '/images/lock.png',
+        icon: '/images/lock.svg',
         isRating: false,
     },
     {
@@ -197,7 +152,7 @@ export const FeatureBannerCard2 = [
         id: "customer-support",
         title: "24/7 Customer Support",
         description: "Help available round the clock",
-        icon: '/images/headphones.png',
+        icon: '/images/headphone.svg',
         isRating: false,
     },
     {
@@ -215,7 +170,7 @@ export const FeatureBannerCard3 = [
     "id": 1,
     "title": "100% Secure",
     "description": "Your data and earnings are completely safe",
-    icon: '/images/lock.png'
+    icon: '/images/lock.svg'
   },
   {
     "id": 2,
@@ -233,6 +188,6 @@ export const FeatureBannerCard3 = [
     "id": 4,
     "title": "Easy Withdrawals",
     "description": "Withdraw your earnings to bank or wallet anytime",
-    icon: '/images/wallet1.svg'
+    icon: '/images/wallet2.svg'
   }
 ];

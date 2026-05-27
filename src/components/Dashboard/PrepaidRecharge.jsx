@@ -15,7 +15,7 @@ import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import FeatureBanner from '../Dashboard/FeatureBanner';
 
-import { FeatureBannerCard } from "../../../data";
+import { FeatureBannerCard } from "../../data/Dashboard";
 
 <FeatureBanner cards={FeatureBannerCard} />
 

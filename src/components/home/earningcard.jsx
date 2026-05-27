@@ -1,6 +1,5 @@
 import React from "react";
-import { earningsData } from "../../../data"; // Adjust this import path based on your folder structure
-
+import { earningsData } from "../../data/Dashboard"
 
 const EarningCard = ({ icon, title, amount, subtitle }) => {
   return (

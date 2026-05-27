@@ -7,7 +7,8 @@ import PopularVouchers from "../components/home/Vouchers";
 import RecentTranscationcard from "../components/Dashboard/RecentTranscation";
 import FeatureBanner from "../components/Dashboard/FeatureBanner";
 import Vouchers from "../components/Dashboard/Vouchers"
-import { FeatureBannerCard } from "../../data";
+
+import { FeatureBannerCard } from  "../data/Dashboard"
 
 <FeatureBanner cards={FeatureBannerCard} />
 export default function loginpage() {
@@ -29,7 +30,7 @@ export default function loginpage() {
       <Heropage />
       <PopularVouchers />
       <RecentTranscationcard/>
-      <FeatureBanner/>
+        <FeatureBanner cards={FeatureBannerCard} />
     </div>
   );
 }
