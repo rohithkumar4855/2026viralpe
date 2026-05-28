@@ -94,7 +94,7 @@ const Footer = () => {
             <h3 className="text-[14px] font-semibold mb-5">Support</h3>
             <ul className="flex flex-col gap-3.5 text-[12px] font-light text-white/90">
               <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Contact Us</li>
-              <li className="cursor-pointer hover:underline" onClick={() => navigate("/future")}>Faq's</li>
+              <li className="cursor-pointer hover:underline" onClick={() => navigate("/faqs")}>Faq's</li>
             </ul>
           </div>
 

@@ -3,8 +3,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, useLocation } from 'react-router-dom'
 
-import Navbar from './layout/Navbar'
-import Footer from './layout/Footer'
+import Navbar from './layout/Navbar.jsx'
+import Footer from './layout/Footer.jsx'
 import Container from './layout/Container.jsx'
 
 import './globals.css'
