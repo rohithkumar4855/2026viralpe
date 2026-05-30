@@ -1,5 +1,5 @@
 import React from "react";
-import thunder from "../../../public/images/thunder.png";
+import thunder from "../../../public/images/thunder.svg";
 import wallet from "../../../public/images/wallet2.svg";
 import lock from "../../../public/images/lock.svg";
 import headphones from "../../../public/images/headphones.png";
@@ -14,10 +14,8 @@ import FeatureBanner from '../Dashboard/FeatureBanner';
 import { useNavigate } from "react-router-dom";
 import { FeatureBannerCard } from "../../data/Dashboard";
 
-<FeatureBanner cards={FeatureBannerCard} />
-
 export default function DthRechargeDashboard() {
-     const navigate = useNavigate();
+    const navigate = useNavigate();
     const whyRechargeFeatures = [
         {
             icon: thunder,
@@ -62,7 +60,7 @@ export default function DthRechargeDashboard() {
         },
         {
             image: sundirect,
-            name: "DishTV", // Matching snapshot label discrepancy perfectly
+            name: "DishTV", 
             id: "90809 879988",
             amount: "₹456",
             daysLeft: "2 Days Left",
@@ -79,39 +77,40 @@ export default function DthRechargeDashboard() {
     ];
 
     return (
-        <div className="  flex flex-col items-center justify-start text-[#1A1A1A] font-sans antialiased">
-            <div className="w-[1217px] flex flex-col gap-6">
+        <div className="w-full flex flex-col items-center justify-start text-[#1A1A1A] font-sans antialiased p-4 md:p-0">
+            <div className="max-w-[1217px] w-full flex flex-col gap-6">
 
                 {/* TOP SECTION: Main Form & Why Recharge Side Widget */}
-                <div className="flex flex-row gap-6 items-stretch">
+                <div className="flex flex-col md:flex-row gap-6 items-stretch w-full">
 
                     {/* Left: DTH Recharge Input Card */}
-                    <div className="col-span-8 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col justify-between max-w-[837px] w-full max-h-[260px]">
+                    <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm flex flex-col justify-between max-w-full md:max-w-[837px] w-full min-h-[240px] md:max-h-[260px]">
                         <div>
-                            <h2 className="text-2xl font-bold mb-6">DTH Recharge</h2>
+                            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">DTH Recharge</h2>
                             <div className="flex flex-col gap-2">
-                                <label className="text-sm font-semibold text-gray-700">
+                                <label className="text-xs md:text-sm font-semibold text-gray-700">
                                     Subscriber ID/Registered Mobile Number
                                 </label>
                                 <input
                                     type="text"
                                     placeholder="Enter Subscriber ID/Registered Mobile Number"
-                                    className="w-full border border-gray-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#800A1D] focus:border-transparent transition placeholder-gray-400"
+                                    className="w-full border border-gray-200 rounded-xl px-4 py-3 md:px-5 md:py-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#800A1D] focus:border-transparent transition placeholder-gray-400"
                                 />
                             </div>
                         </div>
-                        <div className="mt-4 flex justify-center">
-                            <button className="bg-[#800A1D] text-white font-semibold text-base px-16 py-3 rounded-xl hover:bg-[#660817] transition-all duration-200 shadow-sm w-[260px]"
-                              onClick={() => navigate("/dthdetails")}>
-                               
+                        <div className="mt-6 md:mt-4 flex justify-center">
+                            <button 
+                                className="bg-[#800A1D] text-white font-semibold text-base px-16 py-3 rounded-xl hover:bg-[#660817] active:scale-95 transition-all duration-200 shadow-sm w-full md:w-[260px] cursor-pointer touch-manipulation"
+                                onClick={() => navigate("/dthdetails")}
+                            >
                                 Confirm
                             </button>
                         </div>
                     </div>
 
                     {/* Right: Why Recharge On ViralPe */}
-                    <div className="max-w-[348px] w-full  bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between h-[260px]">
-                        <h3 className="text-base font-bold text-gray-900 mb-2">
+                    <div className="max-w-full md:max-w-[348px] w-full bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between h-auto md:h-[260px] gap-4 md:gap-0">
+                        <h3 className="text-base font-bold text-gray-900">
                             Why Recharge On ViralPe?
                         </h3>
                         <div className="flex flex-col gap-3">
@@ -135,25 +134,25 @@ export default function DthRechargeDashboard() {
                 </div>
 
                 {/* MIDDLE SECTION: Recent Recharges & Side Offers */}
-                <div className="flex grid-cols-12 gap-6 items-start">
+                <div className="flex flex-col md:flex-row gap-6 items-start w-full">
 
                     {/* Left: Recent Recharges Card */}
-                    <div className="col-span-8 flex flex-col  max-w-[837px] w-full  bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div className="flex flex-col max-w-full md:max-w-[837px] w-full bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
                         <h2 className="text-xl font-bold mb-6">Recent Recharges</h2>
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="flex flex-col md:flex-row flex-wrap gap-4 w-full">
                             {recentRecharges.map((recharge, index) => (
                                 <div
                                     key={index}
-                                    className="border border-gray-100 rounded-2xl p-4 flex flex-col justify-between relative hover:shadow-md transition bg-white"
+                                    className="border border-gray-100 rounded-2xl p-4 flex flex-col justify-between relative hover:shadow-md active:scale-[0.99] transition bg-white flex-1 min-w-[240px] md:max-w-[calc(33.33%-11px)] cursor-pointer touch-manipulation"
                                 >
-                                    <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                                    <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 p-1">
                                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
                                         </svg>
                                     </button>
 
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className="w-12 h-12 rounded-xl flex items-center justify-center p-1 bg-white border border-gray-50">
+                                        <div className="w-12 h-12 rounded-xl flex items-center justify-center p-1 bg-white border border-gray-50 shrink-0">
                                             <img
                                                 src={recharge.image}
                                                 alt={recharge.name}
@@ -176,11 +175,11 @@ export default function DthRechargeDashboard() {
                     </div>
 
                     {/* Right: Promotion Stack Panel */}
-                    <div className="col-span-4 flex flex-col gap-6">
+                    <div className="max-w-full md:max-w-[348px] w-full flex flex-col gap-6">
 
                         {/* Promo banner 5% cashback */}
-                        <div className="bg-[#FFF2F4] rounded-2xl p-6 relative overflow-hidden flex items-center justify-between border border-[#FFE1E5]">
-                            <div className="max-h-[146px] max-w-[348px] w-full">
+                        <div className="bg-[#FFF2F4] rounded-2xl p-6 relative overflow-hidden flex items-center justify-between border border-[#FFE1E5] active:scale-[0.99] transition cursor-pointer touch-manipulation">
+                            <div className="max-h-[146px] w-full">
                                 <h4 className="text-[20px] font-semibold text-[#1C1B1B]">
                                     Extra 5% Cashback
                                 </h4>
@@ -191,48 +190,47 @@ export default function DthRechargeDashboard() {
                                     *T&C Apply
                                 </span>
                             </div>
-                            <img src={gift} />
+                            <img src={gift} alt="Gift" className="shrink-0" />
                         </div>
 
                         {/* Need Help Box */}
-                        <div className=" mx-w-[348px] w-full  max-h-[151px] bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex">
-                            <div className="flex gap-[28px]">
-                                <div className="max-w-[50px] max-h-[50px] rounded-full h-full w-full">
-                                    <img src={headphones} className="h-full w-full" />
+                        <div className="w-full md:max-w-[348px] md:max-h-[151px] bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex">
+                            <div className="flex gap-[28px] w-full">
+                                <div className="max-w-[50px] max-h-[50px] rounded-full h-12 w-12 shrink-0">
+                                    <img src={headphones} className="h-full w-full" alt="Support" />
                                 </div>
-                                <div className="flex flex-col max-w-[182px] w-full">
+                                <div className="flex flex-col w-full">
                                     <h4 className="text-base font-bold text-gray-900">Need Help?</h4>
                                     <p className="text-xs text-gray-400 mt-1 mb-4 font-medium">
                                         Chat with our support teams
                                     </p>
-                                    <button className="border border-[#800A1D] text-[#800A1D] font-bold text-xs px-6 py-2.5 rounded-xl hover:bg-[#800A1D] hover:text-white transition duration-200 flex items-center gap-2">
+                                    <button className="border border-[#800A1D] text-[#800A1D] font-bold text-xs px-6 py-2.5 rounded-xl hover:bg-[#800A1D] hover:text-white active:scale-95 transition duration-200 flex items-center justify-center gap-2 w-full md:w-auto cursor-pointer touch-manipulation">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                         </svg>
                                         Chat Now
                                     </button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* ALL DTH OPERATORS */}
-                <div className="max-w-[837px] bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                <div className="max-w-full md:max-w-[837px] w-full bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-bold">All DTH Operators</h2>
-                        <a href="#view-all" className="text-[#800A1D] text-xs font-bold flex items-center gap-1 hover:underline">
-                            View More 
+                        <a href="#view-all" className="text-[#800A1D] text-xs font-bold flex items-center gap-1 hover:underline active:opacity-70 p-1">
+                            View More
                             <ArrowRight size={14} />
                         </a>
                     </div>
 
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="flex flex-row flex-wrap gap-4 w-full">
                         {dthOperators.map((operator, index) => (
                             <div
                                 key={index}
-                                className="border border-gray-100 rounded-2xl p-5 flex flex-col items-center justify-between hover:shadow-md transition bg-white max-w-[246px] w-full max-h-[140px]"
+                                className="border border-gray-100 rounded-2xl p-5 flex flex-col items-center justify-between hover:shadow-md active:scale-95 transition bg-white min-w-[130px] md:max-w-[246px] flex-1 h-[140px] cursor-pointer touch-manipulation"
                             >
                                 <div className="w-20 h-16 my-auto flex items-center justify-center">
                                     <img
@@ -241,8 +239,8 @@ export default function DthRechargeDashboard() {
                                         className="max-h-full max-w-full object-contain"
                                     />
                                 </div>
-                                <div>
-                                    <span className="text-[11px] font-bold text-[#2E7D32] bg-[#E8F5E9] px-4 py-1 rounded-[8px] w-full text-center">
+                                <div className="w-full text-center">
+                                    <span className="text-[10px] md:text-[11px] font-bold text-[#2E7D32] bg-[#E8F5E9] px-2 md:px-4 py-1 rounded-[8px] block w-full truncate">
                                         {operator.cashback}
                                     </span>
                                 </div>
@@ -252,10 +250,9 @@ export default function DthRechargeDashboard() {
                 </div>
 
                 {/* FOOTER TRUST BADGES */}
-              <div>
-  <FeatureBanner cards={FeatureBannerCard} />
-</div>
-
+                <div className='mt-6 w-full overflow-hidden'>
+                    <FeatureBanner cards={FeatureBannerCard} />
+                </div>
             </div>
         </div>
     );

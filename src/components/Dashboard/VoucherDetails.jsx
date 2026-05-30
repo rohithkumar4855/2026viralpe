@@ -18,7 +18,7 @@ import {
 
 import Nike from "../../../public/images/nike.png";
 import verified from "../../../public/images/verified.svg"
-import thunder from "../../../public/images/thunder.png"
+import thunder from "../../../public/images/thunder.svg"
 import fashion from "../../../public/images/fashion.svg"
 import footwear from "../../../public/images/footwear.svg"
 import accessories from "../../../public/images/accesories.svg"
@@ -29,15 +29,18 @@ import ticket from "../../../public/images/ticket.svg";
 import wallet from "../../../public/images/wallet.svg";
 import myntra from "../../../public/images/myntra.png";
 import starbucks from "../../../public/images/starbucks.png";
-import lock from "../../../public/images/lock.png";
+import lock from "../../../public/images/lock.svg";
 import Gift from "../../../public/images/gift.svg";
 import success from "../../../public/images/success.svg";
+import headphone from "../../../public/images/headphone.svg"
+import FeatureBanner from '../Dashboard/FeatureBanner';
+import { FeatureBannerCard } from "../../data/Dashboard";
 
 export default function CashbackCardList() {
   const location = useLocation();
   const navigate = useNavigate();
   const voucher = location.state;
-  
+
   // Track popup display layers: null (hidden), 'payment' (checkout view), 'success' (completion screen)
   const [popupStage, setPopupStage] = useState(null);
   const [activeTab, setActiveTab] = useState('card');
@@ -70,53 +73,53 @@ export default function CashbackCardList() {
     { label: "Footwear", icon: footwear },
     { label: "Accessories", icon: accessories }
   ];
-const features = [
+  const features = [
     {
-        id: "secure-payments",
-        title: "100% Secure Payments",
-        description: "256-bit SSL Encrypted",
-        icon: '/images/lock.png',
-        isRating: false,
+      id: "secure-payments",
+      title: "100% Secure Payments",
+      description: "256-bit SSL Encrypted",
+      icon: '/images/lock.png',
+      isRating: false,
     },
     {
-        id: "instant-delivery",
-        title: "Instant Code Delivery",
-        description: "Get Vouchers In Seconds",
-        icon: '/images/Thunder.png',
-        isRating: false,
+      id: "instant-delivery",
+      title: "Instant Code Delivery",
+      description: "Get Vouchers In Seconds",
+      icon: '/images/Thunder.svg',
+      isRating: false,
     },
     {
-        id: "customer-support",
-        title: "24/7 Customer Support",
-        description: "Help available round the clock",
-        icon: '/images/Headphones.png',
-        isRating: false,
+      id: "customer-support",
+      title: "24/7 Customer Support",
+      description: "Help available round the clock",
+      icon: '/images/Headphones.png',
+      isRating: false,
     },
     {
-        id: "trusted-users",
-        title: "Trusted By 1M+ Users",
-        description: "4.8/5",
-        icon: '/images/Vector.svg',
-        isRating: true,
+      id: "trusted-users",
+      title: "Trusted By 1M+ Users",
+      description: "4.8/5",
+      icon: '/images/Vector.svg',
+      isRating: true,
     },
-];
-const renderIcon = (icon) => {
+  ];
+  const renderIcon = (icon) => {
     return (
-        <img
-            src={icon}
-            alt="icon"
-            className="w-8.5 h-8.5 object-contain"
-        />
+      <img
+        src={icon}
+        alt="icon"
+        className="w-8.5 h-8.5 object-contain"
+      />
     );
-};
+  };
   const vouchersData = [
     { id: 1, value: 100, savings: 5 },
     { id: 2, value: 200, savings: 10 },
     { id: 3, value: 300, savings: 15 },
     { id: 4, value: 600, savings: 200 },
     { id: 5, value: 400, savings: 90 },
-     { id: 6, value: 500, savings: 90 },
-    
+    { id: 6, value: 500, savings: 90 },
+
   ];
 
   // Helper functions to update state cleanly
@@ -187,7 +190,7 @@ const renderIcon = (icon) => {
       question: "Validity & Expiry",
       answer: "Cashback is credited instantly to your ViralPe wallet right after a successful transaction. In rare scenarios, it might take up to 24 hours to process."
     },
-     {
+    {
       id: 4,
       question: "Refund & Cancellation",
       answer: "Cashback is credited instantly to your ViralPe wallet right after a successful transaction. In rare scenarios, it might take up to 24 hours to process."
@@ -215,42 +218,41 @@ const renderIcon = (icon) => {
 
   return (
     <div className="min-h-screen  p-4 md:p-8">
-      <div className="max-w-[1240px]  mx-auto">
+      <div className="max-w-[1207px] w-full mx-auto">
 
         {/* Main 12-Column Grid */}
-        <div className="flex flex-row gap-6 items-start">
+        <div className="flex md:flex-row flex-col gap-4  md:gap-6 items-start">
 
           {/* Left Column Area */}
-          <div className="col-span-12 lg:col-span-8 flex flex-col gap-6">
+          <div className=" flex flex-col gap-6">
 
             {/* Voucher Card */}
-            <div className="border border-transparent ">
-              <div className="flex flex-col font-sans">
+            <div className="w-full ">
+              <div className="font-sans    ">
                 {categories.map((item) => (
                   <div
                     key={item.id}
-                    className="bg-white rounded-[16px] p-4 w-full max-w-[700px]  max-h-[331px]shadow-sm border border-gray-100"
+                    className="bg-white overflow-hidden rounded-[16px]  md:p-4 p-2  md:max-w-[700px] max-h-[300px] md:max-h-[331px]  shadow-sm border border-gray-100"
                   >
                     <div className=" flex justify-between items-start">
-                      <div className="flex gap-4 items-center">
-                        <div className="  flex items-center justify-center">
-                          <img src={item.icon} alt={`${item.title} Logo`} className="w-full h-full object-contain" />
-                        </div>
+                      <div className="flex md:gap-4  items-center">
+                        <img src={item.icon} alt={`${item.title} Logo`} className="md:w-full md:h-full w-15 h-15 object-contain " />
                         <div>
-                          <h2 className="text-[28.1px] font-bold text-gray-900 leading-tight">{item.title}</h2>
-                          <p className="text-[#a6303c] text-sm font-semibold mt-1">{item.cashback}</p>
+                          <h2 className="md:text-[28.1px] text-[15px] font-semibold text-gray-900 leading-tight ">{item.title}</h2>
+                          <p className="text-[#128a59] md:text-sm text-[15px]  font-semibold mt-1">Online</p>
                         </div>
                       </div>
-                      <span className="bg-[#e8f7ee] text-[#128a59] text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">
+                      <span className="bg-[#e8f7ee] text-[#128a59] text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap ">
                         {item.cashbackRightside}
                       </span>
                     </div>
 
-                    <p className="text-[#6b7280] text-[16px] leading-[1.7] mb-8 font-medium">{item.para}</p>
-
-                    <div className="flex  items-center text-center gap-2 ">
+                    <p className="text-[#6b7280] md:text-[16px] text-[13px] leading-[1.7] mb-8 font-medium line-clamp-2 md:line-clamp-none">
+                      {item.para}
+                    </p>
+                    <div className="flex  items-center  gap-2 ">
                       {tags.map((tag, index) => (
-                        <div key={index} className="flex items-center gap-2 max-w-[143px] w-full max-h-[41px]  bg-[#fcf6f6] text-[#9b2a36] px-5 py-2.5 rounded-[20px] text-sm font-bold">
+                        <div key={index} className="flex items-center gap-2 md:max-w-[143px] w-full md:max-h-[41px] max-w-[120px]  bg-[#fcf6f6] text-[#901c27] md:px-5 md:py-2.5 px-2 py-1.5 rounded-[20px] md:text-[15px] text-[11px] font-bold">
                           <img src={tag.icon} alt={tag.label} className="w-4 h-4 object-contain" />
                           <span>{tag.label}</span>
                         </div>
@@ -262,15 +264,16 @@ const renderIcon = (icon) => {
             </div>
 
             {/* Choose Voucher Grid Selector */}
-            <div className="w-full bg-white  max-w-[700px] max-h-[367px] rounded-[24px] p-4 border border-gray-100 shadow-sm">
-              <h1 className='font-bold text-[24px] mb-4'>Choose Your Voucher value</h1>
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-4">
+            <div className="w-full bg-white md:max-w-[700px] md:max-h-[367px] max-h-[300px] overflow-y-auto rounded-[20px] p-2 md:p-4 border border-gray-100 shadow-sm">
+              <h1 className="font-semibold md:text-[24px] text-[15px] mb-4">Choose Your Voucher value</h1>
+
+              <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
                 {vouchersData.map((voucher) => {
                   const currentQty = quantities[voucher.id] || 0;
                   return (
                     <div
                       key={voucher.id}
-                      className="w-full  max-w-[148px] max-h-[123px] bg-white border border-[#9c27b0]/20 rounded-[20px] shadow-sm flex flex-col items-center justify-between p-2.5 transition-all duration-200 hover:shadow-md hover:bg-[#FFF8F8] hover:border-[#901C27] mx-auto"
+                      className="w-full md:max-w-[148px] md:max-h-[123px] max-w-[100px] max-h-[100px] bg-white border border-[#9c27b0]/20 rounded-[20px] shadow-sm flex flex-col items-center justify-between p-2.5 transition-all duration-200 hover:shadow-md hover:bg-[#FFF8F8] hover:border-[#901C27] mx-auto"
                     >
                       <div className="flex flex-col items-center text-center mt-1">
                         <h2 className="text-xl font-bold text-gray-900 flex items-center justify-center tracking-tight leading-none">
@@ -309,34 +312,114 @@ const renderIcon = (icon) => {
                   );
                 })}
               </div>
+
+              {/* ORDER SUMMARY - Hidden on md (desktop/tablet), only displays if items are in cart */}
+              
             </div>
+            {cartItems.length > 0 && (
+                <div className="md:hidden mt-6 bg-white rounded-[20px] border border-gray-100 shadow-sm">
+                  <div className="w-full rounded-2xl shadow-lg border border-gray-100 p-4 font-sans">
+                    <h2 className="text-[20px] font-semibold mb-3">Order Summary</h2>
+                    <div className="flex justify-between items-center mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-lg flex items-center justify-center shadow-sm">
+                          <img src={categories[0]?.icon} alt={categories[0]?.title} className="w-full h-full object-contain p-1" />
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900">{categories[0]?.title}</h3>
+                      </div>
+                      <div className="text-xl font-bold text-gray-900">₹ {totalPrice}</div>
+                    </div>
+
+                    <div className="border-gray-100 pb-4 mb-4 space-y-4">
+                      {cartItems.map((item) => (
+                        <div key={item.id} className="space-y-2">
+                          <div className="flex justify-between items-center text-sm">
+                            <span className="text-gray-400">Denomination</span>
+                            <span className="text-gray-500 font-medium">₹ {item.denomination}</span>
+                          </div>
+                          <div className="flex justify-between items-center text-sm">
+                            <span className="text-gray-400">Qty.</span>
+                            <div className="flex items-center gap-3.5">
+                              <button
+                                onClick={() => handleDecrement(item.id)}
+                                className="w-7 h-7 rounded-full bg-gray-50 hover:bg-gray-100 flex items-center justify-center text-gray-700 font-medium transition-colors"
+                              >
+                                −
+                              </button>
+                              <span className="text-[15px] font-bold text-red-700 min-w-[12px] text-center">{item.quantity}</span>
+                              <button
+                                onClick={() => handleIncrement(item.id)}
+                                className="w-7 h-7 rounded-full bg-gray-50 hover:bg-gray-100 flex items-center justify-center text-gray-700 font-medium transition-colors"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={handleAddToCart}
+                      className="w-full bg-[#8c1d26] hover:bg-[#70161e] text-white py-3.5 rounded-lg text-base font-semibold transition-colors shadow-sm mb-4"
+                    >
+                      Add to Cart
+                    </button>
+
+                    <div className="flex justify-between items-center text-[12px] text-gray-500 font-medium px-1">
+                      <div className="flex items-center gap-1">
+                        <span className="text-red-500 text-xs">
+                          <img className="h-[14px] w-[14px]" src={lock} alt="secure" />
+                        </span>
+                        100% Secure Payments
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="text-red-500 text-xs">
+                          <img className="h-[14px] w-[14px]" src={thunder} alt="fast" />
+                        </span>
+                        Instant Code Delivery
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
             {/* Alert Banner */}
-            <div className="w-full max-w-[700px] bg-emerald-50 rounded-2xl flex p-4 items-center gap-3">
+            <div className="w-full md:max-w-[700px] md:max-h-[85px] max-w-[500px] bg-[#EFFFF6] rounded-[20px] flex p-4 items-center gap-3">
               <img src={cashback} alt='cashbackicon' className='w-13 h-13 object-contain shrink-0' />
-              <p className='font-light text-[12px] text-gray-700 leading-relaxed'>
+              <p className=' md:text-[12px]  text-[10px] text-[#584140] leading-relaxed'>
                 Cashback is credited to your Viralpe wallet within 24 hours of order delivery. Reward points are valid for 90 days from the credit date and can be redeemed on your next purchase.
               </p>
             </div>
 
             {/* How It Works Grid */}
             <div className="w-full md:w-[700px] mx-auto md:h-[229px] bg-white rounded-[24px] border border-gray-100 shadow-sm">
-              <div className="p-5">
+              <div className="md:p-5 p-3">
                 <h3 className="font-bold text-xl ml-[28px] mb-[13px]">How it Works</h3>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 items-start relative">
                   {steps.map((step, index) => (
                     <div key={step.id} className="flex flex-col items-center text-center relative group">
-                      <div className="flex items-center justify-center rounded-2xl p-4 mb-2 group-hover:scale-105">
+                      <div className="flex items-center justify-center rounded-2xl p-4 mb-2  group-hover:scale-105">
                         {step.icon}
                       </div>
                       <h3 className="text-sm font-bold text-gray-800 mb-2 tracking-wide">{step.title}</h3>
                       <p className="text-gray-500 text-xs leading-relaxed max-w-[210px]">{step.description}</p>
                       {index < steps.length - 1 && (
-                        <div className="hidden md:block absolute top-8 -right-4 translate-x-1/2 z-10 pointer-events-none">
-                          <svg className="w-14 h-4 text-rose-800" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 4" viewBox="0 0 48 16">
-                            <path d="M0 8H44M44 8L38 2M44 8L38 14" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
+                        <>
+                          {/* DESKTOP: Horizontal dashed arrow (Hidden on mobile) */}
+                          <div className="hidden md:block absolute top-8 -right-4 translate-x-1/2 z-10 pointer-events-none">
+                            <svg className="w-14 h-4 text-rose-800" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 4" viewBox="0 0 48 16">
+                              <path d="M0 8H44M44 8L38 2M44 8L38 14" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </div>
+
+                          {/* MOBILE: Vertical static dashed arrow (Hidden on desktop) */}
+                          <div className="block md:hidden absolute -bottom-13 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+                            <svg className="w-4 h-14 text-rose-800" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 4" viewBox="0 0 16 48">
+                              <path d="M8 0L8 44M8 44L2 38M8 44L14 38" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </div>
+                        </>
                       )}
                     </div>
                   ))}
@@ -345,7 +428,7 @@ const renderIcon = (icon) => {
             </div>
 
             {/* Accordion List Block */}
-            <div className="md:w-[700px] h-[592px] bg-white rounded-[24px] p-6 border border-gray-100 shadow-sm flex flex-col gap-4">
+            <div className="md:w-[700px] md:max-h-[592px] bg-white rounded-[24px] p-6 border border-gray-100 shadow-sm flex flex-col gap-4">
               <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-black mt-[23px] ml-[27px] tracking-tight">
                 Terms & Conditions
               </h2>
@@ -382,10 +465,10 @@ const renderIcon = (icon) => {
           </div>
 
           {/* Right Sidebar Area */}
-          <div className="col-span-12 lg:col-span-4 flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
 
             {/* Sticky Summary Card */}
-            <div className="bg-white rounded-[24px] border border-gray-100 shadow-sm lg:top-6">
+            <div className="hidden md:block bg-white rounded-[24px] border border-gray-100 shadow-sm lg:top-6">
               <div className="max-w-[494px] max-h-[418px] w-full rounded-2xl shadow-lg border border-gray-100 p-6 font-sans">
                 <h2 className="text-[24px] font-semibold mb-3">Order Summary</h2>
                 <div className="flex justify-between items-center mb-4">
@@ -398,7 +481,7 @@ const renderIcon = (icon) => {
                   <div className="text-xl font-bold text-gray-900">₹ {totalPrice}</div>
                 </div>
 
-                <div className="border-b border-gray-100 pb-5 mb-5 space-y-4">
+                <div className=" border-gray-100 pb-5 mb-5 space-y-4">
                   {cartItems.length > 0 ? (
                     cartItems.map(item => (
                       <div key={item.id} className="space-y-2">
@@ -452,10 +535,10 @@ const renderIcon = (icon) => {
             </div>
 
             {/* Perks Panel */}
-            <div className="rounded-[24px]">
-              <div className="w-full h-[409px] bg-white rounded-[28px] border border-gray-100 p-6 shadow-sm">
+          
+              <div className=" bg-white w-full  max-h-[409px] max-w-[494px]  rounded-[20px] border border-gray-100 p-5 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-950 mb-5">
-                  Why Buy from <span className="text-[#8A1C24]">ViralPe</span>?
+                  Why Buy from <span className="text-[#901c27]">ViralPe</span>?
                 </h3>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-start gap-3.5">
@@ -469,7 +552,7 @@ const renderIcon = (icon) => {
                   </div>
                   <div className="flex items-start gap-3.5">
                     <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-                      <Zap className="w-5 h-5 stroke-[2]" />
+                      <img src={thunder} />
                     </div>
                     <div>
                       <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">Instant Code Delivery</h4>
@@ -478,7 +561,7 @@ const renderIcon = (icon) => {
                   </div>
                   <div className="flex items-start gap-3.5">
                     <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-                      <Lock className="w-5 h-5 stroke-[2]" />
+                      <img src={lock} />
                     </div>
                     <div>
                       <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">Secure Payments</h4>
@@ -487,7 +570,7 @@ const renderIcon = (icon) => {
                   </div>
                   <div className="flex items-start gap-3.5">
                     <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-                      <Headphones className="w-5 h-5 stroke-[2]" />
+                      <img src={headphone} />
                     </div>
                     <div>
                       <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">24/7 Customer Support</h4>
@@ -514,16 +597,16 @@ const renderIcon = (icon) => {
                   </div>
                 </div>
               </div>
-            </div>
+           
 
           </div>
 
         </div>
 
         {/* Dynamic Carousel Section */}
-        <div className="mt-12 bg-white rounded-[24px] p-6 border border-gray-100 shadow-sm max-w-[1222px] w-full">
+        <div className="mt-12 bg-white rounded-[20px] p-6 border border-gray-100 shadow-sm max-w-[1226px] w-full">
           <div className='flex justify-between items-center mb-6'>
-            <h1 className='text-2xl font-bold text-gray-900'>You May Also Like</h1>
+            <h1 className='md:text-[24px] font-bold text-[#1C1B1B]'>You May Also Like</h1>
             <button className="text-[#901C27] font-semibold flex items-center transition-colors">
               View More <i className="bi bi-arrow-right"></i>
             </button>
@@ -533,38 +616,42 @@ const renderIcon = (icon) => {
             <button
               onClick={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
               disabled={currentIndex === 0}
-              className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all shrink-0 shadow-sm
+              className={`w-9 h-9 rounded-[20px] border flex items-center justify-center transition-all shrink-0 shadow-sm
                 ${currentIndex === 0 ? "border-gray-100 text-gray-300 cursor-not-allowed bg-gray-50/50" : "border-gray-200 text-gray-600 bg-white hover:bg-gray-50"}`}
             >
               <ChevronLeft size={18} />
             </button>
 
             <div className="max-w-[1197px] w-full overflow-hidden px-0.5 py-1">
-              <div
-                className="flex flex-row gap-4 transition-transform duration-300 ease-out"
-                style={{ transform: `translateX(-${currentIndex * (217 + 16)}px)` }}
-              >
-                {voucherData.map((voucher) => (
-                  <div
-                    key={voucher.id}
-                    className="bg-white rounded-3xl border border-gray-100/70 pt-6 p-4 shadow-sm hover:shadow-md transition-all flex flex-col items-center relative h-[204px] w-[217px] shrink-0"
-                  >
-                    {!voucher.noHeaderTag && (
-                      <div className={`absolute top-0 left-0 text-[10px] font-bold px-3 py-1 rounded-br-xl rounded-tl-2xl shadow-xs tracking-tight
-                        ${voucher.isPromo ? 'bg-[#EBF3FF] text-blue-700 border-b border-r border-blue-100' : 'bg-[#EAFDF3] text-[#149B52]'}`}
-                      >
-                        {voucher.tag}
-                      </div>
-                    )}
-                    <div className="flex items-center justify-center my-auto">
-                      <img src={voucher.logo} alt={voucher.brand} className="h-[73.69px] w-[85.48px] object-contain" />
-                    </div>
-                    <h3 className="text-[15px] font-bold text-gray-900 mt-[7.72px]">{voucher.brand}</h3>
-                    <p className="text-[11px] font-medium text-gray-400">Price: ₹{voucher.price}</p>
-                    <div className="w-full border-t border-dashed border-gray-100 my-1 mt-[13.7px]" />
-                  </div>
-                ))}
-              </div>
+             <div
+  // 1. Added custom CSS variables to handle the distance: 
+  // Mobile distance = 166px (150+16). Medium distance = 233px (217+16).npm
+  className="flex flex-row gap-4 transition-transform duration-300 ease-out [--slide-dist:166px] md:[--slide-dist:233px]"
+  // 2. Used CSS calc() so the transform automatically adapts to the screen size variable
+  style={{ transform: `translateX(calc(${currentIndex * -1} * var(--slide-dist)))` }}
+>
+  {voucherData.map((voucher) => (
+    <div
+      key={voucher.id}
+      // 3. Added mobile dimensions (w-[150px] h-[190px]), and prefixed your original sizes with md:
+      className="rounded-[20px] border border-gray-100/70 pt-6 p-4 shadow-sm hover:shadow-md transition-all flex flex-col items-center relative h-[150px] md:h-[204px] w-[150px] md:w-[217px] shrink-0"
+    >
+      {!voucher.noHeaderTag && (
+        <div className={`absolute top-0 left-0 text-[10px] font-bold px-3 py-1 rounded-br-xl rounded-tl-2xl shadow-xs tracking-tight
+          ${voucher.isPromo ? 'bg-[#EBF3FF] text-blue-700 border-b border-r border-blue-100' : 'bg-[#EAFDF3] text-[#149B52]'}`}
+        >
+          {voucher.tag}
+        </div>
+      )}
+      <div className="flex items-center justify-center my-auto">
+        <img src={voucher.logo} alt={voucher.brand} className="h-[60px] w-[70px] md:h-[73.69px] md:w-[85.48px] object-contain" />
+      </div>
+      <h3 className="text-[13px] md:text-[15px] font-bold text-gray-900 mt-[7.72px]">{voucher.brand}</h3>
+      <p className="text-[10px] md:text-[11px] font-medium text-gray-400">Price: ₹{voucher.price}</p>
+      <div className="w-full border-t border-dashed border-gray-100 my-1 mt-[10px] md:mt-[13.7px]" />
+    </div>
+  ))}
+</div>
             </div>
 
             <button
@@ -579,59 +666,20 @@ const renderIcon = (icon) => {
         </div>
 
         {/* Global Banner Strip */}
-        <div className="max-w-[1210px] mt-4 max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto  gap-6">
-            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 ">
-                {features.map((feature) => (
-
-                    <div key={feature.id} className="flex items-center gap-4 min-w-0 ">
-                        {/* Icon Box */}
-                        <div className="flex h-11.75 w-11.75 flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
-                            {renderIcon(feature.icon)}
-                        </div>
-
-                        {/* Text */}
-                        <div className="flex flex-col justify-center">
-                            <h3 className="text-[16px]  font-semibold text-[#901c27] ">
-                                {feature.title}
-                            </h3>
-
-                            {feature.isRating ? (
-                                <div className="mt-1 flex items-center gap-1">
-                                    {[...Array(5)].map((_, index) => (
-                                        <svg
-                                            key={index}
-                                            className="h-4 w-4 fill-current text-yellow-400"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                        </svg>
-                                    ))}
-
-                                    <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
-                                        {feature.description}
-                                    </span>
-                                </div>
-                            ) : (
-                                <p className="mt-1 text-sm ">
-                                    {feature.description}
-                                </p>
-                            )}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
+        <div className='mt-6'>
+                       <FeatureBanner cards={FeatureBannerCard} />
+                   </div>
 
       </div>
 
       {/* --- POPUP MODAL MULTI-STAGE CONTAINER --- */}
       {popupStage !== null && (
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4 antialiased text-slate-800 overflow-y-auto">
-          
+
           {/* POPUP STAGE: BILLING CHANNELS DETAIL PANEL */}
           {popupStage === 'payment' && (
             <div className="w-full max-w-4xl bg-[#faf8f7] rounded-3xl p-8 relative shadow-2xl my-8">
-              <button 
+              <button
                 onClick={() => setPopupStage(null)}
                 className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
               >
@@ -649,27 +697,24 @@ const renderIcon = (icon) => {
                   <p className="text-xs text-gray-400 mt-0.5">Choose your preferred payment method</p>
 
                   <div className="flex gap-8 mt-6 border-b border-gray-100 pb-3">
-                    <button 
+                    <button
                       onClick={() => setActiveTab('card')}
-                      className={`flex items-center gap-2 text-xs font-medium pb-3 -mb-[13px] border-b-2 transition-all ${
-                        activeTab === 'card' ? 'border-[#800a1d] text-[#800a1d]' : 'border-transparent text-gray-400 hover:text-gray-600'
-                      }`}
+                      className={`flex items-center gap-2 text-xs font-medium pb-3 -mb-[13px] border-b-2 transition-all ${activeTab === 'card' ? 'border-[#800a1d] text-[#800a1d]' : 'border-transparent text-gray-400 hover:text-gray-600'
+                        }`}
                     >
                       <CreditCard className="w-4 h-4" /> Card
                     </button>
-                    <button 
+                    <button
                       onClick={() => setActiveTab('wallet')}
-                      className={`flex items-center gap-2 text-xs font-medium pb-3 -mb-[13px] border-b-2 transition-all ${
-                        activeTab === 'wallet' ? 'border-[#800a1d] text-[#800a1d]' : 'border-transparent text-gray-400 hover:text-gray-600'
-                      }`}
+                      className={`flex items-center gap-2 text-xs font-medium pb-3 -mb-[13px] border-b-2 transition-all ${activeTab === 'wallet' ? 'border-[#800a1d] text-[#800a1d]' : 'border-transparent text-gray-400 hover:text-gray-600'
+                        }`}
                     >
                       <Wallet className="w-4 h-4" /> Wallet
                     </button>
-                    <button 
+                    <button
                       onClick={() => setActiveTab('bank')}
-                      className={`flex items-center gap-2 text-xs font-medium pb-3 -mb-[13px] border-b-2 transition-all ${
-                        activeTab === 'bank' ? 'border-[#800a1d] text-[#800a1d]' : 'border-transparent text-gray-400 hover:text-gray-600'
-                      }`}
+                      className={`flex items-center gap-2 text-xs font-medium pb-3 -mb-[13px] border-b-2 transition-all ${activeTab === 'bank' ? 'border-[#800a1d] text-[#800a1d]' : 'border-transparent text-gray-400 hover:text-gray-600'
+                        }`}
                     >
                       <Landmark className="w-4 h-4" /> Bank
                     </button>
@@ -680,7 +725,7 @@ const renderIcon = (icon) => {
                       <div>
                         <label className="block text-xs font-medium text-slate-900 mb-1.5">Card Number</label>
                         <div className="relative">
-                          <input 
+                          <input
                             type="text" placeholder="4321 •••• •••• 5678" readOnly
                             className="w-full bg-gray-50/50 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-500 placeholder-gray-400 focus:outline-none select-none cursor-default"
                           />
@@ -690,7 +735,7 @@ const renderIcon = (icon) => {
 
                       <div>
                         <label className="block text-xs font-medium text-slate-900 mb-1.5">Cardholder Name</label>
-                        <input 
+                        <input
                           type="text" placeholder="John Doe" readOnly
                           className="w-full bg-gray-50/50 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-500 placeholder-gray-400 focus:outline-none select-none cursor-default"
                         />
@@ -699,14 +744,14 @@ const renderIcon = (icon) => {
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-xs font-medium text-slate-900 mb-1.5">Expiry Date</label>
-                          <input 
+                          <input
                             type="text" placeholder="12/28" readOnly
                             className="w-full bg-gray-50/50 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-500 placeholder-gray-400 focus:outline-none select-none cursor-default"
                           />
                         </div>
                         <div>
                           <label className="block text-xs font-medium text-slate-900 mb-1.5">CVV</label>
-                          <input 
+                          <input
                             type="password" placeholder="•••" readOnly
                             className="w-full bg-gray-50/50 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-500 placeholder-gray-400 focus:outline-none select-none cursor-default"
                           />
@@ -714,7 +759,7 @@ const renderIcon = (icon) => {
                       </div>
 
                       {/* Simple instant trigger click switch button */}
-                      <button 
+                      <button
                         onClick={() => setPopupStage('success')}
                         className="w-full bg-[#800a1d] hover:bg-[#6b0818] text-white font-medium rounded-xl py-3 text-sm mt-4 transition-colors shadow-sm"
                       >
@@ -726,7 +771,7 @@ const renderIcon = (icon) => {
                   {activeTab !== 'card' && (
                     <div className="h-48 flex flex-col items-center justify-center gap-4 text-sm text-gray-400 italic">
                       <div>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} payment gateway selected.</div>
-                      <button 
+                      <button
                         onClick={() => setPopupStage('success')}
                         className="not-italic bg-[#800a1d] text-white px-6 py-2 rounded-lg text-xs font-medium hover:bg-[#6b0818] transition-colors"
                       >
@@ -785,8 +830,8 @@ const renderIcon = (icon) => {
           {/* POPUP STAGE: TRANSACTION COMPLETION SUCCESS DIALOG CARD */}
           {popupStage === 'success' && (
             <div className="w-full max-w-[426px] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col pb-8 relative my-8 animate-fadeIn animate-duration-200">
-              
-              <button 
+
+              <button
                 onClick={() => setPopupStage(null)}
                 className="absolute top-4 right-4 z-10 text-gray-400 hover:text-gray-600 bg-white/80 backdrop-blur-xs rounded-full p-1 transition-colors"
               >
@@ -811,7 +856,7 @@ const renderIcon = (icon) => {
 
               <div className="max-h-[260px] max-w-[384px] mt-6 mx-auto bg-[#fff0f2] rounded-[17.37px] p-5 border border-[#ffe0e4] flex flex-col items-center relative overflow-hidden w-[90%]">
                 <div className="w-full flex justify-center items-center h-20 relative mb-2">
-                  <img src={Gift} alt="Gift Reward" className="max-h-[82px] max-w-[131px] object-contain"/>
+                  <img src={Gift} alt="Gift Reward" className="max-h-[82px] max-w-[131px] object-contain" />
                 </div>
 
                 <h3 className="text-[17px] font-bold text-gray-800 text-center">
@@ -843,13 +888,13 @@ const renderIcon = (icon) => {
               </div>
 
               <div className="flex items-center gap-4 px-5 mt-8">
-                <button 
+                <button
                   onClick={() => setPopupStage(null)}
                   className="flex-1 py-3 rounded-xl border border-gray-200 text-gray-700 font-bold text-[14px] hover:bg-gray-50 transition-colors cursor-pointer text-center"
                 >
                   Back to Home
                 </button>
-                <button 
+                <button
                   onClick={() => { setPopupStage(null); navigate("/orders"); }}
                   className="flex-1 py-3 rounded-xl bg-[#800d1e] text-white font-bold text-[14px] hover:opacity-90 transition-opacity cursor-pointer text-center"
                 >

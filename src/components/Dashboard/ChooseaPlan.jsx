@@ -7,14 +7,16 @@ import Frame_1 from "../../../public/images/Frame_1.png";
 import Frame_2 from "../../../public/images/Frame_2.png";
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
-import thunder from "../../../public/images/thunder.png";
+import thunder from "../../../public/images/thunder.svg";
 import wallet from "../../../public/images/wallet1.svg";
 import Greenthunder from "../../../public/images/greenthunder.svg";
 import Greentick from "../../../public/images/greenTick.svg";
 import discount from "../../../public/images/discount.svg";
-import lock from "../../../public/images/lock.png"
+import lock from "../../../public/images/lock.svg"
 import { ArrowRight } from "lucide-react";
 import FeatureBanner from './FeatureBanner';
+import { FeatureBannerCard } from "../../data/Dashboard";
+
 
 // Mock Data for Recharge Plans
 const plansData = [
@@ -144,11 +146,11 @@ export default function PrepaidRechargeSection() {
         <div>
             <div className="min-h-screen  p-4 md:p-8 font-sans antialiased text-gray-800">
 
-                <div className="max-w-[1217px] mx-auto flex flex-col md:flex-row justify-between">
+                <div className="max-w-[1217px]  gap-3 mx-auto flex flex-col md:flex-row justify-between">
 
 
                     {/* LEFT & CENTER: Main Selection Panel */}
-                    <div className="lg:col-span-2 ">
+                    <div className="w-full ">
 
                         {/* Main Container Card */}
                         <div className=" bg-white rounded-2xl p-6 shadow-sm border border-gray-100 max-w-full max-h-full lg:w-[837px] lg:h-[1027px]">
@@ -417,7 +419,7 @@ export default function PrepaidRechargeSection() {
                 </div>
 
                 {/* SECTION 3: Operators & App Banner (FIXED GRID HERE) */}
-                <div className="flex mt-[32px]  gap-6 max-w-[1217px] justify-between mx-auto">
+                <div className="flex flex-col md:flex-row  mt-[32px]  gap-6 max-w-[1217px] justify-between mx-auto">
 
                     {/* Network Operators List (Fixed Width & Height removed) */}
                     <div className="lg:col-span-2 max-w-[752px] bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
@@ -443,57 +445,68 @@ export default function PrepaidRechargeSection() {
                     </div>
 
                     {/* Marketing Banner (Fixed w-110, ml-32, h-66 completely removed to make it fit properly) */}
-                    <div className="relative bg-[#FFEDEE] w-full max-w-[433px] rounded-2xl flex flex-row  overflow-hidden shadow-sm border border-rose-100  ">
+                    <div className="max-w-[457px] p-3 w-full max-h-[226px] bg-[#FFEDEE] rounded-[20px] flex flex-row relative overflow-hidden shrink-0 shadow-sm mx-auto lg:mx-0">
                         {/* --- Left Text Content --- */}
-                        <div className="flex flex-col justify-center py-6 pl-7 z-10 w-3/5">
-                            <h2 className="font-bold text-[24px] sm:text-[26px] leading-[1.2] text-[#222222] mb-2">
+                        <div className="flex flex-col z-10 w-[240px]">
+                            <h2 className="font-bold text-xl text-[20px] md:text-[28px] leading-[1.2] text-[#222222] mb-3">
                                 Recharge or Pay<br />Mobile Bill
                             </h2>
 
-                            <p className="text-[13px] leading-[1.4] text-gray-600 mb-5 max-w-[180px]">
+                            <p className="text-[12px] md:text-[16px] leading-[1.4] text-gray-700 max-w-[180px]">
                                 Collective earnings from our user community
                             </p>
 
-                            <div className="space-y-2">
-                                <button className="rounded-lg py-[8px] px-[12px] flex items-center gap-[6px] bg-[#6F0014] text-white hover:bg-[#52010f] transition-colors shadow-sm w-fit cursor-pointer text-[12px] font-medium">
-                                    <span>Download ViralPe App</span>
-                                    <img src={playstoreicon} alt="Play Store" className="w-[14px] h-[14px] object-contain" />
+                            <div className='flex flex-col gap-2 mt-1'>
+                                <button className="rounded-lg py-[8px] px-[5px] flex flex-row items-center gap-[6px] text-white bg-[#721c22] transition-colors shadow-sm max-w-[140px] md:max-w-[173px] max-h-[30px] w-full">
+                                    <span className="text-[10px] md:text-[12px] font-medium leading-none mt-[1px]">Download ViralPe App</span>
+                                    <div className="flex flex-row items-center gap-[4px]">
+                                        <img src={playstoreicon} alt="Play Store" className="w-[14px] h-[14px] object-contain" />
+                                    </div>
                                 </button>
-                                <button className="rounded-lg py-[8px] px-[12px] flex items-center gap-[6px] bg-[#6F0014] text-white hover:bg-[#52010f] transition-colors shadow-sm w-fit cursor-pointer text-[12px] font-medium">
-                                    <span>Download ViralPe App</span>
-                                    <img src={Appleicon} alt="Apple" className="w-[14px] h-[14px] object-contain" />
+                                <button className="rounded-lg py-[10px] px-[5px] flex flex-row items-center gap-[6px] text-white bg-[#721c22] transition-colors shadow-sm max-w-[140px] md:max-w-[173px] max-h-[30px] w-full">
+                                    <span className="text-[10px] md:text-[12px] font-medium leading-none mt-[1px]">Download ViralPe App</span>
+                                    <div className="flex flex-row items-center gap-[4px]">
+                                        <img src={Appleicon} alt="Apple" className="w-[14px] h-[14px] object-contain pb-[1px]" />
+                                    </div>
                                 </button>
                             </div>
                         </div>
 
-                        {/* --- Right Frame/Mockup Side --- */}
-                        <div className="w-2/5 relative ">
-                            {/* Mobile Outer Wrapper */}
-                            <div className="absolute top-[60px] right-4 w-[180px] h-[354px] bg-white rounded-t-[25.2px] border-[6.3px] border-[#222222] z-0 flex flex-col items-center pt-[30px] shadow-sm">
+                        <div className="relative flex items-start">
+                            {/* Mobile Card */}
+                            <div className="w-[160px] md:w-[180px] h-[300px] md:h-[353.67px]  md:mr-[25px] bg-white rounded-[25.2px] border-[6.3px] border-[#222222] flex flex-col items-center mt-[40px] shadow-sm relative shrink-0">
                                 <img
                                     src="/images/logoname.png"
                                     alt="ViralPe Logo"
-                                    className="w-[90px] h-auto object-contain"
+                                    className="object-contain mt-4"
                                 />
                             </div>
-                            <img
-                                src={Frame_1}
-                                alt="Frame_1"
-                                className="absolute top-[135px] right-1 h-[31px] max-w-[222px] h-auto object-contain z-10 drop-shadow-md"
-                            />
-                            <img
-                                src={Frame_2}
-                                alt="Frame_2"
-                                className="absolute top-[170px] right-1 h-[31px] max-w-[222px] h-auto object-contain z-10 drop-shadow-md"
-                            />
+
+                            {/* Text Boxes */}
+                            {/* FIX 5: Changed syntax error `left-[px]` to `left-2 md:left-[10px]` */}
+                            <div className="flex flex-col gap-2 absolute md:-left-4 md:right-2   md:right-[10px] mt-[120px]">
+                                {/* Top Text Box */}
+                                <div className="bg-white w-[160px] md:w-[222px] h-[31px] rounded-[4px] flex items-center justify-center shadow-sm">
+                                    <h1 className="text-[9px] md:text-[10px] text-[#222222CC] truncate px-1">
+                                        Collective earnings from our user community
+                                    </h1>
+                                </div>
+
+                                {/* Bottom Text Box */}
+                                <div className="bg-white w-[160px] md:w-[222px] h-[31px] rounded-[4px] flex items-center justify-center shadow-sm">
+                                    <h1 className="text-[9px] md:text-[10px] text-[#222222CC] truncate px-1">
+                                        Earn cashback on every recharge & bill payment
+                                    </h1>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-            <FeatureBanner/>
 
 
             </div>
+            <FeatureBanner cards={FeatureBannerCard} />
 
 
         </div>

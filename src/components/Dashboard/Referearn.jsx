@@ -103,32 +103,32 @@ export default function ReferAndEarnFlex() {
       <div className="w-[1217px] max-w-full mx-auto flex flex-col lg:flex-row justify-between items-start gap-6 px-4 xl:px-0">
 
         {/* LEFT COLUMN (Strict Width: 721px) */}
-        <div className="flex flex-col gap-6 w-full lg:w-[721px] flex-shrink-0 relative">
+        <div className="flex flex-col gap-6 w-full   relative">
 
           {/* 1. Hero Banner */}
-          <div className="w-full lg:w-[721px] h-[418px] bg-white rounded-[24px] border border-[#EAEAEA] p-8 flex flex-col justify-between">
+          <div className="w-full  max-h-[350px] md:max-w-[721px] md:max-h-[418px] bg-white rounded-[24px] border border-[#EAEAEA] md:p-8 p-5  flex flex-col justify-between">
 
             {/* Top Section */}
             <div className="flex justify-between items-center h-[250px]">
 
               {/* Left Content */}
-              <div className="max-w-[333px]">
-                <p className="text-[14px] font-semibold text-[#1C1B1BCC]">
+              <div className="max-w-[250px] md:max-w-[333px]">
+                <p className="md:text-[14px] text-[12px] font-semibold text-[#1C1B1BCC]">
                   Refer & Earn with ViralPe
                 </p>
 
-                <h1 className="text-[24px] font-extrabold leading-[1.4]">
+                <h1 className=" md:text-[24px] font-extrabold leading-[1.4]">
                   Refer Your Friends &
                   <br />
                   Earn <span className="text-[#901C27]">Exciting Rewards!</span>
                 </h1>
 
-                <p className="text-[13px] text-[#1C1B1BCC] leading-7">
+                <p className="md:text-[13px] text-[#1C1B1BCC] md:leading-7">
                   Your friends get a great experience and you earn
                   cashback successful referral.
                 </p>
 
-                <button className="mt-5 bg-[#901C27] text-white px-8 h-[48px] rounded-xl flex items-center gap-3">
+                <button className="mt-5 bg-[#901C27] text-white px-8  h-[30px] md:h-[48px] rounded-xl flex items-center gap-3">
                   <Share2 size={18} />
                   Refer Now
                 </button>

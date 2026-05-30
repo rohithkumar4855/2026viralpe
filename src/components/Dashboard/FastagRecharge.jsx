@@ -4,7 +4,7 @@ import Axis from "../../../public/images/axis.svg";
 import Bajaj from "../../../public/images/bajaj.svg";
 import icic from "../../../public/images/iciclogo.svg";
 import idfc from "../../../public/images/idfclogo.svg";
-import Thunder from "../../../public/images/thunder.png"
+import Thunder from "../../../public/images/thunder.svg"
 import discount from "../../../public/images/discount.svg"
 import Wallet from "../../../public/images/wallet2.svg"
 import lock from "../../../public/images/lock.png"

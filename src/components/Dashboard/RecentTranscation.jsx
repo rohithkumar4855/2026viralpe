@@ -1,7 +1,7 @@
 import React from 'react';
-import { transactionData, referralData } from  "../../data/Dashboard" 
-import googlestore from  "../../../public/images/googleplayicon.png"
-import applestore from  "../../../public/images/applestoreicon.svg"
+import { transactionData, referralData } from "../../data/Dashboard"
+import googlestore from "../../../public/images/googleplayicon.png"
+import applestore from "../../../public/images/applestoreicon.svg"
 
 
 // --- LEFT SIDE COMPONENTS ---
@@ -27,14 +27,14 @@ const TransactionItem = ({ logoUrl, title, date, amount, isPositive, status }) =
 );
 
 const RecentTransactions = ({ transactions }) => (
-  <div className="  max-w-[761px] max-h-[445px] bg-white rounded-xl p-6 shadow-sm  rounded-[20px] h-full">
+  <div className=" max-w-[761px] max-h-[445px] bg-white rounded-xl p-6 shadow-sm  rounded-[20px] h-full overflow-y-hidden overflow-y-scroll">
     <div className="flex justify-between items-center mb-2">
-      <h2 className="text-[24px] font-semibold text-[#1C1B1B]">Recent Transactions</h2>
+      <h2 className="text-[20px] md:text-[24px] font-semibold text-[#1C1B1B]">Recent Transactions</h2>
       <button className="text-red-800 font-semibold text-sm ">
         View All
       </button>
     </div>
-    <div className="flex flex-col">
+    <div className="flex flex-col text-[10px] md: text-[18px] ">
       {transactions.map((tx) => (
         <TransactionItem key={tx.id} {...tx} />
       ))}
@@ -62,14 +62,14 @@ const ReferAndEarn = ({ data }) => {
         <p className="text-[16px] max-w-[180px] leading-relaxed text-(--white)">
           Earn <span className="font-bold">₹{data.bonusAmount}</span> for every friend who joins ViralPe
         </p>
-        
+
         {/* Overlapping Avatars */}
         <div className="flex items-center">
           {data.avatars.map((src, index) => (
-            <img 
+            <img
               key={index}
-              src={src} 
-              alt="Friend avatar" 
+              src={src}
+              alt="Friend avatar"
               className={`w-13 h-13 rounded-full border-2 border-[#8c1822] object-cover ${index !== 0 ? '-ml-3' : ''}`}
               style={{ zIndex: 10 - index }}
             />
@@ -102,15 +102,15 @@ const DownloadApp = () => {
     <div className="bg-white  max-w-[417px] rounded-[20px] p-6 shadow-sm">
       <h2 className="text-[24px] font-semibold text-[#1C1B1B] mb-1">Download ViralPe App</h2>
       <p className="text-[16px] text-[#1C1B1BB2] mb-5">Get the full experience on your mobile app</p>
-      
+
       <div className="flex gap-[26.38px]">
         <button className="flex-1 bg-(--primary-red) text-white rounded-lg p-2 max-w-[119px] max-h-[40px] flex items-center ">
-         <img src={googlestore}/>
-          
+          <img src={googlestore} />
+
         </button>
 
         <button className="flex-1 bg-(--primary-red) text-white rounded-lg p-2 max-w-[119px] max-h-[40px] flex items-center ">
-          <img src={applestore}/>
+          <img src={applestore} />
         </button>
       </div>
     </div>
@@ -124,18 +124,18 @@ export default function Dashboard() {
   return (
     <div className=" p-4 md:p-8 flex justify-center">
       <div className=" w-full max-w-[1215px] flex flex-col lg:flex-row gap-6 items-stretch">
-        
+
         <div className=" flex-1 min-w-0">
           {/* Using imported transactionData */}
           <RecentTransactions transactions={transactionData} />
         </div>
 
-        <div className="w-full lg:w-[400px] flex flex-col gap-6">
+        <div className="w-full lg:w-[400px] flex flex-col gap-6 overflow-hidden">
           {/* Using imported referralData */}
           <ReferAndEarn data={referralData} />
           <DownloadApp />
         </div>
-        
+
       </div>
     </div>
   );

@@ -55,8 +55,8 @@ export default function Heropage() {
 
     return (
         <section>
-            <div className="max-w-301.75 mt-10 mx-auto flex flex-col lg:flex-row gap-4 lg:gap-7.75 px-4 lg:px-0 items-center lg:items-stretch">
-                <div className="flex flex-col gap-4 mt-15 md:mt-0 bg-white rounded-2xl w-full lg:max-w-181 h-auto md:min-h-[264px] p-5 sm:p-[27.28px] shadow-sm relative overflow-hidden">
+            <div className="max-w-301.75 mx-auto mt-15 flex flex-col lg:flex-row gap-4 lg:gap-7.75 px-4 lg:px-0 items-center lg:items-stretch">
+                <div className="flex flex-col gap-4  md:mt-0 bg-white rounded-2xl w-full lg:max-w-181 h-auto md:min-h-[264px] p-5 sm:p-[27.28px] shadow-sm relative overflow-hidden">
 
                     {/* Default View: Show 4 Icons */}
                     {activeTab === null && (
@@ -82,7 +82,7 @@ export default function Heropage() {
                                         <img
                                             src={item.icon}
                                             alt={item.alt}
-                                            className="object-contain mb-2 w-10 h-10 sm:w-auto sm:h-auto"
+                                            className="object-contain mb-2 "
                                         />
                                         <p className="text-[12px] sm:text-sm font-medium flex flex-col items-center text-gray-800 leading-tight text-center">
                                             <span>{item.title.split(" ")[0]}</span>

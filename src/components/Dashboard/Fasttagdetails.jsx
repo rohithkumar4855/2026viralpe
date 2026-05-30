@@ -11,7 +11,7 @@ import Wallet from "../../../public/images/wallet.svg"
 import lock from "../../../public/images/lock.png"
 import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
-import Thunder from "../../../public/images/thunder.png"
+import Thunder from "../../../public/images/thunder.svg"
 import greentick from "../../../public/images/greenTick.svg"
 import greenthunder from "../../../public/images/greenthunder.svg"
 import FeatureBanner from "../Dashboard/FeatureBanner";

@@ -11,7 +11,7 @@ const renderIcon = (icon) => (
 export default function FeatureBanner({ cards = [] }) {
 
   return (
-    <div className="max-w-[1210px] md:max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto gap-6">
+    <div className="md:max-w-[1210px] w-full h-full  md:max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-6 md:px-8 lg:px-16 mx-auto gap-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6">
         {cards.map((feature) => (
           <div key={feature.id} className="flex items-center gap-4 min-w-0">

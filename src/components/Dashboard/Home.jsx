@@ -32,21 +32,23 @@ const WalletandEarnings = ({ icon, title, amount}) => {
 
 export default function Home() {
     return (
-        <div className="w-full max-w-[1217px] max-h-[240px] mx-auto mt-[32px]   bg-white rounded-[20px] p-8 md:p-8 shadow-sm border border-gray-100">
-            <div className="mb-6">
-                <h1 className="text-[24px] font-semibold">Wallet & Earnings</h1>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-4 ">
-                {WalletandEarningsCard.map((item) => (
-                    <WalletandEarnings
-                        key={item.id}
-                        icon={item.icon}
-                        title={item.title}
-                        amount={item.amount}
-                        subtitle={item.subtitle}
-                    />
-                ))}
-            </div>
-        </div>
+        <div className="w-full md:max-w-[1217px] mx-auto mt-[32px] bg-white rounded-[20px] p-5 sm:p-8 shadow-sm border border-gray-100">
+    <div className="mb-6">
+        <h1 className="text-[20px] sm:text-[24px] font-semibold text-gray-900">Wallet & Earnings</h1>
+    </div>
+    
+    {/* Clean, fluid grid layout switching seamlessly from mobile stack up to 6 wide on big desktop monitors */}
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {WalletandEarningsCard.map((item) => (
+            <WalletandEarnings
+                key={item.id}
+                icon={item.icon}
+                title={item.title}
+                amount={item.amount}
+                subtitle={item.subtitle}
+            />
+        ))}
+    </div>
+</div>
     );
 }
