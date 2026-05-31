@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import jio from "/images/jio.svg"
 import airtel from "/images/airtel.svg"
-import Vi from "../../../public/images/Vi.svg";
+import Vi from "../../../public/images/vi.svg";
 import Bsnl from "../../../public/images/bsnl.svg"
 import tata from "../../../public/images/tataicon.svg"
-import Frame_1 from "../../../public/images/Frame_1.png";
-import Frame_2 from "../../../public/images/Frame_2.png";
+
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
 import thunder from "../../../public/images/thunder.svg";
@@ -19,7 +18,7 @@ import gift from "../../../public/images/gift.svg";
 import headphones from "../../../public/images/headphones.png";
 import sundirect from "../../../public/images/sundirecticon.svg";
 import { ArrowRight } from "lucide-react";
-import FeatureBanner from '../Dashboard/FeatureBanner';
+import FeatureBanner from './FeatureBanner';
 import { FeatureBannerCard } from "../../data/Dashboard";
 
 // Mock Data for Recharge Plans

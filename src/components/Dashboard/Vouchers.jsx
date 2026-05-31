@@ -5,7 +5,7 @@ import StarBucks from "/images/starbucks.png"
 import Nike from "/images/nike.png"
 import Trends from "/images/trends.svg"
 import { useNavigate } from 'react-router-dom';
-import FeatureBanner from '../Dashboard/FeatureBanner';
+import FeatureBanner from './FeatureBanner';
 import { FeatureBannerCard } from "../../data/Dashboard";
 import ticketicon from "/images/ticketicon.svg";
 import cart from "/images/cart.svg";

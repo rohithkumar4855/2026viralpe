@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import jio from "/images/jio.svg"
 import airtel from "/images/airtel.svg"
-import Vi from "../../../public/images/Vi.svg";
+import Vi from "../../../public/images/vi.svg";
 import Bsnl from "../../../public/images/bsnl.svg"
-import Frame_1 from "../../../public/images/Frame_1.png";
-import Frame_2 from "../../../public/images/Frame_2.png";
+
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
 import thunder from "../../../public/images/thunder.svg";

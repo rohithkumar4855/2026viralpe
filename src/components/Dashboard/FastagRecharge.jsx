@@ -10,7 +10,7 @@ import Wallet from "../../../public/images/wallet2.svg"
 import lock from "../../../public/images/lock.png"
 import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
-import FeatureBanner from "../Dashboard/FeatureBanner";
+import FeatureBanner from "./FeatureBanner";
 import { FeatureBannerCard2 } from "../../data/Dashboard";
 // Mock Data for Banks List
 const banksData = [

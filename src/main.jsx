@@ -3,8 +3,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, useLocation } from 'react-router-dom'
 
-import Navbar from './layout/Navbar.jsx'
-import Footer from './layout/Footer.jsx'
+import Navbar from './layout/Navbar'
+import Footer from './layout/Footer'
 import Container from './layout/Container.jsx'
 
 import './globals.css'
@@ -18,8 +18,8 @@ function Layout({ children }) {
     <Container>
       {!isAuthRoute && <Navbar />}
       
-      <main className={`w-full min-h-screen flex flex-col overflow-x-hidden ${!isAuthRoute ? "pt-8" : ""}`}>
-        {children} 
+      <main className={`w-full min-h-screen flex flex-col overflow-x-hidden ${!isAuthRoute ? "pt-[100px]" : " "}`}>
+        {children}
       </main>
       
       {!isAuthRoute && <Footer />}

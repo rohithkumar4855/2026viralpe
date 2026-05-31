@@ -9,7 +9,7 @@ import coins from "../../../public/images/coins1.svg"
 import bonus from "../../../public/images/bonus.svg";
 import cashback from "../../../public/images/cash2.svg"
 import circular from "../../../public/images/circular.svg";
-import FeatureBanner from "../Dashboard/FeatureBanner";
+import FeatureBanner from "./FeatureBanner";
 import { FeatureBannerCard3 } from "../../data/Dashboard";
 import {
   Wallet,

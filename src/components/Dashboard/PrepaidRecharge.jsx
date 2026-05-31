@@ -7,13 +7,11 @@ import Wallet from "../../../public/images/wallet2.svg"
 import lock from "../../../public/images/lock.svg"
 import Vi from "../../../public/images/vi.svg";
 import Bsnl from "../../../public/images/bsnl.svg"
-import Frame_1 from "../../../public/images/Frame_1.png";
-import Frame_2 from "../../../public/images/Frame_2.png";
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import FeatureBanner from '../Dashboard/FeatureBanner';
+import FeatureBanner from './FeatureBanner';
 
 import { FeatureBannerCard } from "../../data/Dashboard";
 

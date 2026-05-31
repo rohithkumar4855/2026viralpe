@@ -33,7 +33,7 @@ import lock from "../../../public/images/lock.svg";
 import Gift from "../../../public/images/gift.svg";
 import success from "../../../public/images/success.svg";
 import headphone from "../../../public/images/headphone.svg"
-import FeatureBanner from '../Dashboard/FeatureBanner';
+import FeatureBanner from './FeatureBanner';
 import { FeatureBannerCard } from "../../data/Dashboard";
 
 export default function CashbackCardList() {

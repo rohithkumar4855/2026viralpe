@@ -14,7 +14,7 @@ import headphones from "../../../public/images/earphones.svg"
 import Thunder from "../../../public/images/thunder.svg"
 import greentick from "../../../public/images/greenTick.svg"
 import greenthunder from "../../../public/images/greenthunder.svg"
-import FeatureBanner from "../Dashboard/FeatureBanner";
+import FeatureBanner from "./FeatureBanner";
 import { FeatureBannerCard2 } from "../../data/Dashboard";
 
 const FastagRechargeUI = () => {

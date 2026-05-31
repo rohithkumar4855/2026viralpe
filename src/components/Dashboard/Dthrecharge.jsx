@@ -10,7 +10,7 @@ import sundirect from "../../../public/images/sundirecticon.svg";
 import gift from "../../../public/images/gift.svg";
 import thumbsup from "../../../public/images/thumbsup.svg"
 import { ArrowRight } from "lucide-react";
-import FeatureBanner from '../Dashboard/FeatureBanner';
+import FeatureBanner from './FeatureBanner';
 import { useNavigate } from "react-router-dom";
 import { FeatureBannerCard } from "../../data/Dashboard";
 
