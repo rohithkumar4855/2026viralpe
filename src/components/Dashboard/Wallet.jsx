@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import headphones from "../../../public/images/earphones.svg";
 import chat from "../../../public/images/chat.svg";
-import lock from "../../../public/images/lock.png";
-import gift from "../../../public/images/gift4.svg";
-import wallet from "../../../public/images/wallet1.svg";
-import limit from "../../../public/images/limit.svg";
-import coins from "../../../public/images/coins1.svg";
-import bonus from "../../../public/images/bonus.svg";
-import cashback from "../../../public/images/cash2.svg";
-import circular from "../../../public/images/circular.svg";
 
+import {topTransactionData  , listTransactions,securityFeatures} from "../../data/Dashboard";
 // 1. Import your Modals
 import TransactionDetailsModal from './TransactionDetailsModal';
 // NEW: Import the Postpaid modal (You will need to create this file!)
@@ -26,31 +19,9 @@ import {
 } from 'lucide-react';
 
 // --- DATA ---
-const topTransactionData = [
-    { id: 1, title: 'WALLET BALANCE', amount: '₹ 5,000.00', subtitle: 'Available to Use', icon: wallet },
-    { id: 2, title: 'ZONAL ROYALTY', amount: '₹ 5,000.00', subtitle: 'Total Earned Till Date', icon: wallet },
-    { id: 3, title: 'LIFETIME EARNIN...', amount: '₹ 25,000.00', subtitle: 'Total Earned Till Date', icon: coins },
-    { id: 4, title: 'TOTAL CASHBACK', amount: '₹ 25,000.00', subtitle: 'Total Cashback In This Month', icon: cashback },
-    { id: 5, title: 'REFERRAL BONUS', amount: '₹ 25,000.00', subtitle: 'Pending Claim', icon: bonus },
-    { id: 6, title: 'REVERSAL WALLET', amount: '₹ 25,000.00', subtitle: 'Pending Claim', icon: circular },
-];
 
-const listTransactions = [
-    { id: 1, type: 'Prepaid Recharge', details: 'Airtel Prepaid - 90000 00000', date: '07 May 2026, 10:16 AM', amount: '₹199.00', status: 'Success', iconType: 'out' },
-    { id: 2, type: 'Postpaid Recharge', details: 'Airtel Prepaid - 90000 00000', date: '07 May 2026, 10:16 AM', amount: '₹199.00', status: 'Success', iconType: 'out' },
-    { id: 3, type: 'DTH Recharge', details: 'Tata Play - 14800007', date: '08 May 2026, 11:30 AM', amount: '₹299.00', status: 'Failed', iconType: 'out' },
-    { id: 4, type: 'Referral Bonus', details: 'Referral - Ramesh Kumar', date: '11 May 2026, 09:15 AM', amount: '+ ₹50.00', status: 'Success', iconType: 'in' },
-    { id: 5, type: 'Cashback Received', details: 'For Mobile Recharge', date: '09 May 2026, 02:45 PM', amount: '+ ₹50.00', status: 'Success', iconType: 'in' },
-    { id: 6, type: 'Wallet Topup', details: 'Added from Bank Account', date: '09 May 2026, 10:00 AM', amount: '+ ₹500.00', status: 'Success', iconType: 'in' },
-    { id: 7, type: 'Electricity Bill', details: 'BESCOM - 123456789', date: '10 May 2026, 11:00 AM', amount: '₹1,250.00', status: 'Success', iconType: 'out' }
-];
 
-const securityFeatures = [
-    { id: 1, title: "100% Secure", description: "Your data and earnings are completely safe", icon: lock },
-    { id: 2, title: "No Limits", description: "Refer unlimited friends and earn unlimited rewards", icon: limit },
-    { id: 3, title: "Instant Rewards", description: "Get ₹25 instantly in your wallet", icon: gift },
-    { id: 4, title: "Easy Withdrawals", description: "Withdraw your earnings to bank or wallet anytime", icon: wallet }
-];
+
 
 // --- SUB-COMPONENTS ---
 const CustomCheckbox = ({ label, checked, onChange }) => (
@@ -93,7 +64,7 @@ const TransactionsDashboard = () => {
     };
 
     return (
-        <div className=' bg-[#faf7f7] min-h-screen relative'>
+        <div className='  min-h-screen relative'>
             <div className="w-full flex flex-col items-center pb-8 font-sans gap-6">
 
                 {/* TOP SECTION: TRANSACTION CARDS */}

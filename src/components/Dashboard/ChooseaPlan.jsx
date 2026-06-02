@@ -13,67 +13,10 @@ import Greentick from "../../../public/images/greenTick.svg";
 import discount from "../../../public/images/discount.svg";
 import lock from "../../../public/images/lock.svg"
 import { ArrowRight } from "lucide-react";
+import { PaymentModal } from "./PaymentModal"
 import FeatureBanner from './FeatureBanner';
 import { FeatureBannerCard } from "../../data/Dashboard";
-
-
-// Mock Data for Recharge Plans
-const plansData = [
-    {
-        id: 1,
-        price: 450,
-        badge: 'Popular',
-        cashback: '5% Cashback',
-        validity: '28 Days',
-        data: 'Unlimited',
-        desc: 'Add-On data pack for ULD users; Includes Unlimited Data, 28 days, No SV. Valid on ULD Hero plan T&C Apply',
-    },
-    {
-        id: 2,
-        price: 900,
-        badge: 'Exclusive',
-        cashback: '20% Cashback',
-        validity: '90 Days',
-        data: '200GB',
-        desc: 'Ultimate plan with 200GB data and additional benefits like international calling. Valid on Elite plan T&C Apply',
-    },
-    {
-        id: 3,
-        price: 1000,
-        badge: 'Best Deal',
-        cashback: '20% Cashback',
-        validity: '90 Days',
-        data: '200GB',
-        desc: 'Offers 200GB data valid for 90 days, includes unlimited calls and texts. Valid on Ultimate plan T&C Apply',
-    },
-    {
-        id: 4,
-        price: 500,
-        badge: 'Value Pick',
-        cashback: '10% Cashback',
-        validity: '30 Days',
-        data: '100GB',
-        desc: 'Offers 100GB data valid for 30 days, includes access to select streaming services. Valid on Basic plan T&C Apply',
-    },
-    {
-        id: 5,
-        price: 750,
-        badge: 'Top Choice',
-        cashback: '15% Cashback',
-        validity: '60 Days',
-        data: '150GB',
-        desc: 'Offers 150GB data valid for 60 days, including priority customer service. Valid on Premium plan T&C Apply',
-    },
-    {
-        id: 6,
-        price: 600,
-        badge: 'Best Value',
-        cashback: '10% Cashback',
-        validity: '30 Days',
-        data: '100GB',
-        desc: 'Includes a 100GB data pack with rollover benefits. Valid on SuperSaver plan T&C Apply',
-    },
-];
+import { RecentRecharges, AllNetwork, plansData } from "../../data/Dashboard"
 
 
 const renderIcon = (icon) => {
@@ -85,27 +28,16 @@ const renderIcon = (icon) => {
         />
     );
 };
-const RecentRecharges = [
-    { number: "+91 90000 90000", price: "₹456", icon: airtel },
-    { number: "+91 90000 90000", price: "₹456", icon: airtel },
-    { number: "+91 90000 90000", price: "₹456", icon: jio },
-    { number: "+91 90000 90000", price: "₹456", icon: airtel },
-];
 
-const AllNetwork = [
-    { icon: airtel, name: 'Airtel', cb: '5% Cashback' },
-    { icon: Bsnl, name: 'BSNL', cb: '15% Cashback' },
-    { icon: jio, name: 'Jio', cb: '10% Cashback' },
-    { icon: Vi, name: 'Vi', cb: '20% Cashback' },
-    { icon: Vi, name: 'Vi', cb: '20% Cashback' },
-];
+
+
 const categories = ['Made for You (06)', 'Popular', 'Talktime', '5G Unlimited', '2GB/Day Data', 'Unlimited'];
 
 export default function PrepaidRechargeSection() {
     const [selectedPlan, setSelectedPlan] = useState(plansData[0]);
     const [activeCategory, setActiveCategory] = useState('Made for You (06)');
     const [useWallet, setUseWallet] = useState(false);
-
+    const [popupStage, setPopupStage] = useState(null);
     // Summary Calculations
     const subtotal = selectedPlan ? selectedPlan.price : 0;
     const cashbackAmount = selectedPlan ? Math.round((subtotal * parseInt(selectedPlan.cashback)) / 100) : 0;
@@ -353,7 +285,9 @@ export default function PrepaidRechargeSection() {
                             </div>
 
                             {/* Payment Button */}
-                            <button className="w-full bg-[#901c27]  text-white font-bold py-3 rounded-xl text-sm transition shadow-sm">
+                            <button
+                             onClick={() => setPopupStage('payment')}
+                                className="w-full bg-[#901c27]  text-white font-bold py-3 rounded-xl text-sm transition shadow-sm">
                                 Pay ₹{(subtotal - cashbackAmount).toFixed(2)}
                             </button>
 
@@ -506,6 +440,13 @@ export default function PrepaidRechargeSection() {
 
             </div>
             <FeatureBanner cards={FeatureBannerCard} />
+            <PaymentModal 
+                popupStage={popupStage} 
+                setPopupStage={setPopupStage}
+                totalPrice={subtotal - cashbackAmount}
+                totalSavings={cashbackAmount}
+                categories={[{ title: "Prepaid Recharge" }]} 
+            />
 
 
         </div>

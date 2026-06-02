@@ -20,63 +20,10 @@ import sundirect from "../../../public/images/sundirecticon.svg";
 import { ArrowRight } from "lucide-react";
 import FeatureBanner from './FeatureBanner';
 import { FeatureBannerCard } from "../../data/Dashboard";
-
+import { dthOperators, recentdthRecharges, plansData } from "../../data/Dashboard"
+import { PaymentModal } from "./PaymentModal"
 // Mock Data for Recharge Plans
-const plansData = [
-    {
-        id: 1,
-        price: 299,
-        plan: "HD Value Plus",
-        cashback: "5% Cashback",
-        validity: "28 Days",
-        desc: "Add-On data pack..."
-    },
-    {
-        id: 2,
-        price: 499,
-        plan: "Family Entertainment",
-        cashback: "20% Cashback",
-        validity: "90 Days",
-        desc: "Ultimate plan..."
-    }
-];
 
-const recentRecharges = [
-    {
-        image: tata,
-        name: "Tata Play",
-        id: "149805048",
-        amount: "₹456",
-        daysLeft: "25 Days Left",
-        badgeClass: "text-[#2E7D32] bg-[#E8F5E9]",
-        imageClass: "h-[36px] w-[36px]",
-    },
-    {
-        image: dishtv,
-        name: "DishTV",
-        id: "90809 879988",
-        amount: "₹456",
-        daysLeft: "12 Days Left",
-        badgeClass: "text-[#E65100] bg-[#FFF3E0]",
-        imageClass: "h-[50px] w-[50px]",
-    },
-    {
-        image: sundirect,
-        name: "DishTV", 
-        id: "90809 879988",
-        amount: "₹456",
-        daysLeft: "2 Days Left",
-        badgeClass: "text-[#D32F2F] bg-[#FFEBEE]",
-        imageClass: "h-[46px] w-[46px]",
-    },
-];
-
-const dthOperators = [
-    { type: "tata", logo: tata, label: "Tata Play", cashback: "5% Cashback" },
-    { type: "dish", logo: dishtv, label: "Dish TV", cashback: "5% Cashback" },
-    { type: "airtel", logo: airtel, label: "Airtel Digital TV", cashback: "5% Cashback" },
-    { type: "sun", logo: sundirect, label: "Sun Direct", cashback: "5% Cashback" },
-];
 
 const categories = ['Made for You (06)', 'Popular', 'Monthly', 'Long-validity', 'Add-on Packs '];
 
@@ -84,6 +31,7 @@ export default function PrepaidRechargeSection() {
     const [selectedPlan, setSelectedPlan] = useState(plansData[0]);
     const [activeCategory, setActiveCategory] = useState('Made for You (06)');
     const [useWallet, setUseWallet] = useState(false);
+    const [popupStage, setPopupStage] = useState(null);
 
     const subtotal = selectedPlan ? selectedPlan.price : 0;
     const cashbackAmount = selectedPlan ? Math.round((subtotal * parseInt(selectedPlan.cashback)) / 100) : 0;
@@ -157,7 +105,7 @@ export default function PrepaidRechargeSection() {
                                         className={`whitespace-nowrap px-4 py-1.5 rounded-[12px] text-xs font-semibold tracking-wide border transition ${activeCategory === cat
                                             ? 'bg-[#901c27] border-amber-950 text-white'
                                             : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
-                                        }`}
+                                            }`}
                                     >
                                         {cat}
                                     </button>
@@ -176,7 +124,7 @@ export default function PrepaidRechargeSection() {
                                                 className={`cursor-pointer rounded-2xl p-5 border transition-all flex flex-col justify-between relative w-full sm:w-[calc(50%-8px)] ${isSelected
                                                     ? 'border-red-800 bg-red-50/10 ring-1 ring-[#901C27] hover:bg-[#FFEDEE66]'
                                                     : 'border-gray-200 hover:border-gray-300 bg-white'
-                                                }`}
+                                                    }`}
                                             >
                                                 <div>
                                                     {/* Top Banner Tag */}
@@ -212,7 +160,7 @@ export default function PrepaidRechargeSection() {
                                                     className={`w-full py-2 rounded-xl text-xs font-bold transition ${isSelected
                                                         ? 'bg-white border border-red-800 text-red-800'
                                                         : 'bg-white border border-red-800/30 text-red-800 hover:bg-red-50/50'
-                                                    }`}
+                                                        }`}
                                                 >
                                                     {isSelected ? '✓ Selected' : `Recharge ₹${plan.price}`}
                                                 </button>
@@ -227,7 +175,7 @@ export default function PrepaidRechargeSection() {
                         <div className="w-full bg-white rounded-2xl p-4 sm:p-8 border border-gray-100 shadow-sm">
                             <h2 className="text-xl font-bold mb-6">Recent Recharges</h2>
                             <div className="flex flex-wrap gap-4">
-                                {recentRecharges.map((recharge, index) => (
+                                {recentdthRecharges.map((recharge, index) => (
                                     <div
                                         key={index}
                                         className="border border-gray-100 rounded-2xl p-4 flex flex-col justify-between min-h-[131px] relative hover:shadow-md transition bg-white w-full sm:w-[calc(50%-8px)] md:w-[calc(33.333%-11px)]"
@@ -367,7 +315,10 @@ export default function PrepaidRechargeSection() {
 
                             <div>
                                 {/* Payment Button */}
-                                <button className="w-full bg-[#901c27] text-white font-bold py-3 rounded-xl text-sm transition shadow-sm hover:bg-[#73141e]">
+                                <button
+                                    onClick={() => setPopupStage('payment')}
+
+                                    className="w-full bg-[#901c27] text-white font-bold py-3 rounded-xl text-sm transition shadow-sm hover:bg-[#73141e]">
                                     Pay ₹{(subtotal - cashbackAmount).toFixed(2)}
                                 </button>
 
@@ -428,7 +379,17 @@ export default function PrepaidRechargeSection() {
 
             <div>
                 <FeatureBanner cards={FeatureBannerCard} />
+
             </div>
+             <PaymentModal 
+                            popupStage={popupStage} 
+                            setPopupStage={setPopupStage}
+                            totalPrice={subtotal - cashbackAmount}
+                            totalSavings={cashbackAmount}
+                            categories={[{ title: "Prepaid Recharge" }]} 
+                        />
+            
+            
         </div>
     );
 }

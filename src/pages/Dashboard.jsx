@@ -41,8 +41,7 @@ export default function Dashboard() {
             <ComingSoon />
             <Dthdetails />
             <PrivacyPolicy />
-            <Termsandconditions />
-
+            <Termsandconditions/>
             <RefundPolicy />
         </>
     )

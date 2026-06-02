@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-
+import { faqs } from "../../data/HomeData";
 const FAQSection = () => {
   const [openId, setOpenId] = useState(1);
 
@@ -8,26 +8,7 @@ const FAQSection = () => {
     setOpenId(openId === id ? null : id);
   };
 
-  const faqs = [
-    {
-      id: 1,
-      question: "How do I redeem a voucher?",
-      answer:
-        'Redeeming a voucher typically involves entering a unique code during the checkout process on a retailer\'s website/app, or presenting a QR code/code in-store. For online purchases, locate the "gift card" or "promo code" section at payment, enter the code, and click apply to deduct the amount.',
-    },
-    {
-      id: 2,
-      question: "What if my recharge fails?",
-      answer:
-        "If your recharge fails, the amount will be refunded within 3-5 business days automatically.",
-    },
-    {
-      id: 3,
-      question: "When will I get Cashback?",
-      answer:
-        "Cashback is credited instantly to your wallet after successful transaction.",
-    },
-  ];
+ 
 
   return (
     <div className="w-[95%] lg:w-full max-w-[1206px] mt-6 md:mt-[32px] mx-auto bg-white rounded-[16px] md:rounded-[20px] p-5 sm:p-8 md:p-12 shadow-sm border border-gray-50">

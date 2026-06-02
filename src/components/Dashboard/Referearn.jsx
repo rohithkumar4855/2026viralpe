@@ -1,25 +1,21 @@
 import React from 'react';
-import threepeople from "../../../public/images/threepeople.svg"
-import twopeople from "../../../public/images/twopeople.svg"
+import threepeople from "../../../public/images/Threepeople.svg"
+import twopeople from "../../../public/images/Twopeople.svg"
 import coins from "../../../public/images/coins.svg";
 import friendsicon from "../../../public/images/friends.svg";
-import refericon from "../../../public/images/referlink.svg"
-import twocoinicon from "../../../public/images/twocoins.svg";
+import refericon from "../../../public/images/Referlink.svg"
+import twocoinicon from "../../../public/images/Twocoins.svg";
 import { ArrowRight } from "lucide-react";
-import FeatureBanner from "./FeatureBanner";
+import {myReferrals,topReferrers} from "../../data/Dashboard"
+import FeatureBanner from "../Dashboard/FeatureBanner";
 import { FeatureBannerCard3 } from "../../data/Dashboard";
 
 import {
   Share2,
   Copy,
-  Users,
-  CheckCircle,
-  Wallet,
-  ChevronRight,
   Info,
   ShieldCheck,
   Gift,
-  Clock
 } from 'lucide-react';
 import Refer from "/images/refer.svg";
 import referopenbox from "/images/referopenbox.svg";
@@ -28,21 +24,6 @@ export default function ReferAndEarnFlex() {
   // Mock Data
   const referralCode = "VIRALPE2026";
   const referralLink = "https://viralpe.app.link.Viralpe";
-
-  const myReferrals = [
-    { id: 1, name: "Arun Kumar", phone: "+91 90000 00000", date: "02 May 2026, 10:30 AM", amount: "₹25", status: "Earned" },
-    { id: 2, name: "Bhavna Singh", phone: "+91 91000 11111", date: "03 May 2026, 11:00 AM", amount: "₹15", status: "Pending" },
-    { id: 3, name: "Chirag Mehta", phone: "+91 91200 22222", date: "04 May 2026, 12:00 PM", amount: "₹45", status: "Earned" },
-    { id: 4, name: "Arun Kumar", phone: "+91 90000 00000", date: "02 May 2026, 10:30 AM", amount: "₹25", status: "Earned" },
-  ];
-
-  const topReferrers = [
-    { rank: 1, name: "Rohit Sharma", amount: "₹9,680.00" },
-    { rank: 2, name: "Virat Kohli", amount: "₹8,250.00" },
-    { rank: 3, name: "Jasprit Bumrah", amount: "₹7,500.00" },
-    { rank: 9, name: "Srinivas", amount: "₹3,900.00", isCurrentUser: true },
-    { rank: 4, name: "KL Rahul", amount: "₹3,820.00" },
-  ];
 
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
@@ -103,58 +84,58 @@ export default function ReferAndEarnFlex() {
       <div className="w-[1217px] max-w-full mx-auto flex flex-col lg:flex-row justify-between items-start gap-6 px-4 xl:px-0">
 
         {/* LEFT COLUMN (Strict Width: 721px) */}
-        <div className="flex flex-col gap-6 w-full   relative">
+        <div className="flex flex-col  gap-6 w-full lg:w-[721px] flex-shrink-0 relative">
 
           {/* 1. Hero Banner */}
-          <div className="w-full  max-h-[350px] md:max-w-[721px] md:max-h-[418px] bg-white rounded-[24px] border border-[#EAEAEA] md:p-8 p-5  flex flex-col justify-between">
+          <div className="w-full h-full  lg:max-w-[721px] md:max-h-[418px] bg-white rounded-[24px] border border-[#EAEAEA] p-8 flex flex-col justify-between">
 
             {/* Top Section */}
-            <div className="flex justify-between items-center h-[250px]">
+            <div className="flex justify-between items-center md:h-[250px]">
 
               {/* Left Content */}
-              <div className="max-w-[250px] md:max-w-[333px]">
-                <p className="md:text-[14px] text-[12px] font-semibold text-[#1C1B1BCC]">
+              <div className="md:max-w-[333px]">
+                <p className="text-[14px] font-semibold text-[#1C1B1BCC]">
                   Refer & Earn with ViralPe
                 </p>
 
-                <h1 className=" md:text-[24px] font-extrabold leading-[1.4]">
+                <h1 className="text-[24px] font-extrabold leading-[1.4]">
                   Refer Your Friends &
                   <br />
                   Earn <span className="text-[#901C27]">Exciting Rewards!</span>
                 </h1>
 
-                <p className="md:text-[13px] text-[#1C1B1BCC] md:leading-7">
+                <p className="text-[13px] text-[#1C1B1BCC] leading-5">
                   Your friends get a great experience and you earn
                   cashback successful referral.
                 </p>
 
-                <button className="mt-5 bg-[#901C27] text-white px-8  h-[30px] md:h-[48px] rounded-xl flex items-center gap-3">
+                <button className="md:mt-5 mb-2 md:mb-0 bg-[#901C27] text-white md:px-8 px-5 py-2 md:h-[48px] rounded-xl flex items-center gap-3">
                   <Share2 size={18} />
                   Refer Now
                 </button>
-              </div>
-
+              
+</div>
               {/* Right Image */}
               <div className="w-[300px] h-[250px] flex items-center justify-center">
                 <img
                   src={Refer}
                   alt="Refer"
-                  className="max-w-full max-h-full object-contain"
+                  className="object-contain"
                 />
               </div>
 
             </div>
 
             {/* Bottom Card */}
-            <div className="w-[629px] h-[96px] bg-[#FFEDEE] rounded-[20px] px-8 flex items-center self-center">
-
-              <div className="flex-1">
-                <p className="text-[13px] text-[#666] mb-2">
+<div className="flex flex-col text-center md:text-left md:flex-row w-full  md:max-w-[629px]  md:min-h-[96px] bg-[#FFEDEE] rounded-[20px] px-4 md:px-8 py-4 md:py-0 items-center self-center gap-1 md:gap-0">
+              
+              <div className="md:flex-1 ">
+                <p className="md:text-[13px] text-[#666] mb-2">
                   Your Referral Code
                 </p>
 
-                <div className="w-[185px] h-[32px] bg-white rounded-lg  px-3 flex items-center justify-between">
-                  <span className="text-[13px] font-semibold">
+                <div className="md:w-[185px] md:h-[32px] bg-white rounded-lg  px-3 py-2 flex items-center gap-2 justify-between">
+                  <span className="md:text-[13px] text-[11px] font-semibold">
                     {referralCode}
                   </span>
 
@@ -165,15 +146,15 @@ export default function ReferAndEarnFlex() {
                 </div>
               </div>
 
-              <div className="w-px h-[50px] bg-[#E4D2D4] mx-8"></div>
+              <div className="hidden md:block w-px h-[50px] bg-[#E4D2D4] mx-8"></div>
 
-              <div className="flex-1">
-                <p className="text-[13px] text-[#666] mb-2">
+              <div className="md:flex-1">
+                <p className="md:text-[13px] text-[#666] mb-2">
                   Share your Link
                 </p>
 
-                <div className="w-[270px] h-[32px] bg-white rounded-lg  px-3 flex items-center justify-between">
-                  <span className="text-[13px] font-semibold truncate">
+                <div className="md:w-[270px] md:h-[32px] bg-white rounded-lg  px-3  py-2 flex items-center gap-2 justify-between">
+                  <span className="md:text-[13px] text-[11px] font-semibold truncate">
                     {referralLink}
                   </span>
 
@@ -189,10 +170,10 @@ export default function ReferAndEarnFlex() {
           </div>
 
           {/* 2. Earnings Breakdown */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col w-full lg:w-[721px] h-[196px] overflow-hidden">
+          <div className="bg-white rounded-[20px] shadow-sm border border-gray-100 flex  flex-col w-full md:max-w-[721px] md:max-h-[196px] overflow-hidden">
             <div className="p-6 pb-4">
               <h2 className="text-[24px] font-bold text-gray-900 mb-6">Earnings Breakdown</h2>
-              <div className="flex flex-row justify-between gap-4">
+              <div className="flex md:flex-row flex-col justify-between gap-4">
                 {metricsData.map((metric) => (
                   <div key={metric.id} className="flex flex-1 items-start gap-3">
                     <div className={`p-3 rounded-xl ${metric.bgClass} flex-shrink-0`}>
@@ -266,15 +247,15 @@ export default function ReferAndEarnFlex() {
         </div>
 
         {/* RIGHT COLUMN (Strict Width: 463px) */}
-        <div className="flex flex-col gap-6 w-full lg:w-[463px] flex-shrink-0">
+        <div className="flex flex-col gap-6 w-full md:max-w-[463px] ">
 
           {/* 1. Earnings & Withdrawal Widget */}
           <div className="bg-gradient-to-r from-[#1F0608] to-[#911922] text-white rounded-[20px] p-5 shadow-md flex flex-col w-full lg:w-[463px] h-[417px] justify-between relative overflow-hidden">
             <div>
-              <p className="text-[13px] font-semibold text-[#FFFFFF] ">
+              <p className="md:text-[13px] text-[12px] font-semibold text-[#FFFFFF] ">
                 Your Earnings
               </p>
-              <h2 className="text-[30px] font-semibold tracking-tight">
+              <h2 className="md:text-[30px] text-[24px] font-semibold tracking-tight">
                 ₹1,225.00
               </h2>
             </div>
@@ -283,18 +264,18 @@ export default function ReferAndEarnFlex() {
 
             <div className="flex flex-row items-center w-full">
               <div className="flex-1 border-r border-white/10">
-                <p className="text-[30px] font-semibold mb-1">₹825.00</p>
-                <p className="text-xs text-white/70">
+                <p className="md:text-[30px] text-[24px] font-semibold mb-1">₹825.00</p>
+                <p className="md:text-xs text-[12px] text-white/70">
                   Confirmed Earnings
                 </p>
               </div>
 
               <div className="flex-1 pl-6">
-                <p className="text-[30px] font-semibold mb-1">
+                <p className="md:text-[30px] text-[24px] font-semibold mb-1">
                   ₹400.00
                 </p>
 
-                <p className="text-xs text-white/70 flex items-center gap-1">
+                <p className="md:text-xs text-[12px] text-white/70 flex items-center gap-1">
                   <Info size={12} />
                   Pending Earnings
                 </p>

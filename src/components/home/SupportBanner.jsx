@@ -1,35 +1,7 @@
 import React from "react";
-
-import Headphoneicon from "../../../public/images/headphone.svg";
-import Messageicon from "../../../public/images/textbox.png";
-import Mailicon from "../../../public/images/envelope.png";
+import { supportOptions } from "../../data/HomeData";
 
 const SupportBanner = () => {
-
-  const supportOptions = [
-    {
-      id: 1,
-      icon: Headphoneicon,
-      title: "Need Help?",
-      subtitle: "We're here 24/7 for you",
-      actionText: "+91 90000 00000",
-    },
-    {
-      id: 2,
-      icon: Messageicon,
-      title: "Live Chat",
-      subtitle: "Chat With Our Support\nTeam",
-      actionText: "",
-    },
-    {
-      id: 3,
-      icon: Mailicon,
-      title: "Email Support",
-      subtitle: "We're here 24/7 for you",
-      actionText: "Support@ViralPe.com",
-    },
-  ];
-
   return (
 
     <div className="w-[95%] lg:w-full max-w-[1206px] min-h-auto md:min-h-[221px] mt-6 md:mt-[32px] mx-auto bg-[#901C27] rounded-[16px] md:rounded-[20px] shadow-md flex items-center justify-center overflow-hidden p-4 sm:p-6 md:p-8">

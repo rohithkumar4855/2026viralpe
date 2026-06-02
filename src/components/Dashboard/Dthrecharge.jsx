@@ -3,17 +3,14 @@ import thunder from "../../../public/images/thunder.svg";
 import wallet from "../../../public/images/wallet2.svg";
 import lock from "../../../public/images/lock.svg";
 import headphones from "../../../public/images/headphones.png";
-import tata from "../../../public/images/tataicon.svg";
-import airtel from "../../../public/images/airtelicon.svg";
-import dishtv from "../../../public/images/dishtvicon.svg";
-import sundirect from "../../../public/images/sundirecticon.svg";
+
 import gift from "../../../public/images/gift.svg";
 import thumbsup from "../../../public/images/thumbsup.svg"
 import { ArrowRight } from "lucide-react";
 import FeatureBanner from './FeatureBanner';
 import { useNavigate } from "react-router-dom";
 import { FeatureBannerCard } from "../../data/Dashboard";
-
+import {recentdthRecharges,dthOperators} from "../../data/Dashboard"
 export default function DthRechargeDashboard() {
     const navigate = useNavigate();
     const whyRechargeFeatures = [
@@ -39,42 +36,8 @@ export default function DthRechargeDashboard() {
         },
     ];
 
-    const recentRecharges = [
-        {
-            image: tata,
-            name: "Tata Play",
-            id: "149805048",
-            amount: "₹456",
-            daysLeft: "25 Days Left",
-            badgeClass: "text-[#2E7D32] bg-[#E8F5E9]",
-            imageClass: "h-[36px] w-[36px]",
-        },
-        {
-            image: dishtv,
-            name: "DishTV",
-            id: "90809 879988",
-            amount: "₹456",
-            daysLeft: "12 Days Left",
-            badgeClass: "text-[#E65100] bg-[#FFF3E0]",
-            imageClass: "h-[50px] w-[50px]",
-        },
-        {
-            image: sundirect,
-            name: "DishTV", 
-            id: "90809 879988",
-            amount: "₹456",
-            daysLeft: "2 Days Left",
-            badgeClass: "text-[#D32F2F] bg-[#FFEBEE]",
-            imageClass: "h-[46px] w-[46px]",
-        },
-    ];
+    
 
-    const dthOperators = [
-        { type: "tata", logo: tata, label: "Tata Play", cashback: "5% Cashback" },
-        { type: "dish", logo: dishtv, label: "Dish TV", cashback: "5% Cashback" },
-        { type: "airtel", logo: airtel, label: "Airtel Digital TV", cashback: "5% Cashback" },
-        { type: "sun", logo: sundirect, label: "Sun Direct", cashback: "5% Cashback" },
-    ];
 
     return (
         <div className="w-full flex flex-col items-center justify-start text-[#1A1A1A] font-sans antialiased p-4 md:p-0">
@@ -140,7 +103,7 @@ export default function DthRechargeDashboard() {
                     <div className="flex flex-col max-w-full md:max-w-[837px] w-full bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
                         <h2 className="text-xl font-bold mb-6">Recent Recharges</h2>
                         <div className="flex flex-col md:flex-row flex-wrap gap-4 w-full">
-                            {recentRecharges.map((recharge, index) => (
+                            {recentdthRecharges.map((recharge, index) => (
                                 <div
                                     key={index}
                                     className="border border-gray-100 rounded-2xl p-4 flex flex-col justify-between relative hover:shadow-md active:scale-[0.99] transition bg-white flex-1 min-w-[240px] md:max-w-[calc(33.33%-11px)] cursor-pointer touch-manipulation"

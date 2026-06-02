@@ -1,23 +1,13 @@
 import React from 'react';
-import jio from "/images/jio.svg"
-import airtel from "/images/airtel.svg"
-import Thunder from "../../../public/images/thunder.svg"
-import discount from "../../../public/images/discount.svg"
-import Wallet from "../../../public/images/wallet2.svg"
-import lock from "../../../public/images/lock.svg"
-import Vi from "../../../public/images/vi.svg";
-import Bsnl from "../../../public/images/bsnl.svg"
+
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { ReachargeOn, RecentRecharges, AllNetwork } from "../../data/Dashboard";
 import FeatureBanner from './FeatureBanner';
 
 import { FeatureBannerCard } from "../../data/Dashboard";
-
-
-
-
 const renderIcon = (icon) => {
     return (
         <img
@@ -30,28 +20,7 @@ const renderIcon = (icon) => {
 export default function RechargeDashboard() {
     const navigate = useNavigate();
 
-    const ReachargeOn = [
-        { title: 'Instant Recharge', desc: 'Recharge in just a seconds', icon: Thunder },
-        { title: 'Best Plans', desc: 'Compare and choose the best plans', icon: discount },
-        { title: 'Earn Cashback', desc: 'Earn cashback on every recharge', icon: Wallet },
-        { title: 'Secure Payments', desc: '256-bit SSL encrypted transactions', icon: lock },
-    ];
-
-    const RecentRecharges = [
-        { number: "+91 90000 90000", price: "₹456", icon: airtel },
-        { number: "+91 90000 90000", price: "₹456", icon: airtel },
-        { number: "+91 90000 90000", price: "₹456", icon: jio },
-        { number: "+91 90000 90000", price: "₹456", icon: airtel },
-    ];
-
-    const AllNetwork = [
-        { icon: airtel, name: 'Airtel', cb: '5% Cashback' },
-        { icon: Bsnl, name: 'BSNL', cb: '15% Cashback' },
-        { icon: jio, name: 'Jio', cb: '10% Cashback' },
-        { icon: Vi, name: 'Vi', cb: '20% Cashback' },
-        { icon: Vi, name: 'Vi', cb: '20% Cashback' },
-    ];
-
+   
     return (
 
         <div className='w-full'>

@@ -1,4 +1,4 @@
-import { WalletandEarningsCard } from "../../data/EarningData"
+import { WalletandEarningsCard } from "../../data/HomeData"
 
 
 const WalletandEarnings = ({ icon, title, amount}) => {

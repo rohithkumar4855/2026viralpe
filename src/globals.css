@@ -11,7 +11,8 @@ body {
 
 :root {
   --primary-red: #901C27;
-  --text-dark: #222222;
+  --text-dark: #1C1B1B;
+  --text-light:#222222CC;
   --white: #ffffff;
   --bg-cardone: #ffedee;
 

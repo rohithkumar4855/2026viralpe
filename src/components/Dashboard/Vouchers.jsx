@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Search, Ticket, ShoppingBag, ChevronUp, ChevronDown, Check, Star, ShieldCheck, Zap, Lock, Headphones, SlidersHorizontal } from 'lucide-react';
-import Myntra from "/images/myntra.png"
-import StarBucks from "/images/starbucks.png"
-import Nike from "/images/nike.png"
-import Trends from "/images/trends.svg"
+
 import { useNavigate } from 'react-router-dom';
 import FeatureBanner from './FeatureBanner';
 import { FeatureBannerCard } from "../../data/Dashboard";
 import ticketicon from "/images/ticketicon.svg";
 import cart from "/images/cart.svg";
-
+import { vouchersData } from "../../data/Dashboard";
 
 
 export default function Vouchers() {
@@ -72,33 +69,7 @@ export default function Vouchers() {
     ];
 
     // 4. Products Voucher Mock Data (FIXED: Added category, price, and numeric discount)
-    const vouchersData = [
-        { id: 1, brand: 'Myntra', logo: Myntra, tag: 'Get ₹50 Cashback', isPromo: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 5 },
-        { id: 2, brand: 'Starbucks', logo: StarBucks, tag: '5% Cashback', isPromo: false, category: 'Food', price: "Starting Price from ₹200", discount: 5 },
-        { id: 3, brand: 'Nike', logo: Nike, tag: 'Starting Price from ₹200', isPromo: false, noHeaderTag: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 12 },
-        { id: 4, brand: 'Myntra', logo: Myntra, tag: 'Get ₹50 Cashback', isPromo: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 4 },
-        { id: 5, brand: 'Starbucks', logo: StarBucks, tag: '5% Cashback', isPromo: false, category: 'Food', price: "Starting Price from ₹200", discount: 5 },
-        { id: 6, brand: 'Nike', logo: Nike, tag: 'Starting Price from ₹200', isPromo: false, noHeaderTag: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 14 },
-        { id: 7, brand: 'Trends', logo: Trends, tag: 'Get ₹50 Cashback', isPromo: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 3 },
-        { id: 8, brand: 'Starbucks', logo: StarBucks, tag: '5% Cashback', isPromo: false, category: 'Food', price: "Starting Price from ₹200", discount: 5 },
-        { id: 9, brand: 'Trends', logo: Trends, tag: '5% Cashback', isPromo: false, category: 'Fashion', price: "Starting Price from ₹200", discount: 8 },
-        { id: 10, brand: 'Nike', logo: Nike, tag: '10% OFF', isPromo: false, category: 'Beauty', price: "Starting Price from ₹200", discount: 10 },
-        { id: 11, brand: 'Starbucks', logo: StarBucks, tag: '5% Cashback', isPromo: false, category: 'Food', price: "Starting Price from ₹200", discount: 5 },
-        { id: 12, brand: 'Nike', logo: Nike, tag: 'Starting Price from ₹200', isPromo: false, noHeaderTag: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 14 },
-        { id: 13, brand: 'Trends', logo: Trends, tag: 'Get ₹50 Cashback', isPromo: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 3 },
-        { id: 14, brand: 'Starbucks', logo: StarBucks, tag: '5% Cashback', isPromo: false, category: 'Food', price: "Starting Price from ₹200", discount: 5 },
-        { id: 15, brand: 'Trends', logo: Trends, tag: '5% Cashback', isPromo: false, category: 'Fashion', price: "Starting Price from ₹200", discount: 8 },
-        { id: 16, brand: 'Nike', logo: Nike, tag: '10% OFF', isPromo: false, category: 'Beauty', price: "Starting Price from ₹200", discount: 10 },
-        { id: 17, brand: 'Starbucks', logo: StarBucks, tag: '5% Cashback', isPromo: false, category: 'Food', price: "Starting Price from ₹200", discount: 5 },
-        { id: 18, brand: 'Nike', logo: Nike, tag: 'Starting Price from ₹200', isPromo: false, noHeaderTag: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 14 },
-        { id: 19, brand: 'Trends', logo: Trends, tag: 'Get ₹50 Cashback', isPromo: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 3 },
-        { id: 20, brand: 'Starbucks', logo: StarBucks, tag: '5% Cashback', isPromo: false, category: 'Food', price: "Starting Price from ₹200", discount: 5 },
-        { id: 21, brand: 'Trends', logo: Trends, tag: '5% Cashback', isPromo: false, category: 'Fashion', price: "Starting Price from ₹200", discount: 8 },
-        { id: 22, brand: 'Nike', logo: Nike, tag: '10% OFF', isPromo: false, category: 'Beauty', price: "Starting Price from ₹200", discount: 10 },
-        { id: 23, brand: 'Myntra', logo: Myntra, tag: 'Get ₹50 Cashback', isPromo: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 5 },
-        { id: 24, brand: 'Starbucks', logo: StarBucks, tag: '5% Cashback', isPromo: false, category: 'Food', price: "Starting Price from ₹200", discount: 5 },
-        { id: 25, brand: 'Nike', logo: Nike, tag: 'Starting Price from ₹200', isPromo: false, noHeaderTag: true, category: 'Fashion', price: "Starting Price from ₹200", discount: 12 },
-    ];
+  
 
     // 5. Interactivity Event Actions
     const toggleSection = (section) => {

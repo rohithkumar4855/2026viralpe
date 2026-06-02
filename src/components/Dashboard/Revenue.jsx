@@ -1,26 +1,7 @@
 import Graph from "../../../public/images/graph.png";
 import Graphbar from "../../../public/images/graphBar.png";
-
+import { statsData } from "../../data/Dashboard";
 export default function Revenue() {
-
-  const statsData = [
-    {
-      id: 1,
-      value: "12",
-      label: "Transactions",
-    },
-    {
-      id: 2,
-      value: "₹320",
-      label: "Cashback Earned",
-    },
-    {
-      id: 3,
-      value: "₹200",
-      label: "Cashback Claimed",
-    },
-  ];
-
   return (
    <div className="w-full max-w-[1217px] h-auto lg:h-[98px] mx-auto mt-[32px] bg-white rounded-[20px] shadow-sm px-6 py-5 flex items-center">
   <div className="w-full flex flex-col md:flex-row lg:flex-row items-center justify-between gap-6">

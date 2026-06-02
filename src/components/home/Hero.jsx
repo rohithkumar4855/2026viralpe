@@ -6,61 +6,20 @@ import playstoreicon from "../../../public/images/playstoreicon.png";
 import homescreen from "../../../public/images/homescreen1.png";
 
 import { ArrowLeft, ChevronDown } from "lucide-react";
-
-
-const rechargeData = [
-    {
-        id: 1,
-        title: "Prepaid Recharge",
-        icon: "/images/recharge.png",
-        alt: "Prepaid",
-    },
-    {
-        id: 2,
-        title: "Postpaid Recharge",
-        icon: "/images/recharge.png",
-        alt: "Postpaid",
-    },
-    {
-        id: 3,
-        title: "DTH Recharge",
-        icon: "/images/dthicon.png",
-        alt: "DTH",
-    },
-    {
-        id: 4,
-        title: "FASTag Recharge",
-        icon: "/images/fastagicon.png",
-        alt: "FASTag",
-    },
-];
-
-const headings = {
-    1: "Prepaid Recharge",
-    2: "Postpaid Recharge",
-    3: "DTH Recharge",
-    4: "FASTag Recharge",
-};
-
-const labels = {
-    1: "Mobile Number",
-    2: "Mobile Number",
-    3: "Subscriber ID/Registered Mobile Number",
-    4: "Bank",
-};
+import { rechargeData, headings,labels } from "../../data/HomeData";
 
 export default function Heropage() {
     const [activeTab, setActiveTab] = useState(null);
 
     return (
         <section>
-            <div className="max-w-301.75 mx-auto mt-15 flex flex-col lg:flex-row gap-4 lg:gap-7.75 px-4 lg:px-0 items-center lg:items-stretch">
-                <div className="flex flex-col gap-4  md:mt-0 bg-white rounded-2xl w-full lg:max-w-181 h-auto md:min-h-[264px] p-5 sm:p-[27.28px] shadow-sm relative overflow-hidden">
+            <div className="max-w-301.75 mx-auto mt-30 flex flex-col lg:flex-row gap-4 lg:gap-7.75 px-4 lg:px-0 items-center lg:items-stretch">
+                <div className="flex flex-col gap-4  md:mt-0 bg-(--white) rounded-2xl w-full lg:max-w-181 h-auto md:min-h-[264px] p-5 sm:p-[27.28px] shadow-sm relative overflow-hidden">
 
                     {/* Default View: Show 4 Icons */}
-                    {activeTab === null && (
+                  
                         <div className="animate-in fade-in duration-300">
-                            <h2 className="font-semibold text-[22px] sm:text-[28px] text-[#222222]">
+                            <h2 className="font-semibold text-[22px] sm:text-[28px] text-(--text-dark)">
                                 Recharge or Pay Mobile Bill
                             </h2>
 
@@ -91,7 +50,7 @@ export default function Heropage() {
                                 ))}
                             </div>
                         </div>
-                    )}
+                   
 
                     {activeTab !== null && (
                         <div className="fixed inset-0 bg-black/30 backdrop-blur-[2px] flex items-center justify-center z-[999] p-4">
@@ -108,12 +67,12 @@ export default function Heropage() {
                                 </button>
 
                                 {/* Heading */}
-                                <h2 className="font-bold text-[22px] sm:text-[28px] text-[#222222] mb-6 sm:mb-8 pr-6">
+                                <h2 className="font-bold text-[22px] sm:text-[28px] text-(--text-dark) mb-6 sm:mb-8 pr-6">
                                     {headings[activeTab]}
                                 </h2>
 
                                 {/* Label */}
-                                <label className="text-[13px] sm:text-[14px] font-medium text-[#222222] mb-2 block">
+                                <label className="text-[13px] sm:text-[14px] font-medium text-(--text-dark) mb-2 block">
                                     {labels[activeTab]}
                                 </label>
 
@@ -132,7 +91,7 @@ export default function Heropage() {
 
                                         {/* Mobile Number */}
                                         <div>
-                                            <label className="text-[13px] sm:text-[14px] font-medium text-[#222222] mb-2 block">
+                                            <label className="text-[13px] sm:text-[14px] font-medium text-(--text-dark) mb-2 block">
                                                 Vehicle Number/Chassis Number/Registered Mobile Number
                                             </label>
 
@@ -169,7 +128,7 @@ export default function Heropage() {
 
                                 {/* Button */}
                                 <div className="flex justify-center mt-6 sm:mt-8">
-                                    <button className="bg-[#850F22] hover:bg-[#720c1d] h-[48px] transition-colors text-white font-medium w-full sm:w-[220px] rounded-[8px]">
+                                    <button className="bg-(--primary-red) hover:bg-[#720c1d] h-[48px] transition-colors text-(--white) font-medium w-full sm:w-[220px] rounded-[8px]">
                                         Confirm
                                     </button>
                                 </div>

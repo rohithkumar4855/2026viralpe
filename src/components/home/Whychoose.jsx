@@ -1,7 +1,5 @@
 import React from "react";
 import { BadgeCheck, Lock, Zap } from "lucide-react";
-import Homescreen from "../../../public/images/homescreen.png";
-// import Graph from "../../../public/images/graphic.png";
 import Homeframe from "../../../public/images/homeframe.svg";
 
 const WhyChooseViralPe = () => {

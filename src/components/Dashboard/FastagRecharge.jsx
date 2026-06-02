@@ -1,51 +1,18 @@
 import React, { useState } from "react";
 import { Search, Info, MessageSquare, MoreVertical, ArrowRight } from "lucide-react";
-import Axis from "../../../public/images/axis.svg";
-import Bajaj from "../../../public/images/bajaj.svg";
-import icic from "../../../public/images/iciclogo.svg";
-import idfc from "../../../public/images/idfclogo.svg";
+
 import Thunder from "../../../public/images/thunder.svg"
 import discount from "../../../public/images/discount.svg"
 import Wallet from "../../../public/images/wallet2.svg"
-import lock from "../../../public/images/lock.png"
+import lock from "../../../public/images/lock.svg"
 import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
 import FeatureBanner from "./FeatureBanner";
 import { FeatureBannerCard2 } from "../../data/Dashboard";
 // Mock Data for Banks List
-const banksData = [
-    { id: 1, name: "Axis Bank", logo: Axis, cb: "5% Cashback" },
-    { id: 2, name: "Bajaj Finserv", logo: Bajaj, cb: "5% Cashback" },
-    { id: 3, name: "IDFC First Bank", logo: idfc, cb: "5% Cashback" },
-    { id: 4, name: "ICICI Bank", logo: icic, cb: "5% Cashback" },
-    { id: 5, name: "Axis Bank", logo: Axis, cb: "5% Cashback" },
-    { id: 6, name: "Bajaj Finserv", logo: Bajaj, cb: "5% Cashback" },
-    { id: 7, name: "IDFC First Bank", logo: idfc, cb: "5% Cashback" },
-    { id: 8, name: "ICICI Bank", logo: icic, cb: "5% Cashback" },
-    { id: 9, name: "Axis Bank", logo: Axis, cb: "20% Cashback" }, // specific to screenshot
-    { id: 10, name: "Bajaj Finserv", logo: Bajaj, cb: "5% Cashback" },
-    { id: 11, name: "IDFC First Bank", logo: idfc, cb: "5% Cashback" },
-    { id: 12, name: "ICICI Bank", logo: icic, cb: "5% Cashback" },
-    { id: 13, name: "Axis Bank", logo: Axis, cb: "5% Cashback" },
-    { id: 14, name: "Bajaj Finserv", logo: Bajaj, cb: "5% Cashback" },
-    { id: 15, name: "IDFC First Bank", logo: idfc, cb: "5% Cashback" },
-];
+import { banksData,recentRecharges,reachargefastag } from "../../data/Dashboard";
 
 // Mock Data for Recent Recharges matching Screenshot
-const recentRecharges = [
-    { id: 1, logo: idfc, vehicle: "AP 10 2345", amount: "₹500", date: "01 May 2026, 10:09AM", bg: "bg-[#faeaea]" },
-    { id: 2, logo: Bajaj, vehicle: "AP 10 2345", amount: "₹500", date: "01 May 2026, 10:09AM", bg: "bg-[#eaf3fc]" },
-    { id: 3, logo: icic, vehicle: "AP 10 2345", amount: "₹500", date: "01 May 2026, 10:09AM", bg: "bg-[#faeaea]" },
-];
-
-
-
-const ReachargeOn = [
-    { title: 'Instant Recharge', desc: 'Recharge in just a seconds', icon: Thunder },
-    { title: 'Best Plans', desc: 'Compare and choose the best plans', icon: discount },
-    { title: 'Earn Cashback', desc: 'Earn cashback on every recharge', icon: Wallet },
-    { title: 'Secure Payments', desc: '256-bit SSL encrypted transactions', icon: lock },
-];
 
 const renderIcon = (icon) => {
     return (
@@ -84,16 +51,16 @@ export default function FastagRecharge() {
 
     return (
         <div className=" min-h-screen  font-sans text-gray-800 ">
-            <div className="max-w-[1207px]   w-full mx-auto flex justify-between ">
+            <div className="max-w-[1207px]   w-full mx-auto md:flex md:flex-row  justify-between gap-5 ">
                 
                 {/* --- LEFT SIDE CONTAINER (Heights/Widths strictly preserved) --- */}
-                <div className="max-w-[837px] max-h-[847px] w-full flex flex-col gap-6">
+                <div className=" md:max-w-[837px] md:max-h-[847px] w-full flex flex-col rounded-[20px] p-3 gap-4">
 
                     {/* TOP FORM CONTAINER */}
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 shrink-0">
+                    <div className="bg-white p-6 rounded-[20px] shadow-sm border border-gray-100 shrink-0 md:overflow-hidden">
                         <div className="flex justify-between items-center mb-6">
-                            <h2 className="text-2xl font-bold text-gray-900">FASTag Recharge</h2>
-                            <button className="flex items-center gap-1.5 text-xs bg-[#fff0f2] text-[#6F0014] px-3 py-1.5 rounded-full font-semibold border border-rose-100">
+                            <h2 className="md:text-[24px] font-bold text-gray-900">FASTag Recharge</h2>
+                            <button className="flex items-center gap-1.5 text-xs bg-[#fff0f2] text-[#901c27] md:text-[13px] text-[10px] px-1 py-1 md:px-3 md:py-1.5  rounded-[20px] font-semibold border border-rose-100">
                                 <Info size={14} />
                                 <span>How to find FASTag bank?</span>
                             </button>
@@ -105,14 +72,14 @@ export default function FastagRecharge() {
                                 <input
                                     type="text"
                                     placeholder="Enter Bank Name"
-                                    className="max-w-[763px] w-full  border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-50 focus:border-red-400 transition"
+                                    className="max-w-[763px] w-full  border border-gray-200 rounded-[20px] px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-50 focus:border-red-400 transition"
                                 />
                             </div>
 
                             {/* --- CONDITIONAL TEXT FIELD --- */}
                             {isConfirmed && (
                                 <div className="animate-in fade-in slide-in-from-top-2 duration-300">
-                                    <h3 className="text-[14px] font-medium text-[#1C1B1B] mb-3">Vehicle/Chassis/Registered Mobile Number</h3>
+                                    <h3 className="md:text-[14px] font-medium text-[#1C1B1B] mb-3">Vehicle/Chassis/Registered Mobile Number</h3>
                                     <input
                                         type="text"
                                         placeholder="Enter Vehicle Number/Chassis Number/Registered Mobile Number"
@@ -125,7 +92,7 @@ export default function FastagRecharge() {
                                 {/* Button styling EXACTLY as original */}
                                 <button
                                     onClick={handleConfirm}
-                                    className="bg-[#6F0014] text-white font-bold py-3 px-16 rounded-xl hover:bg-[#52010f] transition-colors cursor-pointer w-full sm:w-auto"
+                                    className="bg-[linear-gradient(96.39deg,_#901C27_0%,_#6F0014_100%)] text-white font-bold py-3 px-16 rounded-[20px] hover:bg-[#52010f] transition-colors cursor-pointer w-full sm:w-auto"
                                 >
                                     Confirm
                                 </button>
@@ -152,16 +119,16 @@ export default function FastagRecharge() {
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 ">
                                     {filteredBanks.map((bank, index) => (
                                         <div
                                             key={index}
-                                            className="border border-[#ffffff] shadow rounded-2xl p-4 flex flex-col items-center justify-center text-center cursor-pointer max-w-[128px] max-h[139px] gap-6"
+                                            className="border border-[#ffffff] shadow rounded-[20px] p-4 flex flex-col items-center justify-center text-center cursor-pointer  md:max-w-[128px] md:max-h[139px] gap-6"
                                         >
                                             <img
                                                 src={bank.logo}
                                                 alt={bank.name}
-                                                className="w-[92px] h-[62px] object-contain mx-auto mb-2"
+                                                className="md:w-[92px] md:h-[62px] w-[70px] h-[50px] object-contain mx-auto mb-2"
                                             />
                                             <span className="text-[11px] font-bold text-[#069341] bg-emerald-50 px-2 py-1 rounded-md w-full whitespace-nowrap">
                                                 {bank.cb}
@@ -239,11 +206,11 @@ export default function FastagRecharge() {
                 </div>
 
                 {/* --- RIGHT SIDE CONTAINER (Completely Untouched) --- */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 p-3">
                     <div className="bg-white max-w-[348px] max-h-[260px] p-4 rounded-2xl shadow-sm border border-slate-100">
                         <h3 className="text-lg font-bold mb-4">Why Recharge On ViralPe?</h3>
                         <div className="space-y-4">
-                            {ReachargeOn.map((item, idx) => (
+                            {reachargefastag.map((item, idx) => (
                                 <div key={idx} className="flex items-start gap-3">
                                     <div className="w-8 h-8 rounded-lg bg-rose-50 flex items-center justify-center flex-shrink-0">
                                         <img src={item.icon} alt={item.title} className="w-5 h-5 object-contain" />

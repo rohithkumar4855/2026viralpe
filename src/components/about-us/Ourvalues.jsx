@@ -47,39 +47,47 @@ const cardsData = [
 export default function Ourvalues(){
     return(
       <Container>
-       <div className="md:max-w-303.75 max-h-96.75 w-full bg-(--white) rounded-[20px] mx-auto ">
-        <div className="text-center ">
-            <h1 className="text-[52px] font-semibold">Our <span className="text-(--primary-red)">Values</span></h1>
-            <p className="text-[20px] text-[#222222CC]">The Principles That Define Us</p>
-        </div>
-<div className="flex flex-wrap gap-5  justify-center pb-4 pt-5.5">
+  <div className="w-full max-w-[1215px] bg-(--white) rounded-[20px] mx-auto px-4 py-6 md:py-8">
+    
+    {/* HEADER SECTION */}
+    <div className="text-center mb-6 md:mb-8">
+      <h1 className="text-3xl sm:text-4xl md:text-[52px] md:leading-[60px] font-semibold">
+        Our <span className="text-(--primary-red)">Values</span>
+      </h1>
+      <p className="text-base sm:text-lg md:text-[20px] text-[#222222CC] mt-1">
+        The Principles That Define Us
+      </p>
+    </div>
+
+    {/* CARDS SECTION - Responsive Grid to Flex */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-4 md:gap-5 justify-center pb-4">
       {cardsData.map((card) => (
         <div
           key={card.id}
-          className="w-[179px]  bg-white rounded-[20px] flex flex-col items-start  p-2  rounded-[20px] border-1 border-solid border-[#0000001A]"
+          className="w-full md:w-[179px] bg-white rounded-[20px] flex flex-col items-start p-3 md:p-2 border border-solid border-[#0000001A] shadow-sm md:shadow-none"
         >
           {/* IMAGE */}
           <img
             src={card.image}
             alt={card.title}
-            className="w-[40px] h-[40px] object-contain"
+            className="w-8 h-8 md:w-[40px] md:h-[40px] object-contain"
           />
 
           {/* HEADING */}
-          <h3 className="mt-3 text-[16px] font-semibold text-[#222222]">
+          <h3 className="mt-3 text-sm md:text-[16px] font-semibold text-[#222222] line-clamp-1">
             {card.title}
           </h3>
 
           {/* PARAGRAPH */}
-          <p className="mt-2 text-[13px] leading-[20px] text-[#666666]">
+          <p className="mt-1 md:mt-2 text-xs md:text-[13px] leading-[18px] md:leading-[20px] text-[#666666] line-clamp-3 md:line-clamp-none">
             {card.description}
           </p>
         </div>
       ))}
     </div>
-       </div>
-      </Container>
+
+  </div>
+</Container>
     );
 
 }
-
