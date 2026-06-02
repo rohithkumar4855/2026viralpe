@@ -1,21 +1,19 @@
-import React from 'react';
-import threepeople from "../../../public/images/threepeople.svg"
-import twopeople from "../../../public/images/Twopeople.svg"
+import { ArrowRight } from "lucide-react";
 import coins from "../../../public/images/coins.svg";
 import friendsicon from "../../../public/images/friends.svg";
-import refericon from "../../../public/images/Referlink.svg"
-import twocoinicon from "../../../public/images/Twocoins.svg";
-import { ArrowRight } from "lucide-react";
-import {myReferrals,topReferrers} from "../../data/Dashboard"
+import refericon from "../../../public/images/referlink.svg";
+import threepeople from "../../../public/images/threepeople.svg";
+import twocoinicon from "../../../public/images/twocoins.svg";
+import twopeople from "../../../public/images/twopeople.svg";
+import { FeatureBannerCard3, myReferrals, topReferrers } from "../../data/Dashboard";
 import FeatureBanner from "../Dashboard/FeatureBanner";
-import { FeatureBannerCard3 } from "../../data/Dashboard";
 
 import {
-  Share2,
   Copy,
-  Info,
-  ShieldCheck,
   Gift,
+  Info,
+  Share2,
+  ShieldCheck,
 } from 'lucide-react';
 import Refer from "/images/refer.svg";
 import referopenbox from "/images/referopenbox.svg";

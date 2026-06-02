@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
-import jio from "/images/jio.svg"
-import airtel from "/images/airtel.svg"
-import Vi from "../../../public/images/vi.svg";
-import Bsnl from "../../../public/images/bsnl.svg"
+import { useState } from 'react';
+import jio from "/images/jio.svg";
 
+import { ArrowRight } from "lucide-react";
 import Appleicon from "../../../public/images/appleicon.png";
+import discount from "../../../public/images/discount.svg";
+import Greenthunder from "../../../public/images/greenthunder.svg";
+import Greentick from "../../../public/images/greentick.svg";
+import lock from "../../../public/images/lock.svg";
 import playstoreicon from "../../../public/images/playstoreicon.png";
 import thunder from "../../../public/images/thunder.svg";
 import wallet from "../../../public/images/wallet1.svg";
-import Greenthunder from "../../../public/images/greenthunder.svg";
-import Greentick from "../../../public/images/greenTick.svg";
-import discount from "../../../public/images/discount.svg";
-import lock from "../../../public/images/lock.svg"
-import { ArrowRight } from "lucide-react";
-import { PaymentModal } from "./PaymentModal"
+import { AllNetwork, FeatureBannerCard, plansData, RecentRecharges } from "../../data/Dashboard";
 import FeatureBanner from './FeatureBanner';
-import { FeatureBannerCard } from "../../data/Dashboard";
-import { RecentRecharges, AllNetwork, plansData } from "../../data/Dashboard"
+import { PaymentModal } from "./PaymentModal";
 
 
 const renderIcon = (icon) => {

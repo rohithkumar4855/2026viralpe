@@ -12,7 +12,7 @@ import lock from "../../../public/images/lock.svg"
 import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
 import Thunder from "../../../public/images/thunder.svg"
-import greentick from "../../../public/images/greenTick.svg"
+import greentick from "../../../public/images/greentick.svg"
 import greenthunder from "../../../public/images/greenthunder.svg"
 import FeatureBanner from "./FeatureBanner";
 import { FeatureBannerCard2 } from "../../data/Dashboard";
