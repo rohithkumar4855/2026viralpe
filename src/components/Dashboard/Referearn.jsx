@@ -1,5 +1,5 @@
 import React from 'react';
-import threepeople from "../../../public/images/Threepeople.svg"
+import threepeople from "../../../public/images/threepeople.svg"
 import twopeople from "../../../public/images/Twopeople.svg"
 import coins from "../../../public/images/coins.svg";
 import friendsicon from "../../../public/images/friends.svg";
