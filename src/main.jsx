@@ -18,7 +18,7 @@ function Layout({ children }) {
     <Container>
       {!isAuthRoute && <Navbar />}
       
-      <main className={`w-full min-h-screen flex flex-col overflow-x-hidden ${!isAuthRoute ? "pt-10" : " "}`}>
+      <main className={`w-full min-h-screen flex flex-col overflow-x-hidden ${!isAuthRoute ? "pt-8" : " "}`}>
         {children}
       </main>
       
