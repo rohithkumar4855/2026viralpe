@@ -5,6 +5,11 @@ import { useGoogleLogin } from '@react-oauth/google'; // <-- We added this!
 import CashBackCard from '../../../public/images/cashbacklogo.png';
 import logo from "../../../public/images/logo.png"
 import logobg from "/images/loginbg.svg"
+import coin1 from "/images/goldcoin1.svg"
+import coin2 from "/images/goldcoin2.svg"
+import coin3 from "/images/goldcoin3.svg"
+import coin4 from "/images/goldcoin4.svg"
+import goldlogo from "/images/goldlogo.svg";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -54,17 +59,25 @@ export default function LoginPage() {
 
   return (
     <div className="w-full min-h-screen bg-white flex items-center justify-center">
-      <div className="flex w-full h-screen bg-white overflow-hidden relative">
+      <div className="flex w-full h-screen bg-white overflow-hidden ">
 
         {/* Left Side */}
-        <div className="relative hidden md:flex w-1/2 relative bg-[#4a0a10]">
+        <div  className="relative hidden md:flex w-1/2 bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: `url(${logobg})` }} >
           <div>
-            <img src={logobg} alt="Background" />
-            <div className="absolute top-40 left-20 rounded-xl text-center">
+            
+            <div>
+            <img src={coin1} alt="Coin" className="absolute left-138 top-8.5 w-64 h-49.5 opacity-99 "  />
+            <img src={goldlogo} alt="Gold Logo" className="absolute left-[694.28px] top-[101.83px] w-[60px] h-[65px]  " />
+            <img src={coin2} alt="Coin" className="absolute -left-[165px] top-[402px] w-[343px] h-[207px]  " />
+            <img src={coin3} alt="Coin" className="absolute left-[79px] top-[-85px] w-[153px] h-[170px]  " />
+            <img src={coin4} alt="Coin" className="absolute  top-[678px] left-[363px] w-[226px] h-[251px]  " />
+             </div>
+            <div className="absolute w-full  md:max-w-[615px]  h-[492px] top-[156px] left-[55px]  rounded-xl text-center">
               <img
                 src={CashBackCard}
                 alt="Cashback"
-                className="max-w-[500px] w-full object-contain"
+                className=" w-full object-contain"
               />
             </div>
           </div>
