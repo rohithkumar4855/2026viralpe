@@ -2,6 +2,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, useLocation } from 'react-router-dom'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
 import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'
@@ -29,10 +30,13 @@ function Layout({ children }) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Layout>
-        <App />
-      </Layout>
-    </BrowserRouter>
+    {/* Your BRAND NEW Client ID is pasted here */}
+    <GoogleOAuthProvider clientId="291375034706-ki1bo9rmcc9juh6hf29d1ukevoshgbhl.apps.googleusercontent.com">
+      <BrowserRouter>
+        <Layout>
+          <App />
+        </Layout>
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   </StrictMode>,
 )
