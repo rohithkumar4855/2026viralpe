@@ -1,26 +1,53 @@
 import React from 'react';
 import { X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useGoogleLogin } from '@react-oauth/google'; // <-- We added this!
 import CashBackCard from '../../../public/images/cashbacklogo.png';
 import logo from "../../../public/images/logo.png"
+import logobg from "/images/loginbg.svg"
 
 export default function LoginPage() {
   const navigate = useNavigate();
 
-  // --- SIMULATED LOGIN LOGIC ---
-  const handleSimulatedLogin = (provider) => {
-    // 1. Create fake user data based on the button clicked
+  // --- 1. LIVE GOOGLE LOGIN LOGIC ---
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      try {
+        // Fetch the user's real profile from Google using the token
+        const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+          headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+        });
+        const userInfo = await response.json();
+
+        // Format the real data
+        const userData = {
+          name: userInfo.name,
+          email: userInfo.email,
+          photo: userInfo.picture,
+        };
+
+        // Save to local storage and navigate
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("userData", JSON.stringify(userData));
+        window.dispatchEvent(new Event("authChange"));
+        navigate("/dashboard");
+      } catch (error) {
+        console.error("Error fetching user info:", error);
+      }
+    },
+    onError: (error) => console.log('Login Failed:', error)
+  });
+
+  // --- 2. SIMULATED APPLE LOGIN LOGIC (Kept as a placeholder) ---
+  const handleSimulatedAppleLogin = () => {
     const userData = {
-      name: `Sreenivas (${provider})`,
-      email: `sreenivas.${provider}@example.com`,
-      photo: "", // Leaving this blank will show the "S" initial in the Navbar!
+      name: `Sreenivas (Apple)`,
+      email: `sreenivas.apple@example.com`,
+      photo: "", 
     };
 
-    // 2. Save to local storage
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("userData", JSON.stringify(userData));
-
-    // 3. Update Navbar and navigate instantly
     window.dispatchEvent(new Event("authChange"));
     navigate("/dashboard");
   };
@@ -30,9 +57,10 @@ export default function LoginPage() {
       <div className="flex w-full h-screen bg-white overflow-hidden relative">
 
         {/* Left Side */}
-        <div className="hidden md:flex w-1/2 relative bg-[#4a0a10]">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#3a080d] to-[#5c0e15] flex items-center justify-center">
-            <div className="p-8 rounded-xl text-center">
+        <div className="relative hidden md:flex w-1/2 relative bg-[#4a0a10]">
+          <div>
+            <img src={logobg} alt="Background" />
+            <div className="absolute top-40 left-20 rounded-xl text-center">
               <img
                 src={CashBackCard}
                 alt="Cashback"
@@ -61,8 +89,7 @@ export default function LoginPage() {
           {/* Login Content */}
           <div className="w-full max-w-sm flex flex-col items-center">
             <div className="mb-10 flex flex-col items-center">
-<img src={logo}/>
-             
+              <img src={logo} alt="Logo" />
             </div>
 
             <h2 className="text-[26px] font-bold text-[#8B1A21] mb-2 tracking-tight">
@@ -76,9 +103,9 @@ export default function LoginPage() {
             {/* Login Buttons */}
             <div className="w-full space-y-4">
               
-              {/* Google Login Button */}
+              {/* GOOGLE LOGIN BUTTON */}
               <button
-                onClick={() => handleSimulatedLogin("Google")}
+                onClick={() => handleGoogleLogin()} // <-- Now triggers the real popup!
                 className="w-full flex items-center justify-center gap-3 bg-white border border-gray-100 rounded-xl py-[14px] shadow-[0_2px_10px_rgb(0,0,0,0.04)] hover:shadow-md hover:bg-gray-50 transition-all cursor-pointer"
               >
                 <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24">
@@ -92,9 +119,9 @@ export default function LoginPage() {
                 </span>
               </button>
 
-              {/* Apple Login Button */}
+              {/* APPLE LOGIN BUTTON */}
               <button
-                onClick={() => handleSimulatedLogin("Apple")}
+                onClick={() => handleSimulatedAppleLogin()}
                 className="w-full flex items-center justify-center gap-3 bg-white border border-gray-100 rounded-xl py-[14px] shadow-[0_2px_10px_rgb(0,0,0,0.04)] hover:shadow-md hover:bg-gray-50 transition-all cursor-pointer"
               >
                 <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="black">
