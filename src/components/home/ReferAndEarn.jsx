@@ -14,15 +14,15 @@ export const ReferAndEarn = () => {
 
         {/* Heading */}
         <h2 className="text-[32px] sm:text-[40px] md:text-[46px] font-bold leading-[1.1] tracking-tight mb-2 sm:mb-3">
-          <span className="text-[#901C27] text-[40px] sm:text-[46px] md:text-[52px] font-semibold">
+          <span className="text-[var(--primary-red)] text-[40px] sm:text-[46px] md:text-[52px] font-semibold">
             Refer
           </span>{" "}
-          <span className="text-[#222222] font-semibold">
+          <span className="text-[var(--text-dark)] font-semibold">
             & Earn
           </span>
         </h2>
 
-        <p className="text-[14px] sm:text-[15px] md:text-[20px] text-[#222222CC] mb-6 md:mb-8 font-medium">
+        <p className="text-[14px] sm:text-[15px] md:text-[20px] text-[var(--text-light)] mb-6 md:mb-8 font-medium">
           Share ViralPe and start earning from your circle.
         </p>
 
@@ -32,16 +32,16 @@ export const ReferAndEarn = () => {
             <div key={step.id} className="flex items-start gap-3 sm:gap-4">
 
               {/* Number */}
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-[10px] sm:rounded-[12.5px] bg-[#901C27] text-white text-[15px] sm:text-[18.19px] flex items-center justify-center font-semibold flex-shrink-0 shadow-sm mt-0.5">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-[10px] sm:rounded-[12.5px] bg-[var(--primary-red)] text-white text-[15px] sm:text-[18.19px] flex items-center justify-center font-semibold flex-shrink-0 shadow-sm mt-0.5">
                 {step.id}
               </div>
 
               {/* Text */}
               <div>
-                <h3 className="font-bold text-[#222222] text-[16px] sm:text-[18.19px] leading-snug">
+                <h3 className="font-bold text-[var(--text-dark)] text-[16px] sm:text-[18.19px] leading-snug">
                   {step.title}
                 </h3>
-                <p className="text-[12px] sm:text-[13px] text-gray-800 mt-1">
+                <p className="text-[12px] sm:text-[13px] text-[var(--text-light)] mt-1">
                   {step.description}
                 </p>
               </div>
@@ -66,11 +66,11 @@ export const ReferAndEarn = () => {
           </div>
 
           {/* Form Title */}
-          <h3 className="font-bold text-[18px] md:text-[20px] text-[#222222] mb-1 text-center">
+          <h3 className="font-bold text-[18px] md:text-[20px] text-[var(--text-dark)] mb-1 text-center">
             Your Referral Code
           </h3>
 
-          <p className="text-[14px] md:text-[16px] text-[#222222CC] mb-4 md:mb-5 text-center px-2">
+          <p className="text-[14px] md:text-[16px] text-[var(--text-light)] mb-4 md:mb-5 text-center px-2">
             Enter a code or share yours with your network
           </p>
 
@@ -83,7 +83,7 @@ export const ReferAndEarn = () => {
               className="flex-1 px-2 sm:px-3 bg-transparent outline-none text-[13px] md:text-[14px] text-gray-700 placeholder-gray-400 min-w-0"
             />
 
-            <button className="bg-[#901C27] transition-colors text-white text-[14px] md:text-[16px] font-semibold py-2 md:py-2.5 px-4 md:px-6 rounded-[8px] whitespace-nowrap shadow-sm shrink-0">
+            <button className="button-class transition-colors text-white text-[14px] md:text-[16px] font-semibold py-2 md:py-2.5 px-4 md:px-6 rounded-[8px] whitespace-nowrap shadow-sm shrink-0">
               Refer
             </button>
 

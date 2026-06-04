@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Home from "../pages/Home";
 import AboutUs from "../pages/AboutUs";
 import Management from "../pages/Management";
@@ -26,7 +27,27 @@ import RefundPolicy from "../components/Dashboard/Refundpolicy";
 import Dashboard from "../../src/pages/Dashboard";
 import Profile from "../components/Dashboard/MyProfile"
 import Faq from "../components/Dashboard/Howcanwehelp"
+import NotFoundpage from "../pages/NotFoundpage";
+import NetworkErrorpage from "../pages/NetworkErrorpage";
 export default function AppRoutes() {
+   const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const goOnline = () => setIsOnline(true);
+    const goOffline = () => setIsOnline(false);
+
+    window.addEventListener("online", goOnline);
+    window.addEventListener("offline", goOffline);
+
+    return () => {
+      window.removeEventListener("online", goOnline);
+      window.removeEventListener("offline", goOffline);
+    };
+  }, []);
+
+  if (!isOnline) {
+    return <NetworkErrorpage />;
+  }
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -57,6 +78,7 @@ export default function AppRoutes() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/faqs" element={<Faq />} />
 
+        <Route path="*" element={<NotFoundpage />} />
     </Routes>
   );
 }

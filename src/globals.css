@@ -15,12 +15,44 @@ body {
   --text-light:#222222CC;
   --white: #ffffff;
   --bg-cardone: #ffedee;
+   --bg-cardtwo: #FCF9F8;
+   --bg-cardstrip:#27AE601A;
+   --bg-cardstripblue:#0627931A;
+   --text-green:#069341;
+     --primary-blue: #062793;
 
   --bg-home: radial-gradient(
     circle at top left,
     rgba(144, 28, 39, 0.05) 0%,
     transparent 35%
   );
+}
+
+@layer utilities {
+  .custom-bg {
+    background:
+      linear-gradient(0deg, #FFFFFF, #FFFFFF),
+      linear-gradient(0deg, #FCF9F8, #FCF9F8),
+      radial-gradient(
+        141.42% 141.42% at 100% 100%,
+        rgba(144, 28, 39, 0.03) 0%,
+        rgba(144, 28, 39, 0) 50%
+      ),
+      radial-gradient(
+        141.42% 141.42% at 0% 0%,
+        rgba(144, 28, 39, 0.05) 0%,
+        rgba(144, 28, 39, 0) 50%
+      );
+  }
+
+
+  .bg-card-gradient {
+    background: linear-gradient(
+      178.95deg,
+      #901C27 -176.79%,
+      #FFFFFF 78.79%
+    );
+  }
 }
 
 .button-class {

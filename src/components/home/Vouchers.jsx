@@ -103,10 +103,10 @@ export default function PopularVouchers() {
       {/* Header Section */}
       <div className=" flex flex-col md:flex-row md:items-start justify-between gap-4">
         <div>
-          <h2 className="text-3xl md:text-[48px] font-semibold tracking-tight mb-2 text-[#222222]">
+          <h2 className="text-3xl md:text-[48px] font-semibold tracking-tight mb-2 ">
             <span className="text-(--primary-red)">Popular</span> Vouchers
           </h2>
-          <p className="text-gray-600 text-[24px]">
+          <p className="text-(--text-light) text-[24px]">
             Buy vouchers from leading brands and save more on every purchase
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function PopularVouchers() {
 
       {/* Trust Badges */}
       <div className="flex flex-wrap items-center gap-3.25 md:gap-3.25 mt-6">
-        <div className="flex items-center rounded-[23px] p-2 bg-[#FCF9F8] gap-2 text-(--primary-red) text-[15px] mr-[13px] font-semibold tracking-wider">
+        <div className="flex items-center rounded-[23px] p-2 bg-[var(--bg-cardtwo)] gap-2 text-(--primary-red) text-[15px] mr-[13px] font-semibold tracking-wider">
           <img
             src={verified}
             alt="verified"
@@ -127,14 +127,14 @@ export default function PopularVouchers() {
           />   Verified Brands
         </div>
 
-        <div className="flex items-center max-w-[205px] rounded-[23px] p-2 bg-[#FCF9F8] gap-2 text-(--primary-red) text-[15px] font-semibold tracking-wider mr-[13px] ">
+        <div className="flex items-center max-w-[205px] rounded-[23px] p-2 bg-[var(--bg-cardtwo)] gap-2 text-(--primary-red) text-[15px] font-semibold tracking-wider mr-[13px] ">
           <img
             src={Thunder}
             alt="verified"
             className=" object-contain"
           />   Instant Redeem
         </div>
-        <div className="flex items-center rounded-[23px] p-2 bg-[#FCF9F8] gap-2 text-(--primary-red) text-[15px] font-semibold tracking-wider mr-[13px]">
+        <div className="flex items-center rounded-[23px] p-2 bg-[var(--bg-cardtwo)] gap-2 text-(--primary-red) text-[15px] font-semibold tracking-wider mr-[13px]">
           <img
             src={lockicon}
             alt="verified"
@@ -150,7 +150,7 @@ export default function PopularVouchers() {
             onClick={() => setActiveCategory(cat)}
             className={`h-[34.26px] px-6 py-2.5 rounded-xl text-[13px] font-medium whitespace-nowrap transition-all duration-300 flex align-center justify-center ${activeCategory === cat
               ? 'bg-(--primary-red) text-white shadow-md'
-              : ' bg-linear-to-r from-[#f1eeee] via-white to-white text-[#1C1B1B] shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.09)]'
+              : ' bg-linear-to-r from-[var(--bg-cardtwo)] via-white to-white text-[var(--text-dark)] shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.09)]'
               }`}
           >
             {cat}
@@ -183,8 +183,8 @@ export default function PopularVouchers() {
               {voucher.badgeType !== 'none' && (
                 <span
                   className={`absolute top-0 left-0 text-[10px] font-bold px-3 py-1 rounded-br-[12px] rounded-tl-[21px] shadow-xs tracking-tight z-10 ${voucher.badgeType === 'green'
-                    ? 'bg-green-50 text-green-600'
-                    : 'bg-blue-50 text-blue-600'
+                    ? 'bg-[var(--bg-cardstrip)]  text-[var(--text-green)]'
+                    : 'bg-[var(--bg-cardstripblue)] text-[var(--primary-blue)]'
                     }`}
                 >
                   {voucher.badgeText}
@@ -202,11 +202,11 @@ export default function PopularVouchers() {
 
               {/* Text Info */}
               <div className="text-center mt-2">
-                <h4 className="font-bold text-[#222222] text-[16px]">
+                <h4 className="font-bold text-[var(--text-dark)] text-[16px]">
                   {voucher.brand}
                 </h4>
 
-                <p className="text-[11px] text-gray-500 mt-1">
+                <p className="text-[11px] text-[var(--text-light)] mt-1">
                   {voucher.priceText}
                 </p>
               </div>
@@ -217,7 +217,7 @@ export default function PopularVouchers() {
         {/* Right Navigation Arrow */}
         <button
           onClick={handleScrollRight}
-          className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-xl shadow-md border border-gray-100 flex items-center justify-center text-(--primary-red) hover:bg-gray-50 transition-colors hidden md:flex"
+          className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-xl shadow-md border border-gray-100 flex items-center justify-center text-[var(--primary-red)] hover:bg-gray-50 transition-colors hidden md:flex"
         >
           <ChevronRight size={20} />
         </button>

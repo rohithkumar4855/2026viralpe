@@ -4,7 +4,7 @@ import { supportOptions } from "../../data/HomeData";
 const SupportBanner = () => {
   return (
 
-    <div className="w-[95%] lg:w-full max-w-[1206px] min-h-auto md:min-h-[221px] mt-6 md:mt-[32px] mx-auto bg-[#901C27] rounded-[16px] md:rounded-[20px] shadow-md flex items-center justify-center overflow-hidden p-4 sm:p-6 md:p-8">
+    <div className="w-[95%] lg:w-full max-w-[1206px] min-h-auto md:min-h-[221px] mt-6 md:mt-[32px] mx-auto bg-[var(--primary-red)] rounded-[16px] md:rounded-[20px] shadow-md flex items-center justify-center overflow-hidden p-4 sm:p-6 md:p-8">
 
       {/* Wrapper - Forced to flex-row and divide-x for all devices */}
       <div className="w-full max-w-[900px] flex flex-row items-start sm:items-center justify-between md:divide-x divide-white/30 md:divide-white/50">
@@ -19,7 +19,7 @@ const SupportBanner = () => {
             >
 
               {/* Icon Box */}
-              <div className="w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] md:w-[57px] md:h-[57px] bg-white rounded-[10px] md:rounded-[12px] flex items-center justify-center text-[#901C27] shadow-sm">
+              <div className="w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] md:w-[57px] md:h-[57px] bg-white rounded-[10px] md:rounded-[12px] flex items-center justify-center text-[var(--primary-red)] shadow-sm">
                 <img
                   src={option.icon}
                   alt={option.title}
