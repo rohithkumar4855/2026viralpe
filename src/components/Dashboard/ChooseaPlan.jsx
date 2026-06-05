@@ -9,7 +9,7 @@ import playstoreicon from "../../../public/images/playstoreicon.png";
 import thunder from "../../../public/images/thunder.svg";
 import wallet from "../../../public/images/wallet1.svg";
 import Greenthunder from "../../../public/images/greenthunder.svg";
-import Greentick from "../../../public/images/greenTick.svg";
+import Greentick from "../../../public/images/greentick.svg";
 import discount from "../../../public/images/discount.svg";
 import lock from "../../../public/images/lock.svg"
 import { ArrowRight } from "lucide-react";
