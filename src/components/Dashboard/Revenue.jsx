@@ -1,5 +1,5 @@
 import Graph from "../../../public/images/graph.png";
-import Graphbar from "../../../public/images/graphBar.png";
+import Graphbar from "../../../public/images/graphbar.png";
 import { statsData } from "../../data/Dashboard";
 export default function Revenue() {
   return (
