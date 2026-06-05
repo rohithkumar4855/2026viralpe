@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Home from "../pages/Home";
+import HomePage from "../pages/HomePage";
 import AboutUs from "../pages/AboutUs";
 import Management from "../pages/Management";
 import Login from "../pages/Login";
@@ -50,7 +50,7 @@ export default function AppRoutes() {
   }
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/management" element={<Management />} />
       <Route path="/dashboard-details" element={<Dashboard />} />
